@@ -7,11 +7,11 @@ class Simulator
     private $dice = [];
 
     /**
-     * @param string ...$dice
+     * @param string ...$diceNotations
      */
-    public function addDice(string ...$dice) : void
+    public function addDice(string ...$diceNotations) : void
     {
-        foreach($dice as $singleDie){
+        foreach($diceNotations as $diceNotation){
             $die = new SingleDie();
 
             $dice[] = $die;
@@ -19,11 +19,11 @@ class Simulator
     }
 
     /**
-     * @param string ...$dice
+     * @param string ...$diceNotations
      */
-    public function removeDice(string ...$dice) : void
+    public function removeDice(string ...$diceNotations) : void
     {
-        foreach($dice as $singleDice){
+        foreach($diceNotations as $diceNotations){
 
         }
     }

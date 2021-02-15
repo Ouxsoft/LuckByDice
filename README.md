@@ -2,21 +2,19 @@
 
 A library for simulating dice rolls with luck written in PHP.
 
-$simulation = new Ouxsoft\LuckByDice\Simulator();
+```php
+<?php
+$diceSimulation = new Ouxsoft\LuckByDice\Simulator();
 
 // dice is both the singular and plural form
-$simulation->addDice('1d4','1d5','2d4');
-$simulation->addDice('1d4');
+$diceSimulation->setNotation('2d6+1d8+1d5+2d4');
+$diceSimulation->setLuck(223);
+$outcome = $diceSimulation->parse();
+```
 
-
-$simulation->setLuck(223);
-$outcome = $simulation->run();
-
-new LuckyByDice\Dice
-
-total => 3
+total => 
 [
-    name => '1d4'
+    name => '1d4'd
     slides => 4
     outcome => 3
 ]
@@ -32,7 +30,6 @@ getLuck();
 luckMin luckMax
 luckBase
 
-
 ## Luck
 
-Luck could be granted by items. Library does not take into account based luck and modifiers. It only returns the luck.
+Luck could be increased by items or skills. This Library does not take into account based luck and modifiers. It only returns the luck.
