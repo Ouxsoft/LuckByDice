@@ -1,0 +1,51 @@
+{
+  "name": "ouxsoft/luckbydice",
+  "description": "A library for simulating luck based dice rolls written in PHP.",
+  "license": "MIT",
+  "keywords": [
+    "dice",
+    "luck",
+    "dice notation",
+    "roll",
+    "throw"
+  ],
+  "type": "library",
+  "homepage": "https://github.com/ouxsoft/LuckByDice",
+  "support": {
+    "docs": "https://luckbydice.readthedocs.io",
+    "source": "https://github.com/ouxsoft/LuckByDice",
+    "issues": "https://github.com/ouxsoft/LuckByDice/issues"
+  },
+  "require": {
+    "php": "^7.3 || ~8.0.0",
+    "ext-json": "*",
+    "pimple/pimple": "3.3.x-dev"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.17@dev",
+    "phpunit/phpunit": "^9"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ouxsoft\\LuckByDice\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Ouxsoft\\LuckByDice\\Tests\\": "tests/src/"
+    }
+  },
+  "scripts": {
+    "build": [
+      "php-cs-fixer fix --rules=@PSR12 --using-cache=no src/",
+      "php-cs-fixer fix --rules=@PSR12 --using-cache=no tests/"
+    ],
+    "test": [
+      "XDEBUG_MODE=coverage phpunit"
+    ],
+    "fix-code": [
+      "php-cs-fixer fix --rules=@PSR12 --using-cache=no src/",
+      "php-cs-fixer fix --rules=@PSR12 --using-cache=no tests/"
+    ]
+  }
+}

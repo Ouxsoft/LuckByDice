@@ -1,18 +1,17 @@
 # LuckByDice
 
-A library for simulating dice rolls using with luck written in PHP.
+A library for simulating luck based dice rolls written in PHP.
 
 ```php
 <?php
-$diceNotation = new Ouxsoft\LuckByDice\DiceNotation();
-$diceNotation->set('2d6+1d8+1d5+2d4+d10x4+2');
-$diceNotation->add('1d6');
-$diceNotation->remove('1d8');
-$diceNotation->get();
+$similator = new Ouxsoft\LuckByDice\Factory\Simulator::getInstance();
+$similator->notation->set('2d6+1d8+1d5+2d4+d10x4+2');
+$similator->notation->add('1d6');
+$similator->notation->remove('1d8');
+$similator->notation->get();
 
-$diceSimulation = new Ouxsoft\LuckByDice\Simulator();
-$diceSimulation->setLuck(223);
-$outcome = $diceSimulation->parse();
+$simulator->luck->set(223);
+$outcome = $simulator->run();
 ```
 
 total => 

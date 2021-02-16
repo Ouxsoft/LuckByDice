@@ -4,8 +4,9 @@ use Ouxsoft\LuckByDice;
 
 /**
  * Class DiceNotation
+ * A Notation may contain one or more expressions
  */
-class DiceNotation
+class Notation
 {
     /**
      * DiceNotation constructor.
