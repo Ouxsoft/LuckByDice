@@ -4,33 +4,17 @@ A library for simulating luck based dice rolls written in PHP.
 
 ```php
 <?php
-$similator = new Ouxsoft\LuckByDice\Factory\Simulator::getInstance();
-$similator->notation->set('2d6+1d8+1d5+2d4+d10x4+2');
-$similator->notation->add('1d6');
-$similator->notation->remove('1d8');
-$similator->notation->get();
 
-$simulator->luck->set(223);
-$outcome = $simulator->run();
+require '../vendor/autoload.php';
+
+use Ouxsoft\LuckByDice\Factory\TurnFactory;
+
+$turn = TurnFactory::getInstance();
+$turn->set("1d4,2d5,6d6+3,d5*2");
+echo $turn->roll();
+
+# outputs example 72
 ```
-
-total => 
-[
-    name => '1d4'd
-    slides => 4
-    outcome => 3
-]
-
-$simulation->run();
-
-$simulation->getLastOutcome();
-$turn->getOutcomeByDice();
-getLuckModifier();
-getLuckBase();
-getLuck();
-
-luckMin luckMax
-luckBase
 
 ## Luck
 

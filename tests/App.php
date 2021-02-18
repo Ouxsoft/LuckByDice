@@ -8,19 +8,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ouxsoft\LuckByDice;
+require '../vendor/autoload.php';
 
-class Luck
-{
-    private $luck;
+use Ouxsoft\LuckByDice\Factory\TurnFactory;
 
-    public function get() : int
-    {
-        return $this->luck;
-    }
-
-    public function set(int $luck) : void
-    {
-        $this->luck = $luck;
-    }
-}
+$turn = TurnFactory::getInstance();
+$turn->set("1d4,2d5,6d6+3,d5*2");
+echo $turn->roll();

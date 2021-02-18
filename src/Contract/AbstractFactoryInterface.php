@@ -8,19 +8,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Ouxsoft\LuckByDice;
+namespace Ouxsoft\LuckByDice\Contract;
 
-class Luck
+use Pimple\Container;
+
+/**
+ * Interface AbstractFactoryInterface
+ * @package Ouxsoft\LuckByDice\Contract
+ */
+interface AbstractFactoryInterface
 {
-    private $luck;
-
-    public function get() : int
-    {
-        return $this->luck;
-    }
-
-    public function set(int $luck) : void
-    {
-        $this->luck = $luck;
-    }
 }

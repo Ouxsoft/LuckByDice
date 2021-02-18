@@ -1,8 +1,8 @@
 <?php
 /*
- * This file is part of the LivingMarkup package.
+ * This file is part of the LuckByDice package.
  *
- * (c) 2017-2021 Ouxsoft  <contact@ouxsoft.com>
+ * (c) 2020-2021 Ouxsoft <contact@ouxsoft.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -26,7 +26,8 @@ class ContainerFactory
     ): Container {
         $container = new Container();
 
-        $container['diceNotation'] = $abstractFactory->makeDiceNotation($container);
+        $container['parser'] = $abstractFactory->makeParser($container);
+        $container['cup'] = $abstractFactory->makeCup($container);
         $container['luck'] = $abstractFactory->makeLuck($container);
 
         return $container;
