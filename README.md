@@ -1,6 +1,6 @@
 # LuckByDice
 
-A library for simulating luck based dice rolls written in PHP.
+A library for simulating luck based dice rolls from dice notations written in PHP.
 
 ## Installation
 
