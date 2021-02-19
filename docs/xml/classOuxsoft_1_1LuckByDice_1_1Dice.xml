@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classOuxsoft_1_1LuckByDice_1_1Dice" kind="class" language="PHP" prot="public">
+    <compoundname>Ouxsoft::LuckByDice::Dice</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classOuxsoft_1_1LuckByDice_1_1Dice_1a4aa830438f9f88320c430767768a94aa" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>Ouxsoft\LuckByDice\Dice::$sides</definition>
+        <argsstring></argsstring>
+        <name>$sides</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/app/src/Dice.php" line="23" column="1" bodyfile="/app/src/Dice.php" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Dice_1a54d0bc90f79f2f16b06cb7b5db69f6a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ouxsoft\LuckByDice\Dice::__construct</definition>
+        <argsstring>($sides)</argsstring>
+        <name>__construct</name>
+        <param>
+          <declname>$sides</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="classOuxsoft_1_1LuckByDice_1_1Dice" kindref="compound">Dice</ref> constructor. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>$sides</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/app/src/Dice.php" line="29" column="1" bodyfile="/app/src/Dice.php" bodystart="29" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Dice_1a93390625f3e3e1dc3d932d05cdd6aadc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ouxsoft\LuckByDice\Dice::roll</definition>
+        <argsstring>()</argsstring>
+        <name>roll</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>int </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/app/src/Dice.php" line="41" column="1" bodyfile="/app/src/Dice.php" bodystart="41" bodyend="44"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/app/src/Dice.php" line="22" column="1" bodyfile="/app/src/Dice.php" bodystart="21" bodyend="45"/>
+    <listofallmembers>
+      <member refid="classOuxsoft_1_1LuckByDice_1_1Dice_1a4aa830438f9f88320c430767768a94aa" prot="private" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Dice</scope><name>$sides</name></member>
+      <member refid="classOuxsoft_1_1LuckByDice_1_1Dice_1a54d0bc90f79f2f16b06cb7b5db69f6a1" prot="public" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Dice</scope><name>__construct</name></member>
+      <member refid="classOuxsoft_1_1LuckByDice_1_1Dice_1a93390625f3e3e1dc3d932d05cdd6aadc" prot="public" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Dice</scope><name>roll</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

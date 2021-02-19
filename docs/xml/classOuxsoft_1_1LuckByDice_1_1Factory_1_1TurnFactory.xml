@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classOuxsoft_1_1LuckByDice_1_1Factory_1_1TurnFactory" kind="class" language="PHP" prot="public">
+    <compoundname>Ouxsoft::LuckByDice::Factory::TurnFactory</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Factory_1_1TurnFactory_1a64130d78ef69252fbb5ee59268abef16" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Ouxsoft\LuckByDice\Factory\TurnFactory::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classOuxsoft_1_1LuckByDice_1_1Turn" kindref="compound">Turn</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/app/src/Factory/TurnFactory.php" line="22" column="1" bodyfile="/app/src/Factory/TurnFactory.php" bodystart="22" bodyend="32"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/app/src/Factory/TurnFactory.php" line="18" column="1" bodyfile="/app/src/Factory/TurnFactory.php" bodystart="17" bodyend="33"/>
+    <listofallmembers>
+      <member refid="classOuxsoft_1_1LuckByDice_1_1Factory_1_1TurnFactory_1a64130d78ef69252fbb5ee59268abef16" prot="public" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Factory::TurnFactory</scope><name>getInstance</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

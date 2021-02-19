@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>/app/src</compoundname>
+    <innerdir refid="dir_69b5f04c422a7cafe2d0e32f9eb03524">/app/src/Contract</innerdir>
+    <innerdir refid="dir_ebd355f492f50ea33d294d31d7726b7c">/app/src/Factory</innerdir>
+    <innerfile refid="Collection_8php">Collection.php</innerfile>
+    <innerfile refid="Cup_8php">Cup.php</innerfile>
+    <innerfile refid="Dice_8php">Dice.php</innerfile>
+    <innerfile refid="Luck_8php">Luck.php</innerfile>
+    <innerfile refid="Parser_8php">Parser.php</innerfile>
+    <innerfile refid="Turn_8php">Turn.php</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/app/src/"/>
+  </compounddef>
+</doxygen>

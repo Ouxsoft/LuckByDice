@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classOuxsoft_1_1LuckByDice_1_1Collection" kind="class" language="PHP" prot="public">
+    <compoundname>Ouxsoft::LuckByDice::Collection</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classOuxsoft_1_1LuckByDice_1_1Collection_1a08f3751dad6dbcc814801825d21c275d" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>Ouxsoft\LuckByDice\Collection::$dice</definition>
+        <argsstring></argsstring>
+        <name>$dice</name>
+        <initializer>= []</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/app/src/Collection.php" line="25" column="1" bodyfile="/app/src/Collection.php" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classOuxsoft_1_1LuckByDice_1_1Collection_1a93d9eaf3239347d81714a903e7614a2b" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>Ouxsoft\LuckByDice\Collection::$modifier</definition>
+        <argsstring></argsstring>
+        <name>$modifier</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/app/src/Collection.php" line="29" column="1" bodyfile="/app/src/Collection.php" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classOuxsoft_1_1LuckByDice_1_1Collection_1a3f66babac01009a5bca1800c1abed6e0" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>Ouxsoft\LuckByDice\Collection::$multiplier</definition>
+        <argsstring></argsstring>
+        <name>$multiplier</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/app/src/Collection.php" line="33" column="1" bodyfile="/app/src/Collection.php" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Collection_1a31e270d78418d824fe31e9ca19802461" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ouxsoft\LuckByDice\Collection::__construct</definition>
+        <argsstring>(int $amount, int $sides, int $modifier, int $multiplier)</argsstring>
+        <name>__construct</name>
+        <param>
+          <type>int</type>
+          <declname>$amount</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$sides</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$modifier</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$multiplier</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DiceGroup constructor.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$sides</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$amount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$modifier</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$multiplier</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/app/src/Collection.php" line="43" column="1" bodyfile="/app/src/Collection.php" bodystart="43" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Collection_1a57cd45bdf9c70861be79fa94ec5020d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ouxsoft\LuckByDice\Collection::roll</definition>
+        <argsstring>()</argsstring>
+        <name>roll</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Roll each dice for total then add modifier and apply multiplier</para><para><simplesect kind="return"><para>int </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/app/src/Collection.php" line="61" column="1" bodyfile="/app/src/Collection.php" bodystart="61" bodyend="73"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/app/src/Collection.php" line="21" column="1" bodyfile="/app/src/Collection.php" bodystart="20" bodyend="74"/>
+    <listofallmembers>
+      <member refid="classOuxsoft_1_1LuckByDice_1_1Collection_1a08f3751dad6dbcc814801825d21c275d" prot="private" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Collection</scope><name>$dice</name></member>
+      <member refid="classOuxsoft_1_1LuckByDice_1_1Collection_1a93d9eaf3239347d81714a903e7614a2b" prot="private" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Collection</scope><name>$modifier</name></member>
+      <member refid="classOuxsoft_1_1LuckByDice_1_1Collection_1a3f66babac01009a5bca1800c1abed6e0" prot="private" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Collection</scope><name>$multiplier</name></member>
+      <member refid="classOuxsoft_1_1LuckByDice_1_1Collection_1a31e270d78418d824fe31e9ca19802461" prot="public" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Collection</scope><name>__construct</name></member>
+      <member refid="classOuxsoft_1_1LuckByDice_1_1Collection_1a57cd45bdf9c70861be79fa94ec5020d7" prot="public" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Collection</scope><name>roll</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

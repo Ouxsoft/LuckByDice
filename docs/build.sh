@@ -1,5 +1,7 @@
 # Simple shell script to build docs
 
+# :set ff=unix required when editing
+
 echo "Run Doxyfile"
 /usr/bin/doxygen Doxyfile
 

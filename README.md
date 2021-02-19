@@ -2,20 +2,21 @@
 
 A library for simulating luck based dice rolls written in PHP.
 
-```php
-<?php
+## Installation
 
-require '../vendor/autoload.php';
+### Via Composer
+LuckByDice is available on [Packagist](https://packagist.org/packages/ouxsoft/luckbydice).
 
-use Ouxsoft\LuckByDice\Factory\TurnFactory;
-
-$turn = TurnFactory::getInstance();
-$turn->set("1d4,2d5,6d6+3,d5*2");
-echo $turn->roll();
-
-# outputs example 72
+Install with [Composer](https://getcomposer.org/download/):
+```shell script
+composer require ouxsoft/luckbydice
 ```
 
-## Luck
+### Via Git
+Install with [Git](https://git-scm.com/):
+```shell script
+git clone git@github.com:ouxsoft/LuckByDice.git
+```
 
-Luck could be increased by items or skills. This Library does not take into account based luck and modifiers. It only returns the luck.
+## Documentation
+Read our docs for usage [luckbydice.readthedocs.io](https://luckbydice.readthedocs.io).

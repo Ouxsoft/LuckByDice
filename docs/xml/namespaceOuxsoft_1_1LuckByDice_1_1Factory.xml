@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespaceOuxsoft_1_1LuckByDice_1_1Factory" kind="namespace" language="PHP">
+    <compoundname>Ouxsoft::LuckByDice::Factory</compoundname>
+    <innerclass refid="classOuxsoft_1_1LuckByDice_1_1Factory_1_1ConcreteFactory" prot="public">Ouxsoft::LuckByDice::Factory::ConcreteFactory</innerclass>
+    <innerclass refid="classOuxsoft_1_1LuckByDice_1_1Factory_1_1ContainerFactory" prot="public">Ouxsoft::LuckByDice::Factory::ContainerFactory</innerclass>
+    <innerclass refid="classOuxsoft_1_1LuckByDice_1_1Factory_1_1TurnFactory" prot="public">Ouxsoft::LuckByDice::Factory::TurnFactory</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/app/src/Factory/ConcreteFactory.php" line="13" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.13">
+  <compound refid="interfaceOuxsoft_1_1LuckByDice_1_1Contract_1_1AbstractFactoryInterface" kind="interface"><name>Ouxsoft::LuckByDice::Contract::AbstractFactoryInterface</name>
+  </compound>
+  <compound refid="classOuxsoft_1_1LuckByDice_1_1Collection" kind="class"><name>Ouxsoft::LuckByDice::Collection</name>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Collection_1a08f3751dad6dbcc814801825d21c275d" kind="variable"><name>$dice</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Collection_1a93d9eaf3239347d81714a903e7614a2b" kind="variable"><name>$modifier</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Collection_1a3f66babac01009a5bca1800c1abed6e0" kind="variable"><name>$multiplier</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Collection_1a31e270d78418d824fe31e9ca19802461" kind="function"><name>__construct</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Collection_1a57cd45bdf9c70861be79fa94ec5020d7" kind="function"><name>roll</name></member>
+  </compound>
+  <compound refid="classOuxsoft_1_1LuckByDice_1_1Factory_1_1ConcreteFactory" kind="class"><name>Ouxsoft::LuckByDice::Factory::ConcreteFactory</name>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Factory_1_1ConcreteFactory_1a2e3e83ca21f941323abdefe404e4f944" kind="function"><name>makeParser</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Factory_1_1ConcreteFactory_1a9dc1b514b89794aa6fb2592de874cccd" kind="function"><name>makeCup</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Factory_1_1ConcreteFactory_1afadeab1b21be6d3adb85cec48f0146a2" kind="function"><name>makeLuck</name></member>
+  </compound>
+  <compound refid="classOuxsoft_1_1LuckByDice_1_1Factory_1_1ContainerFactory" kind="class"><name>Ouxsoft::LuckByDice::Factory::ContainerFactory</name>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Factory_1_1ContainerFactory_1a545540251967a26cd1123fc137734ad5" kind="function"><name>buildContainer</name></member>
+  </compound>
+  <compound refid="classOuxsoft_1_1LuckByDice_1_1Cup" kind="class"><name>Ouxsoft::LuckByDice::Cup</name>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Cup_1a1603e5538e68702b38783f7aace56a7f" kind="variable"><name>$container</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Cup_1a461797468aa7c52c4ee7384f6ad11711" kind="variable"><name>$index</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Cup_1a94e66a4f9e30134815ffe945c75d2350" kind="function"><name>offsetExists</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Cup_1aa6150a3e93564350dad33746dd68675f" kind="function"><name>offsetGet</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Cup_1a5257b56cf8981d25e9c48a745f02085a" kind="function"><name>offsetSet</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Cup_1ac1f75f02d55fd5c4e622a1cbdbe063f8" kind="function"><name>offsetUnset</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Cup_1a6abd735f6f67f98a89ca443231d81e7f" kind="function"><name>current</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Cup_1a23094e19386b1af74456f872beb844ef" kind="function"><name>next</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Cup_1ad0d81a030f8445c6262c03184f884856" kind="function"><name>key</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Cup_1a585c8030088f26a46c0ffca8e8c307da" kind="function"><name>valid</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Cup_1a198c3e43cf2a8c6537de4526f11ef01f" kind="function"><name>rewind</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Cup_1af85e51fd29c22fea7bd9b30bd0d0e4d0" kind="function"><name>reverse</name></member>
+  </compound>
+  <compound refid="classOuxsoft_1_1LuckByDice_1_1Dice" kind="class"><name>Ouxsoft::LuckByDice::Dice</name>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Dice_1a4aa830438f9f88320c430767768a94aa" kind="variable"><name>$sides</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Dice_1a54d0bc90f79f2f16b06cb7b5db69f6a1" kind="function"><name>__construct</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Dice_1a93390625f3e3e1dc3d932d05cdd6aadc" kind="function"><name>roll</name></member>
+  </compound>
+  <compound refid="classOuxsoft_1_1LuckByDice_1_1Luck" kind="class"><name>Ouxsoft::LuckByDice::Luck</name>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Luck_1a20555070e97ba516f83336aa786f7c0f" kind="variable"><name>$luck</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Luck_1a3c2c543d40fc8cd445f0e97c602e97f7" kind="function"><name>get</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Luck_1a43476dfb75baf2baf975e0d117ff7ef4" kind="function"><name>set</name></member>
+  </compound>
+  <compound refid="classOuxsoft_1_1LuckByDice_1_1Parser" kind="class"><name>Ouxsoft::LuckByDice::Parser</name>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Parser_1af89c26b5f5695745087a670721bcaf27" kind="function"><name>run</name></member>
+  </compound>
+  <compound refid="classOuxsoft_1_1LuckByDice_1_1Turn" kind="class"><name>Ouxsoft::LuckByDice::Turn</name>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Turn_1a2b8bf78c5f1e41869fb751832b449cc6" kind="variable"><name>$cup</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Turn_1a997396e386d8959b9a89a157704cfd5c" kind="variable"><name>$parser</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Turn_1a33cc426196211d4ea1f512d33815ea8f" kind="variable"><name>$total</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Turn_1ac8e1cd0206d9a32220bead875a0220e1" kind="function"><name>__construct</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Turn_1aa9fd3b616feed3cb4d0d87698ee9758f" kind="function"><name>set</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Turn_1ac2a078b059637476c256d9f32dcbefe2" kind="function"><name>roll</name></member>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Turn_1a1d28b73b4ab16438fb1f854144156750" kind="function"><name>__toString</name></member>
+  </compound>
+  <compound refid="classOuxsoft_1_1LuckByDice_1_1Factory_1_1TurnFactory" kind="class"><name>Ouxsoft::LuckByDice::Factory::TurnFactory</name>
+    <member refid="classOuxsoft_1_1LuckByDice_1_1Factory_1_1TurnFactory_1a64130d78ef69252fbb5ee59268abef16" kind="function"><name>getInstance</name></member>
+  </compound>
+  <compound refid="namespaceArrayAccess" kind="namespace"><name>ArrayAccess</name>
+  </compound>
+  <compound refid="namespaceIterator" kind="namespace"><name>Iterator</name>
+  </compound>
+  <compound refid="namespaceOutOfRangeException" kind="namespace"><name>OutOfRangeException</name>
+  </compound>
+  <compound refid="namespaceOuxsoft" kind="namespace"><name>Ouxsoft</name>
+  </compound>
+  <compound refid="namespaceOuxsoft_1_1LuckByDice" kind="namespace"><name>Ouxsoft::LuckByDice</name>
+  </compound>
+  <compound refid="namespaceOuxsoft_1_1LuckByDice_1_1Contract" kind="namespace"><name>Ouxsoft::LuckByDice::Contract</name>
+  </compound>
+  <compound refid="namespaceOuxsoft_1_1LuckByDice_1_1Contract_1_1AbstractFactoryInterface" kind="namespace"><name>Ouxsoft::LuckByDice::Contract::AbstractFactoryInterface</name>
+  </compound>
+  <compound refid="namespaceOuxsoft_1_1LuckByDice_1_1Cup" kind="namespace"><name>Ouxsoft::LuckByDice::Cup</name>
+  </compound>
+  <compound refid="namespaceOuxsoft_1_1LuckByDice_1_1Factory" kind="namespace"><name>Ouxsoft::LuckByDice::Factory</name>
+  </compound>
+  <compound refid="namespaceOuxsoft_1_1LuckByDice_1_1Luck" kind="namespace"><name>Ouxsoft::LuckByDice::Luck</name>
+  </compound>
+  <compound refid="namespaceOuxsoft_1_1LuckByDice_1_1Parser" kind="namespace"><name>Ouxsoft::LuckByDice::Parser</name>
+  </compound>
+  <compound refid="namespaceOuxsoft_1_1LuckByDice_1_1Turn" kind="namespace"><name>Ouxsoft::LuckByDice::Turn</name>
+  </compound>
+  <compound refid="namespacePimple_1_1Container" kind="namespace"><name>Pimple::Container</name>
+  </compound>
+  <compound refid="Collection_8php" kind="file"><name>Collection.php</name>
+  </compound>
+  <compound refid="AbstractFactoryInterface_8php" kind="file"><name>AbstractFactoryInterface.php</name>
+  </compound>
+  <compound refid="Cup_8php" kind="file"><name>Cup.php</name>
+  </compound>
+  <compound refid="Dice_8php" kind="file"><name>Dice.php</name>
+  </compound>
+  <compound refid="ConcreteFactory_8php" kind="file"><name>ConcreteFactory.php</name>
+  </compound>
+  <compound refid="ContainerFactory_8php" kind="file"><name>ContainerFactory.php</name>
+  </compound>
+  <compound refid="TurnFactory_8php" kind="file"><name>TurnFactory.php</name>
+  </compound>
+  <compound refid="Luck_8php" kind="file"><name>Luck.php</name>
+  </compound>
+  <compound refid="Parser_8php" kind="file"><name>Parser.php</name>
+  </compound>
+  <compound refid="Turn_8php" kind="file"><name>Turn.php</name>
+  </compound>
+  <compound refid="dir_69b5f04c422a7cafe2d0e32f9eb03524" kind="dir"><name>/app/src/Contract</name>
+  </compound>
+  <compound refid="dir_ebd355f492f50ea33d294d31d7726b7c" kind="dir"><name>/app/src/Factory</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>/app/src</name>
+  </compound>
+</doxygenindex>

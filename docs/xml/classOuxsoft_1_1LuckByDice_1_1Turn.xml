@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classOuxsoft_1_1LuckByDice_1_1Turn" kind="class" language="PHP" prot="public">
+    <compoundname>Ouxsoft::LuckByDice::Turn</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classOuxsoft_1_1LuckByDice_1_1Turn_1a2b8bf78c5f1e41869fb751832b449cc6" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>Ouxsoft\LuckByDice\Turn::$cup</definition>
+        <argsstring></argsstring>
+        <name>$cup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/app/src/Turn.php" line="24" column="1" bodyfile="/app/src/Turn.php" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classOuxsoft_1_1LuckByDice_1_1Turn_1a997396e386d8959b9a89a157704cfd5c" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>Ouxsoft\LuckByDice\Turn::$parser</definition>
+        <argsstring></argsstring>
+        <name>$parser</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/app/src/Turn.php" line="28" column="1" bodyfile="/app/src/Turn.php" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classOuxsoft_1_1LuckByDice_1_1Turn_1a33cc426196211d4ea1f512d33815ea8f" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>Ouxsoft\LuckByDice\Turn::$total</definition>
+        <argsstring></argsstring>
+        <name>$total</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/app/src/Turn.php" line="32" column="1" bodyfile="/app/src/Turn.php" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Turn_1ac8e1cd0206d9a32220bead875a0220e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ouxsoft\LuckByDice\Turn::__construct</definition>
+        <argsstring>(Parser $parser, Cup $cup, string $expression=null)</argsstring>
+        <name>__construct</name>
+        <param>
+          <type><ref refid="classOuxsoft_1_1LuckByDice_1_1Parser" kindref="compound">Parser</ref></type>
+          <declname>$parser</declname>
+        </param>
+        <param>
+          <type><ref refid="classOuxsoft_1_1LuckByDice_1_1Cup" kindref="compound">Cup</ref></type>
+          <declname>$cup</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>$expression</declname>
+          <defval>null</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Expression constructor. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype><ref refid="classOuxsoft_1_1LuckByDice_1_1Parser" kindref="compound">Parser</ref></parametertype>
+<parametername>$parser</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype><ref refid="classOuxsoft_1_1LuckByDice_1_1Cup" kindref="compound">Cup</ref></parametertype>
+<parametername>$cup</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametertype>null</parametertype>
+<parametername>$expression</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>Turn::setByString() </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/app/src/Turn.php" line="41" column="1" bodyfile="/app/src/Turn.php" bodystart="41" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Turn_1aa9fd3b616feed3cb4d0d87698ee9758f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ouxsoft\LuckByDice\Turn::set</definition>
+        <argsstring>(string $expression)</argsstring>
+        <name>set</name>
+        <param>
+          <type>string</type>
+          <declname>$expression</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$expression</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&quot;1d4+3*2,1d5,d5,10d5&quot; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/app/src/Turn.php" line="57" column="1" bodyfile="/app/src/Turn.php" bodystart="57" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Turn_1ac2a078b059637476c256d9f32dcbefe2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ouxsoft\LuckByDice\Turn::roll</definition>
+        <argsstring>()</argsstring>
+        <name>roll</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Roll each dice group and total <simplesect kind="return"><para>int </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/app/src/Turn.php" line="66" column="1" bodyfile="/app/src/Turn.php" bodystart="66" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Turn_1a1d28b73b4ab16438fb1f854144156750" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ouxsoft\LuckByDice\Turn::__toString</definition>
+        <argsstring>()</argsstring>
+        <name>__toString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>string </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/app/src/Turn.php" line="82" column="1" bodyfile="/app/src/Turn.php" bodystart="82" bodyend="85"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/app/src/Turn.php" line="20" column="1" bodyfile="/app/src/Turn.php" bodystart="19" bodyend="86"/>
+    <listofallmembers>
+      <member refid="classOuxsoft_1_1LuckByDice_1_1Turn_1a2b8bf78c5f1e41869fb751832b449cc6" prot="private" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Turn</scope><name>$cup</name></member>
+      <member refid="classOuxsoft_1_1LuckByDice_1_1Turn_1a997396e386d8959b9a89a157704cfd5c" prot="private" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Turn</scope><name>$parser</name></member>
+      <member refid="classOuxsoft_1_1LuckByDice_1_1Turn_1a33cc426196211d4ea1f512d33815ea8f" prot="private" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Turn</scope><name>$total</name></member>
+      <member refid="classOuxsoft_1_1LuckByDice_1_1Turn_1ac8e1cd0206d9a32220bead875a0220e1" prot="public" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Turn</scope><name>__construct</name></member>
+      <member refid="classOuxsoft_1_1LuckByDice_1_1Turn_1a1d28b73b4ab16438fb1f854144156750" prot="public" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Turn</scope><name>__toString</name></member>
+      <member refid="classOuxsoft_1_1LuckByDice_1_1Turn_1ac2a078b059637476c256d9f32dcbefe2" prot="public" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Turn</scope><name>roll</name></member>
+      <member refid="classOuxsoft_1_1LuckByDice_1_1Turn_1aa9fd3b616feed3cb4d0d87698ee9758f" prot="public" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Turn</scope><name>set</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

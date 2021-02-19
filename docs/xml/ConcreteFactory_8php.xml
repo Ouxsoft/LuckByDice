@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="ConcreteFactory_8php" kind="file" language="PHP">
+    <compoundname>ConcreteFactory.php</compoundname>
+    <innerclass refid="classOuxsoft_1_1LuckByDice_1_1Factory_1_1ConcreteFactory" prot="public">Ouxsoft::LuckByDice::Factory::ConcreteFactory</innerclass>
+    <innernamespace refid="namespaceOuxsoft_1_1LuckByDice_1_1Factory">Ouxsoft::LuckByDice::Factory</innernamespace>
+    <innernamespace refid="namespaceOuxsoft_1_1LuckByDice_1_1Contract_1_1AbstractFactoryInterface">Ouxsoft::LuckByDice::Contract::AbstractFactoryInterface</innernamespace>
+    <innernamespace refid="namespaceOuxsoft_1_1LuckByDice_1_1Parser">Ouxsoft::LuckByDice::Parser</innernamespace>
+    <innernamespace refid="namespaceOuxsoft_1_1LuckByDice_1_1Cup">Ouxsoft::LuckByDice::Cup</innernamespace>
+    <innernamespace refid="namespaceOuxsoft_1_1LuckByDice_1_1Luck">Ouxsoft::LuckByDice::Luck</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>LuckByDice<sp/>package.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>(c)<sp/>2020-2021<sp/>Ouxsoft<sp/>&lt;contact@ouxsoft.com&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>For<sp/>the<sp/>full<sp/>copyright<sp/>and<sp/>license<sp/>information,<sp/>please<sp/>view<sp/>the<sp/>LICENSE</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>file<sp/>that<sp/>was<sp/>distributed<sp/>with<sp/>this<sp/>source<sp/>code.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">declare(strict_types=1);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceOuxsoft_1_1LuckByDice_1_1Factory" kindref="compound">Ouxsoft\LuckByDice\Factory</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">use<sp/><ref refid="namespaceOuxsoft_1_1LuckByDice_1_1Contract_1_1AbstractFactoryInterface" kindref="compound">Ouxsoft\LuckByDice\Contract\AbstractFactoryInterface</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">use<sp/><ref refid="namespaceOuxsoft_1_1LuckByDice_1_1Parser" kindref="compound">Ouxsoft\LuckByDice\Parser</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">use<sp/><ref refid="namespaceOuxsoft_1_1LuckByDice_1_1Cup" kindref="compound">Ouxsoft\LuckByDice\Cup</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">use<sp/><ref refid="namespaceOuxsoft_1_1LuckByDice_1_1Luck" kindref="compound">Ouxsoft\LuckByDice\Luck</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">use<sp/><ref refid="namespacePimple_1_1Container" kindref="compound">Pimple\Container</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="classOuxsoft_1_1LuckByDice_1_1Factory_1_1ConcreteFactory" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classOuxsoft_1_1LuckByDice_1_1Factory_1_1ConcreteFactory" kindref="compound">ConcreteFactory</ref><sp/></highlight><highlight class="keyword">implements</highlight><highlight class="normal"><sp/><ref refid="interfaceOuxsoft_1_1LuckByDice_1_1Contract_1_1AbstractFactoryInterface" kindref="compound">AbstractFactoryInterface</ref></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>makeParser(Container<sp/>&amp;$container):<sp/><ref refid="classOuxsoft_1_1LuckByDice_1_1Parser" kindref="compound">Parser</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classOuxsoft_1_1LuckByDice_1_1Parser" kindref="compound">Parser</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>makeCup(Container<sp/>&amp;$container):<sp/><ref refid="classOuxsoft_1_1LuckByDice_1_1Cup" kindref="compound">Cup</ref></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classOuxsoft_1_1LuckByDice_1_1Cup" kindref="compound">Cup</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>makeLuck(Container<sp/>&amp;$container):<sp/><ref refid="classOuxsoft_1_1LuckByDice_1_1Luck" kindref="compound">Luck</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classOuxsoft_1_1LuckByDice_1_1Luck" kindref="compound">Luck</ref>();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/app/src/Factory/ConcreteFactory.php"/>
+  </compounddef>
+</doxygen>

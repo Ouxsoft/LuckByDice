@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_ebd355f492f50ea33d294d31d7726b7c" kind="dir">
+    <compoundname>/app/src/Factory</compoundname>
+    <innerfile refid="ConcreteFactory_8php">ConcreteFactory.php</innerfile>
+    <innerfile refid="ContainerFactory_8php">ContainerFactory.php</innerfile>
+    <innerfile refid="TurnFactory_8php">TurnFactory.php</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/app/src/Factory/"/>
+  </compounddef>
+</doxygen>
