@@ -1,5 +1,5 @@
 <h1>LuckByDice</h1>
-<a href="https://luckydice.readthedocs.io/en/latest/?badge=latest"><img src="https://readthedocs.org/projects/luckbydice/badge/?version=latest" alt="Documentation Status"></a> 
+<a href="https://luckbydice.readthedocs.io/en/latest/?badge=latest"><img src="https://readthedocs.org/projects/luckbydice/badge/?version=latest" alt="Documentation Status"></a> 
 
 A library for simulating luck based dice rolls from dice notations written in PHP.
 
