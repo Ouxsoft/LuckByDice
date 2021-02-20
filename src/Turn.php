@@ -12,11 +12,13 @@ declare(strict_types=1);
 
 namespace Ouxsoft\LuckByDice;
 
+use Ouxsoft\LuckByDice\Contract\TurnInterface;
+
 /**
  * Class Turn
  * @package Ouxsoft\LuckByDice
  */
-class Turn
+class Turn implements TurnInterface
 {
     /**
      * @var Cup
@@ -32,7 +34,7 @@ class Turn
     private $total;
 
     /**
-     * Expression constructor.
+     * Turn constructor.
      * @param Parser $parser
      * @param Cup $cup
      * @param string|null $expression
@@ -52,6 +54,7 @@ class Turn
     }
 
     /**
+     * Set dice notation
      * @param string $expression "1d4+3*2,1d5,d5,10d5"
      */
     public function set(string $expression) : void

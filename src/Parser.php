@@ -10,7 +10,9 @@
 
 namespace Ouxsoft\LuckByDice;
 
-class Parser
+use Ouxsoft\LuckByDice\Contract\ParserInterface;
+
+class Parser implements ParserInterface
 {
     /**
      * @param $expression

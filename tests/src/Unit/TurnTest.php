@@ -28,6 +28,16 @@ class TurnTest extends TestCase
     }
 
     /**
+     * @covers \Ouxsoft\LuckByDice\Turn::set
+     */
+    public function testSet()
+    {
+        $this->turn->set("d3+3*3");
+        $outcome = $this->turn->roll();
+        $this->assertIsInt($outcome);
+    }
+
+    /**
      * @covers \Ouxsoft\LuckByDice\Turn::roll
      */
     public function testRoll()
@@ -35,6 +45,16 @@ class TurnTest extends TestCase
         $this->turn->set("1d4,2d5,6d6+3,d5*2");
         $outcome = $this->turn->roll();
         $this->assertIsInt($outcome);
+    }
+
+    /**
+     * @covers \Ouxsoft\LuckByDice\Turn::__toString
+     */
+    public function test__toString()
+    {
+        $this->turn->set("d6");
+        $outcome = (string) $this->turn;
+        $this->assertIsString($outcome);
     }
 
 }
