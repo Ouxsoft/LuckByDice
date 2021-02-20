@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="tests/bootstrap.php"
+         colors="true">
+
+    <testsuites>
+        <testsuite name="unit">
+            <directory>tests/src/Unit</directory>
+        </testsuite>
+    </testsuites>
+
+    <coverage includeUncoveredFiles="true"
+              processUncoveredFiles="true"
+              ignoreDeprecatedCodeUnits="true"
+              disableCodeCoverageIgnore="true">
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+        <exclude>
+            <directory suffix="Interface.php">.</directory>
+        </exclude>
+        <report>
+            <clover outputFile="tests/output/clover.xml"/>
+            <crap4j outputFile="tests/output/crap4j.xml" threshold="50"/>
+            <html outputDirectory="tests/output/html-coverage" lowUpperBound="50" highLowerBound="90"/>
+            <php outputFile="tests/output/coverage.php"/>
+            <text outputFile="php://stdout" showUncoveredFiles="false" showOnlySummary="true"/>
+            <xml outputDirectory="tests/output/xml-coverage"/>
+        </report>
+    </coverage>
+
+    <logging>
+        <junit outputFile="tests/output/junit.xml"/>
+        <teamcity outputFile="tests/output/teamcity.txt"/>
+        <testdoxHtml outputFile="tests/output/testdox.html"/>
+        <testdoxText outputFile="tests/output/testdox.txt"/>
+        <testdoxXml outputFile="tests/output/testdox.xml"/>
+        <text outputFile="tests/output/logfile.txt"/>
+    </logging>
+</phpunit>

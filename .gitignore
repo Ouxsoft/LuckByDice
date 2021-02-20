@@ -1,2 +1,4 @@
 vendor
 docs/xml
+tests/output
+.phpunit.result.cache
