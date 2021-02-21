@@ -12,10 +12,11 @@ namespace Ouxsoft\LuckByDice;
 
 use ArrayAccess;
 use Iterator;
+use Ouxsoft\LuckByDice\Contract\CollectionInterface;
 
 /**
  * Cup
- * A cup contains Collections of dice
+ * A dice Cup holds and allows iteration of one ore more dice Collection
  *
  * @package Ouxsoft\LivingMarkup
  */
@@ -39,7 +40,7 @@ class Cup implements
      * @param mixed $offset
      * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset) : CollectionInterface
     {
         return $this->container[$offset];
     }
@@ -48,23 +49,27 @@ class Cup implements
      * @param mixed $offset
      * @param mixed $value
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value) : void
     {
-        $this->container[$offset] = $value;
+        if (is_null($offset)) {
+            $this->container[] = $value;
+        } else {
+            $this->container[$offset] = $value;
+        }
     }
 
     /**
      * @param mixed $offset
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset) : void
     {
         unset($this->container[$offset]);
     }
 
     /**
-     * @return int
+     * @return CollectionInterface
      */
-    public function current(): int
+    public function current() : CollectionInterface
     {
         return $this->container[$this->index];
     }
@@ -92,7 +97,7 @@ class Cup implements
         $this->index = 0;
     }
 
-    public function reverse()
+    public function reverse() : void
     {
         $this->container = array_reverse($this->container);
         $this->rewind();

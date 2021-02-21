@@ -1,4 +1,5 @@
 <?php
+
 /*
  * This file is part of the LuckByDice package.
  *
@@ -28,7 +29,6 @@ class DiceTest extends TestCase
     {
         unset($this->dice);
     }
-
 
     /**
      * @covers \Ouxsoft\LuckByDice\Dice::__construct
@@ -60,3 +60,4 @@ class DiceTest extends TestCase
         $this->assertEquals(6, $slides);
     }
 }
+

@@ -16,6 +16,7 @@ use Ouxsoft\LuckByDice\Contract\TurnInterface;
 
 /**
  * Class Turn
+ * A turn is used to set and hold dice
  * @package Ouxsoft\LuckByDice
  */
 class Turn implements TurnInterface
@@ -54,12 +55,21 @@ class Turn implements TurnInterface
     }
 
     /**
-     * Set dice notation
+     * Set cup notation
      * @param string $expression "1d4+3*2,1d5,d5,10d5"
      */
     public function set(string $expression) : void
     {
         $this->cup = $this->notation->decode($expression);
+    }
+
+    /**
+     * Get cup notation
+     * @return string "1d4+3*2,1d5,d5,10d5"
+     */
+    public function get() : string
+    {
+        return $this->notation->encode($this->cup);
     }
 
     /**

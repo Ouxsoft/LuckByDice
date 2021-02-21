@@ -12,6 +12,11 @@ namespace Ouxsoft\LuckByDice;
 
 use Ouxsoft\LuckByDice\Contract\NotationInterface;
 
+/**
+ * Class Notation
+ * A notation is used to encode and decode a Cup
+ * @package Ouxsoft\LuckByDice
+ */
 class Notation implements NotationInterface
 {
     /**
@@ -20,7 +25,34 @@ class Notation implements NotationInterface
      */
     public function encode(Cup $cup) : string
     {
-        // TODO: add
+        $expression = '';
+        $firstIteration = true;
+        foreach ($cup as $collection) {
+            if($firstIteration) {
+                $firstIteration = false;
+            } else {
+                $expression .= ',';
+            }
+
+            $count = count($collection);
+            if($count > 1){
+                $expression .= $count;
+            }
+
+            $expression .= 'd' . $collection->getSides();
+
+            $modifier = $collection->getModifier();
+            if($modifier > 1){
+                $expression .= '+' . $modifier;
+            }
+
+            $multiplier = $collection->getMultiplier();
+            if($multiplier > 1){
+                $expression .= '*' . $multiplier;
+            }
+        }
+
+        return $expression;
     }
 
     /**

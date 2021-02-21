@@ -12,12 +12,17 @@ declare(strict_types=1);
 
 namespace Ouxsoft\LuckByDice;
 
+use Ouxsoft\LuckByDice\Contract\CollectionInterface;
+
 /**
  * Class Collection
- * A collection resides inside a cup and contains one or more dice with same amount of sides that can be later rolled.
+ * A Collection resides inside a Cup and contains one or more Dice with same amount of sides that can be later rolled
+ * along with a modifier for the roll and a multiplier.
  * @package Ouxsoft\LuckByDice
  */
-class Collection
+class Collection implements
+    CollectionInterface,
+    \Countable
 {
     /**
      * @var array
@@ -31,6 +36,10 @@ class Collection
      * @var int
      */
     private $multiplier;
+    /**
+     * @var int
+     */
+    private $sides;
 
     /**
      * DiceGroup constructor.
@@ -46,11 +55,21 @@ class Collection
             throw new OutOfRangeException('A DiceGroup must have at least one dice.');
         }
 
-        for ($i = 0; $i <= $amount; $i++) {
+        for ($i = 1; $i <= $amount; $i++) {
             $this->dice[] = new Dice($sides);
         }
+
+        $this->sides = $sides;
         $this->modifier = $modifier;
         $this->multiplier = $multiplier;
+    }
+
+    /**
+     * @return int
+     */
+    public function count() : int
+    {
+        return count($this->dice);
     }
 
     /**
@@ -70,5 +89,29 @@ class Collection
         $total *= $this->multiplier;
 
         return $total;
+    }
+
+    /**
+     * @return int
+     */
+    public function getModifier() : int
+    {
+        return $this->modifier;
+    }
+
+    /**
+     * @return int
+     */
+    public function getMultiplier() : int
+    {
+        return $this->multiplier;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSides() : int
+    {
+        return $this->sides;
     }
 }
