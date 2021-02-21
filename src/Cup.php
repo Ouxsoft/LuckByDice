@@ -26,26 +26,44 @@ class Cup implements
     private $container = [];
     private $index = 0;
 
+    /**
+     * @param mixed $offset
+     * @return bool
+     */
     public function offsetExists($offset): bool
     {
         return array_key_exists($offset, $this->container);
     }
 
+    /**
+     * @param mixed $offset
+     * @return mixed
+     */
     public function offsetGet($offset)
     {
         return $this->container[$offset];
     }
 
+    /**
+     * @param mixed $offset
+     * @param mixed $value
+     */
     public function offsetSet($offset, $value)
     {
         $this->container[$offset] = $value;
     }
 
+    /**
+     * @param mixed $offset
+     */
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
     }
 
+    /**
+     * @return int
+     */
     public function current(): int
     {
         return $this->container[$this->index];
@@ -61,6 +79,9 @@ class Cup implements
         return $this->index;
     }
 
+    /**
+     * @return bool
+     */
     public function valid(): bool
     {
         return isset($this->container[$this->key()]);
