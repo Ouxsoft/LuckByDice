@@ -56,5 +56,4 @@ class TurnTest extends TestCase
         $outcome = (string) $this->turn;
         $this->assertIsString($outcome);
     }
-
 }

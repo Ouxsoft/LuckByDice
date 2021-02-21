@@ -8,7 +8,6 @@ use Ouxsoft\LuckByDice\Parser;
 
 interface TurnInterface
 {
-
     public function __construct(
         Notation $notation,
         Cup $cup,
@@ -20,5 +19,4 @@ interface TurnInterface
     public function roll() : int;
 
     public function __toString() : string;
-
 }

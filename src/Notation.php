@@ -28,26 +28,26 @@ class Notation implements NotationInterface
         $expression = '';
         $firstIteration = true;
         foreach ($cup as $collection) {
-            if($firstIteration) {
+            if ($firstIteration) {
                 $firstIteration = false;
             } else {
                 $expression .= ',';
             }
 
             $amount = count($collection);
-            if($amount > 1){
+            if ($amount > 1) {
                 $expression .= $amount;
             }
 
             $expression .= 'd' . $collection->getSides();
 
             $modifier = $collection->getModifier();
-            if($modifier > 1){
+            if ($modifier > 1) {
                 $expression .= '+' . $modifier;
             }
 
             $multiplier = $collection->getMultiplier();
-            if($multiplier > 1){
+            if ($multiplier > 1) {
                 $expression .= '*' . $multiplier;
             }
         }

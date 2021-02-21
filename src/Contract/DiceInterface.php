@@ -12,7 +12,7 @@ declare(strict_types=1);
 
 namespace Ouxsoft\LuckByDice\Contract;
 
-Interface DiceInterface
+interface DiceInterface
 {
     public function __construct($sides);
 
