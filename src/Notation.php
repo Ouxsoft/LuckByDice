@@ -34,9 +34,9 @@ class Notation implements NotationInterface
                 $expression .= ',';
             }
 
-            $count = count($collection);
-            if($count > 1){
-                $expression .= $count;
+            $amount = count($collection);
+            if($amount > 1){
+                $expression .= $amount;
             }
 
             $expression .= 'd' . $collection->getSides();
@@ -63,10 +63,10 @@ class Notation implements NotationInterface
     {
         $cup = new Cup();
 
-        $diceGroupExpressions = explode(',', strtolower($expression));
+        $expressionParts = explode(',', strtolower($expression));
 
-        foreach ($diceGroupExpressions as $diceGroupExpression) {
-            $unsorted = explode('d', $diceGroupExpression);
+        foreach ($expressionParts as $expressionPart) {
+            $unsorted = explode('d', $expressionPart);
 
             $amount = (int) (($unsorted[0] !== '') ? $unsorted[0] : 1);
 

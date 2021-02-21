@@ -12,6 +12,8 @@ declare(strict_types=1);
 
 namespace Ouxsoft\LuckByDice;
 
+use Countable;
+use OutOfRangeException;
 use Ouxsoft\LuckByDice\Contract\CollectionInterface;
 
 /**
@@ -22,7 +24,7 @@ use Ouxsoft\LuckByDice\Contract\CollectionInterface;
  */
 class Collection implements
     CollectionInterface,
-    \Countable
+    Countable
 {
     /**
      * @var array

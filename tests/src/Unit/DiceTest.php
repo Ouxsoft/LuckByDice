@@ -60,4 +60,3 @@ class DiceTest extends TestCase
         $this->assertEquals(6, $slides);
     }
 }
-

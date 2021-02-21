@@ -14,5 +14,13 @@ interface CollectionInterface
 {
     public function __construct(int $amount, int $sides, int $modifier, int $multiplier);
 
+    public function count() : int;
+
     public function roll() : int;
+
+    public function getModifier() : int;
+
+    public function getMultiplier() : int;
+
+    public function getSides() : int;
 }
