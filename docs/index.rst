@@ -1,6 +1,7 @@
+|alt text|
+
 Welcome to LuckByDice Documentation
 =====================================
-
 
 .. code-block:: php
 
@@ -48,3 +49,6 @@ Indices and tables
 
 * :ref:`genindex`
 * :ref:`search`
+
+
+.. |alt text| image:: https://github.com/ouxsoft/LuckByDice/raw/master/docs/logo.jpg
