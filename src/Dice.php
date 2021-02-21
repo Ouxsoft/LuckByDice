@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Ouxsoft\LuckByDice;
 
+use Ouxsoft\LuckByDice\Contract\DiceInterface;
 use OutOfRangeException;
 
 /**
@@ -19,7 +20,7 @@ use OutOfRangeException;
  * A dice has two or more sides and can be roll
  * @package Ouxsoft\LuckByDice
  */
-class Dice
+class Dice implements DiceInterface
 {
     private $sides;
 

@@ -20,16 +20,17 @@ class Notation implements NotationInterface
      */
     public function encode(Cup $cup) : string
     {
-
+        // TODO: add
     }
 
     /**
-     * @param $expression
-     * @return array
+     * @param string $expression
+     * @return Cup
      */
-    public function decode(string $expression): array
+    public function decode(string $expression): Cup
     {
-        $diceGroups = [];
+        $cup = new Cup();
+
         $diceGroupExpressions = explode(',', strtolower($expression));
 
         foreach ($diceGroupExpressions as $diceGroupExpression) {
@@ -44,9 +45,9 @@ class Notation implements NotationInterface
             $modifier = (int) ((isset($unsorted[1])) ? $unsorted[1] : 0);
             $sides = (int) $unsorted[0];
 
-            $diceGroups[] = new Collection($amount, $sides, $modifier, $multiplier);
+            $cup[] = new Collection($amount, $sides, $modifier, $multiplier);
         }
 
-        return $diceGroups;
+        return $cup;
     }
 }
