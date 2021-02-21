@@ -25,9 +25,9 @@ class Turn implements TurnInterface
      */
     private $cup;
     /**
-     * @var Parser
+     * @var Notation
      */
-    private $parser;
+    private $notation;
     /**
      * @var int
      */
@@ -35,17 +35,17 @@ class Turn implements TurnInterface
 
     /**
      * Turn constructor.
-     * @param Parser $parser
+     * @param Notation $notation
      * @param Cup $cup
      * @param string|null $expression
      * @see Turn::setByString()
      */
     public function __construct(
-        Parser $parser,
+        Notation $notation,
         Cup $cup,
         string $expression = null
     ) {
-        $this->parser = $parser;
+        $this->notation = $notation;
         $this->cup = $cup;
 
         if ($expression !== null) {
@@ -59,7 +59,7 @@ class Turn implements TurnInterface
      */
     public function set(string $expression) : void
     {
-        $this->cup = $this->parser->run($expression);
+        $this->cup = $this->notation->decode($expression);
     }
 
     /**

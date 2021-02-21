@@ -26,7 +26,7 @@ class ContainerFactory
     ): Container {
         $container = new Container();
 
-        $container['parser'] = $abstractFactory->makeParser($container);
+        $container['notation'] = $abstractFactory->makeNotation($container);
         $container['cup'] = $abstractFactory->makeCup($container);
         $container['luck'] = $abstractFactory->makeLuck($container);
 

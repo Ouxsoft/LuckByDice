@@ -3,13 +3,14 @@
 namespace Ouxsoft\LuckByDice\Contract;
 
 use Ouxsoft\LuckByDice\Cup;
+use Ouxsoft\LuckByDice\Notation;
 use Ouxsoft\LuckByDice\Parser;
 
 interface TurnInterface
 {
 
     public function __construct(
-        Parser $parser,
+        Notation $notation,
         Cup $cup,
         string $expression = null
     );

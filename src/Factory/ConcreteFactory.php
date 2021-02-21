@@ -13,7 +13,7 @@ declare(strict_types=1);
 namespace Ouxsoft\LuckByDice\Factory;
 
 use Ouxsoft\LuckByDice\Contract\AbstractFactoryInterface;
-use Ouxsoft\LuckByDice\Parser;
+use Ouxsoft\LuckByDice\Notation;
 use Ouxsoft\LuckByDice\Cup;
 use Ouxsoft\LuckByDice\Luck;
 
@@ -21,9 +21,9 @@ use Pimple\Container;
 
 class ConcreteFactory implements AbstractFactoryInterface
 {
-    public function makeParser(Container &$container): Parser
+    public function makeNotation(Container &$container): Notation
     {
-        return new Parser();
+        return new Notation();
     }
 
     public function makeCup(Container &$container): Cup

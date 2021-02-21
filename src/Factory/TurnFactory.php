@@ -26,7 +26,7 @@ class TurnFactory
         $container = ContainerFactory::buildContainer($abstractFactory);
 
         return new Turn(
-            $container['parser'],
+            $container['notation'],
             $container['cup']
         );
     }

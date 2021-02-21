@@ -10,15 +10,24 @@
 
 namespace Ouxsoft\LuckByDice;
 
-use Ouxsoft\LuckByDice\Contract\ParserInterface;
+use Ouxsoft\LuckByDice\Contract\NotationInterface;
 
-class Parser implements ParserInterface
+class Notation implements NotationInterface
 {
+    /**
+     * @param Cup $cup
+     * @return string
+     */
+    public function encode(Cup $cup) : string
+    {
+
+    }
+
     /**
      * @param $expression
      * @return array
      */
-    public function run($expression): array
+    public function decode(string $expression): array
     {
         $diceGroups = [];
         $diceGroupExpressions = explode(',', strtolower($expression));

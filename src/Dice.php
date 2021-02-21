@@ -16,6 +16,7 @@ use OutOfRangeException;
 
 /**
  * Class Dice
+ * A dice has two or more sides and can be roll
  * @package Ouxsoft\LuckByDice
  */
 class Dice
@@ -41,5 +42,13 @@ class Dice
     public function roll() : int
     {
         return mt_rand(1, $this->sides);
+    }
+
+    /**
+     * @return int
+     */
+    public function getSides() : int
+    {
+        return $this->sides;
     }
 }
