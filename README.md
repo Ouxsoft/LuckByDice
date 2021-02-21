@@ -8,6 +8,8 @@ A library for simulating luck based dice rolls from dice notations written in PH
 
 ## Installation
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/582663c71dcf45ecbba3d61ab8f5e70c)](https://app.codacy.com/gh/ouxsoft/LuckByDice?utm_source=github.com&utm_medium=referral&utm_content=ouxsoft/LuckByDice&utm_campaign=Badge_Grade)
+
 ### Via Composer
 LuckByDice is available on [Packagist](https://packagist.org/packages/ouxsoft/luckbydice).
 
