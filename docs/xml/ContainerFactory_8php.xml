@@ -33,7 +33,7 @@
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>):<sp/>Container<sp/>{</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$container<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Container();</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$container[</highlight><highlight class="stringliteral">&apos;parser&apos;</highlight><highlight class="normal">]<sp/>=<sp/>$abstractFactory-&gt;makeParser($container);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$container[</highlight><highlight class="stringliteral">&apos;notation&apos;</highlight><highlight class="normal">]<sp/>=<sp/>$abstractFactory-&gt;makeNotation($container);</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$container[</highlight><highlight class="stringliteral">&apos;cup&apos;</highlight><highlight class="normal">]<sp/>=<sp/>$abstractFactory-&gt;makeCup($container);</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$container[</highlight><highlight class="stringliteral">&apos;luck&apos;</highlight><highlight class="normal">]<sp/>=<sp/>$abstractFactory-&gt;makeLuck($container);</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>

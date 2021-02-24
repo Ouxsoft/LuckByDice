@@ -116,4 +116,13 @@ class Collection implements
     {
         return $this->sides;
     }
+
+    /**
+     * Get max potential of outcome
+     * @return int
+     */
+    public function getMaxOutcome() : int
+    {
+        return (count($this->dice) * $this->sides + $this->modifier) * $this->multiplier;
+    }
 }

@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/app/src/Cup.php" line="26" column="1" bodyfile="/app/src/Cup.php" bodystart="26" bodyend="-1"/>
+        <location file="/app/src/Cup.php" line="27" column="1" bodyfile="/app/src/Cup.php" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classOuxsoft_1_1LuckByDice_1_1Cup_1a461797468aa7c52c4ee7384f6ad11711" prot="private" static="no" mutable="no">
         <type></type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/app/src/Cup.php" line="27" column="1" bodyfile="/app/src/Cup.php" bodystart="27" bodyend="-1"/>
+        <location file="/app/src/Cup.php" line="28" column="1" bodyfile="/app/src/Cup.php" bodystart="28" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -46,10 +46,20 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>mixed</parametertype>
+<parametername>$offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/app/src/Cup.php" line="29" column="1" bodyfile="/app/src/Cup.php" bodystart="29" bodyend="32"/>
+        <location file="/app/src/Cup.php" line="34" column="1" bodyfile="/app/src/Cup.php" bodystart="34" bodyend="37"/>
       </memberdef>
       <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Cup_1aa6150a3e93564350dad33746dd68675f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -62,10 +72,20 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>mixed</parametertype>
+<parametername>$offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>mixed </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/app/src/Cup.php" line="34" column="1" bodyfile="/app/src/Cup.php" bodystart="34" bodyend="37"/>
+        <location file="/app/src/Cup.php" line="43" column="1" bodyfile="/app/src/Cup.php" bodystart="43" bodyend="46"/>
       </memberdef>
       <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Cup_1a5257b56cf8981d25e9c48a745f02085a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -81,10 +101,27 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>mixed</parametertype>
+<parametername>$offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>mixed</parametertype>
+<parametername>$value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/app/src/Cup.php" line="39" column="1" bodyfile="/app/src/Cup.php" bodystart="39" bodyend="42"/>
+        <location file="/app/src/Cup.php" line="52" column="1" bodyfile="/app/src/Cup.php" bodystart="52" bodyend="59"/>
       </memberdef>
       <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Cup_1ac1f75f02d55fd5c4e622a1cbdbe063f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -97,10 +134,19 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>mixed</parametertype>
+<parametername>$offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/app/src/Cup.php" line="44" column="1" bodyfile="/app/src/Cup.php" bodystart="44" bodyend="47"/>
+        <location file="/app/src/Cup.php" line="64" column="1" bodyfile="/app/src/Cup.php" bodystart="64" bodyend="67"/>
       </memberdef>
       <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Cup_1a6abd735f6f67f98a89ca443231d81e7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -110,10 +156,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>CollectionInterface </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/app/src/Cup.php" line="49" column="1" bodyfile="/app/src/Cup.php" bodystart="49" bodyend="52"/>
+        <location file="/app/src/Cup.php" line="72" column="1" bodyfile="/app/src/Cup.php" bodystart="72" bodyend="75"/>
       </memberdef>
       <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Cup_1a23094e19386b1af74456f872beb844ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -126,7 +173,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/app/src/Cup.php" line="54" column="1" bodyfile="/app/src/Cup.php" bodystart="54" bodyend="57"/>
+        <location file="/app/src/Cup.php" line="77" column="1" bodyfile="/app/src/Cup.php" bodystart="77" bodyend="80"/>
       </memberdef>
       <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Cup_1ad0d81a030f8445c6262c03184f884856" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -139,7 +186,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/app/src/Cup.php" line="59" column="1" bodyfile="/app/src/Cup.php" bodystart="59" bodyend="62"/>
+        <location file="/app/src/Cup.php" line="82" column="1" bodyfile="/app/src/Cup.php" bodystart="82" bodyend="85"/>
       </memberdef>
       <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Cup_1a585c8030088f26a46c0ffca8e8c307da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -149,10 +196,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>bool </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/app/src/Cup.php" line="64" column="1" bodyfile="/app/src/Cup.php" bodystart="64" bodyend="67"/>
+        <location file="/app/src/Cup.php" line="90" column="1" bodyfile="/app/src/Cup.php" bodystart="90" bodyend="93"/>
       </memberdef>
       <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Cup_1a198c3e43cf2a8c6537de4526f11ef01f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -165,7 +213,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/app/src/Cup.php" line="69" column="1" bodyfile="/app/src/Cup.php" bodystart="69" bodyend="72"/>
+        <location file="/app/src/Cup.php" line="95" column="1" bodyfile="/app/src/Cup.php" bodystart="95" bodyend="98"/>
       </memberdef>
       <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Cup_1af85e51fd29c22fea7bd9b30bd0d0e4d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -178,7 +226,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/app/src/Cup.php" line="74" column="1" bodyfile="/app/src/Cup.php" bodystart="74" bodyend="78"/>
+        <location file="/app/src/Cup.php" line="100" column="1" bodyfile="/app/src/Cup.php" bodystart="100" bodyend="104"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -186,38 +234,38 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="13">
+      <node id="20">
         <label>ArrayAccess</label>
       </node>
-      <node id="12">
+      <node id="19">
         <label>Iterator</label>
       </node>
-      <node id="11">
+      <node id="18">
         <label>Ouxsoft\LuckByDice\Cup</label>
         <link refid="classOuxsoft_1_1LuckByDice_1_1Cup"/>
-        <childnode refid="12" relation="public-inheritance">
+        <childnode refid="19" relation="public-inheritance">
         </childnode>
-        <childnode refid="13" relation="public-inheritance">
+        <childnode refid="20" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="16">
+      <node id="23">
         <label>ArrayAccess</label>
       </node>
-      <node id="15">
+      <node id="22">
         <label>Iterator</label>
       </node>
-      <node id="14">
+      <node id="21">
         <label>Ouxsoft\LuckByDice\Cup</label>
         <link refid="classOuxsoft_1_1LuckByDice_1_1Cup"/>
-        <childnode refid="15" relation="public-inheritance">
+        <childnode refid="22" relation="public-inheritance">
         </childnode>
-        <childnode refid="16" relation="public-inheritance">
+        <childnode refid="23" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/app/src/Cup.php" line="25" column="1" bodyfile="/app/src/Cup.php" bodystart="22" bodyend="79"/>
+    <location file="/app/src/Cup.php" line="26" column="1" bodyfile="/app/src/Cup.php" bodystart="23" bodyend="105"/>
     <listofallmembers>
       <member refid="classOuxsoft_1_1LuckByDice_1_1Cup_1a1603e5538e68702b38783f7aace56a7f" prot="private" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Cup</scope><name>$container</name></member>
       <member refid="classOuxsoft_1_1LuckByDice_1_1Cup_1a461797468aa7c52c4ee7384f6ad11711" prot="private" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Cup</scope><name>$index</name></member>

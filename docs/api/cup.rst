@@ -7,6 +7,7 @@ Cup
 
   .. php:method:: public current ()
 
+    :returns: CollectionInterface
 
   .. php:method:: public key ()
 
@@ -14,13 +15,15 @@ Cup
   .. php:method:: public next ()
 
 
-  .. php:method:: public offsetExists ($offset)
+  .. php:method:: public offsetExists ($offset) -> bool
 
     :param $offset:
+    :returns: bool -- 
 
-  .. php:method:: public offsetGet ($offset)
+  .. php:method:: public offsetGet ($offset) -> mixed
 
     :param $offset:
+    :returns: mixed -- 
 
   .. php:method:: public offsetSet ($offset, $value)
 
@@ -37,6 +40,7 @@ Cup
   .. php:method:: public rewind ()
 
 
-  .. php:method:: public valid ()
+  .. php:method:: public valid () -> bool
 
+    :returns: bool -- 
 

@@ -27,7 +27,8 @@ class TurnFactory
 
         return new Turn(
             $container['notation'],
-            $container['cup']
+            $container['cup'],
+            $container['luck']
         );
     }
 }

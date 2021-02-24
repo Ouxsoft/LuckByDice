@@ -2,6 +2,7 @@ Dice
 ====
 
 :Qualified name: ``Ouxsoft\LuckByDice\Dice``
+:Implements: :interface:`DiceInterface`
 
 .. php:class:: Dice
 
@@ -10,6 +11,10 @@ Dice
     :class:`Dice` constructor.
 
     :param $sides:
+
+  .. php:method:: public getSides () -> int
+
+    :returns: int -- 
 
   .. php:method:: public roll () -> int
 

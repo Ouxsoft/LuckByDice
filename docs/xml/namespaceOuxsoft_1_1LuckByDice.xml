@@ -6,7 +6,7 @@
     <innerclass refid="classOuxsoft_1_1LuckByDice_1_1Cup" prot="public">Ouxsoft::LuckByDice::Cup</innerclass>
     <innerclass refid="classOuxsoft_1_1LuckByDice_1_1Dice" prot="public">Ouxsoft::LuckByDice::Dice</innerclass>
     <innerclass refid="classOuxsoft_1_1LuckByDice_1_1Luck" prot="public">Ouxsoft::LuckByDice::Luck</innerclass>
-    <innerclass refid="classOuxsoft_1_1LuckByDice_1_1Parser" prot="public">Ouxsoft::LuckByDice::Parser</innerclass>
+    <innerclass refid="classOuxsoft_1_1LuckByDice_1_1Notation" prot="public">Ouxsoft::LuckByDice::Notation</innerclass>
     <innerclass refid="classOuxsoft_1_1LuckByDice_1_1Turn" prot="public">Ouxsoft::LuckByDice::Turn</innerclass>
     <innernamespace refid="namespaceOuxsoft_1_1LuckByDice_1_1Contract">Ouxsoft::LuckByDice::Contract</innernamespace>
     <innernamespace refid="namespaceOuxsoft_1_1LuckByDice_1_1Factory">Ouxsoft::LuckByDice::Factory</innernamespace>

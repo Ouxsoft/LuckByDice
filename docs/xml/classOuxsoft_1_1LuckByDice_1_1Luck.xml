@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classOuxsoft_1_1LuckByDice_1_1Luck" kind="class" language="PHP" prot="public">
     <compoundname>Ouxsoft::LuckByDice::Luck</compoundname>
+    <basecompoundref refid="interfaceOuxsoft_1_1LuckByDice_1_1Contract_1_1LuckInterface" prot="public" virt="non-virtual">Ouxsoft\LuckByDice\Contract\LuckInterface</basecompoundref>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classOuxsoft_1_1LuckByDice_1_1Luck_1a20555070e97ba516f83336aa786f7c0f" prot="private" static="no" mutable="no">
         <type></type>
@@ -14,28 +15,122 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/app/src/Luck.php" line="15" column="1" bodyfile="/app/src/Luck.php" bodystart="15" bodyend="-1"/>
+        <location file="/app/src/Luck.php" line="20" column="1" bodyfile="/app/src/Luck.php" bodystart="20" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
-      <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Luck_1a3c2c543d40fc8cd445f0e97c602e97f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="variable" id="classOuxsoft_1_1LuckByDice_1_1Luck_1aac4e416f88cead445da9955a5f640cb0" prot="private" static="no" mutable="no">
         <type></type>
-        <definition>Ouxsoft\LuckByDice\Luck::get</definition>
-        <argsstring>()</argsstring>
-        <name>get</name>
+        <definition>Ouxsoft\LuckByDice\Luck::$phi</definition>
+        <argsstring></argsstring>
+        <name>$phi</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/app/src/Luck.php" line="17" column="1" bodyfile="/app/src/Luck.php" bodystart="17" bodyend="20"/>
+        <location file="/app/src/Luck.php" line="24" column="1" bodyfile="/app/src/Luck.php" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Luck_1afbc4e802e014ea19049e0b4acce6bc50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ouxsoft\LuckByDice\Luck::__construct</definition>
+        <argsstring>(int $luck=0)</argsstring>
+        <name>__construct</name>
+        <reimplements refid="interfaceOuxsoft_1_1LuckByDice_1_1Contract_1_1LuckInterface_1a5d4177ee67bbf1bd8564af1517fb6904">__construct</reimplements>
+        <param>
+          <type>int</type>
+          <declname>$luck</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="classOuxsoft_1_1LuckByDice_1_1Luck" kindref="compound">Luck</ref> constructor. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$luck</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/app/src/Luck.php" line="30" column="1" bodyfile="/app/src/Luck.php" bodystart="30" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Luck_1afeb998d36001fdfebc9a6bbb9ecb8f20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ouxsoft\LuckByDice\Luck::update</definition>
+        <argsstring>($rollOutcome, $rollMax)</argsstring>
+        <name>update</name>
+        <reimplements refid="interfaceOuxsoft_1_1LuckByDice_1_1Contract_1_1LuckInterface_1a3093b4824a6d4fa4c9106775b513d1a9">update</reimplements>
+        <param>
+          <declname>$rollOutcome</declname>
+        </param>
+        <param>
+          <declname>$rollMax</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>$rollOutcome</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>$rollMax</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/app/src/Luck.php" line="40" column="1" bodyfile="/app/src/Luck.php" bodystart="40" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Luck_1a99b946ae3fcaf0b8924ca59fd8611be1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ouxsoft\LuckByDice\Luck::getPhi</definition>
+        <argsstring>()</argsstring>
+        <name>getPhi</name>
+        <reimplements refid="interfaceOuxsoft_1_1LuckByDice_1_1Contract_1_1LuckInterface_1a6c09db767dfcf7e2a2858026b88a80a4">getPhi</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get Phi / The Golden Ratio <simplesect kind="return"><para>float </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/app/src/Luck.php" line="61" column="1" bodyfile="/app/src/Luck.php" bodystart="61" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Luck_1a3c2c543d40fc8cd445f0e97c602e97f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ouxsoft\LuckByDice\Luck::get</definition>
+        <argsstring>()</argsstring>
+        <name>get</name>
+        <reimplements refid="interfaceOuxsoft_1_1LuckByDice_1_1Contract_1_1LuckInterface_1a4c20b2d9d533cd67ef6493f2ee5f2c59">get</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>int </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/app/src/Luck.php" line="69" column="1" bodyfile="/app/src/Luck.php" bodystart="69" bodyend="72"/>
       </memberdef>
       <memberdef kind="function" id="classOuxsoft_1_1LuckByDice_1_1Luck_1a43476dfb75baf2baf975e0d117ff7ef4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>Ouxsoft\LuckByDice\Luck::set</definition>
         <argsstring>(int $luck)</argsstring>
         <name>set</name>
+        <reimplements refid="interfaceOuxsoft_1_1LuckByDice_1_1Contract_1_1LuckInterface_1aece54a9f022c327f243f080ae7b5bd19">set</reimplements>
         <param>
           <type>int</type>
           <declname>$luck</declname>
@@ -43,21 +138,58 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$luck</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/app/src/Luck.php" line="22" column="1" bodyfile="/app/src/Luck.php" bodystart="22" bodyend="25"/>
+        <location file="/app/src/Luck.php" line="77" column="1" bodyfile="/app/src/Luck.php" bodystart="77" bodyend="80"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/app/src/Luck.php" line="14" column="1" bodyfile="/app/src/Luck.php" bodystart="13" bodyend="26"/>
+    <inheritancegraph>
+      <node id="32">
+        <label>Ouxsoft\LuckByDice\Contract\LuckInterface</label>
+        <link refid="interfaceOuxsoft_1_1LuckByDice_1_1Contract_1_1LuckInterface"/>
+      </node>
+      <node id="31">
+        <label>Ouxsoft\LuckByDice\Luck</label>
+        <link refid="classOuxsoft_1_1LuckByDice_1_1Luck"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="34">
+        <label>Ouxsoft\LuckByDice\Contract\LuckInterface</label>
+        <link refid="interfaceOuxsoft_1_1LuckByDice_1_1Contract_1_1LuckInterface"/>
+      </node>
+      <node id="33">
+        <label>Ouxsoft\LuckByDice\Luck</label>
+        <link refid="classOuxsoft_1_1LuckByDice_1_1Luck"/>
+        <childnode refid="34" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/app/src/Luck.php" line="16" column="1" bodyfile="/app/src/Luck.php" bodystart="15" bodyend="81"/>
     <listofallmembers>
       <member refid="classOuxsoft_1_1LuckByDice_1_1Luck_1a20555070e97ba516f83336aa786f7c0f" prot="private" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Luck</scope><name>$luck</name></member>
+      <member refid="classOuxsoft_1_1LuckByDice_1_1Luck_1aac4e416f88cead445da9955a5f640cb0" prot="private" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Luck</scope><name>$phi</name></member>
+      <member refid="classOuxsoft_1_1LuckByDice_1_1Luck_1afbc4e802e014ea19049e0b4acce6bc50" prot="public" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Luck</scope><name>__construct</name></member>
       <member refid="classOuxsoft_1_1LuckByDice_1_1Luck_1a3c2c543d40fc8cd445f0e97c602e97f7" prot="public" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Luck</scope><name>get</name></member>
+      <member refid="classOuxsoft_1_1LuckByDice_1_1Luck_1a99b946ae3fcaf0b8924ca59fd8611be1" prot="public" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Luck</scope><name>getPhi</name></member>
       <member refid="classOuxsoft_1_1LuckByDice_1_1Luck_1a43476dfb75baf2baf975e0d117ff7ef4" prot="public" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Luck</scope><name>set</name></member>
+      <member refid="classOuxsoft_1_1LuckByDice_1_1Luck_1afeb998d36001fdfebc9a6bbb9ecb8f20" prot="public" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Luck</scope><name>update</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

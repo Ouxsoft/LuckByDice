@@ -8,7 +8,7 @@
     <innerfile refid="Cup_8php">Cup.php</innerfile>
     <innerfile refid="Dice_8php">Dice.php</innerfile>
     <innerfile refid="Luck_8php">Luck.php</innerfile>
-    <innerfile refid="Parser_8php">Parser.php</innerfile>
+    <innerfile refid="Notation_8php">Notation.php</innerfile>
     <innerfile refid="Turn_8php">Turn.php</innerfile>
     <briefdescription>
     </briefdescription>

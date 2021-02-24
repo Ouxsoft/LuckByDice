@@ -15,14 +15,14 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/app/src/Factory/TurnFactory.php" line="22" column="1" bodyfile="/app/src/Factory/TurnFactory.php" bodystart="22" bodyend="32"/>
+        <location file="/app/src/Factory/TurnFactory.php" line="22" column="1" bodyfile="/app/src/Factory/TurnFactory.php" bodystart="22" bodyend="33"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/app/src/Factory/TurnFactory.php" line="18" column="1" bodyfile="/app/src/Factory/TurnFactory.php" bodystart="17" bodyend="33"/>
+    <location file="/app/src/Factory/TurnFactory.php" line="18" column="1" bodyfile="/app/src/Factory/TurnFactory.php" bodystart="17" bodyend="34"/>
     <listofallmembers>
       <member refid="classOuxsoft_1_1LuckByDice_1_1Factory_1_1TurnFactory_1a64130d78ef69252fbb5ee59268abef16" prot="public" virt="non-virtual"><scope>Ouxsoft::LuckByDice::Factory::TurnFactory</scope><name>getInstance</name></member>
     </listofallmembers>

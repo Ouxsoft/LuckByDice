@@ -1,42 +1,68 @@
-/app/src/Cup.php:25: warning: Compound Ouxsoft::LuckByDice::Cup is not documented.
-/app/src/Turn.php:20: warning: Compound Ouxsoft::LuckByDice::Turn is not documented.
-/app/src/Dice.php:22: warning: Compound Ouxsoft::LuckByDice::Dice is not documented.
+/app/src/Cup.php:26: warning: Compound Ouxsoft::LuckByDice::Cup is not documented.
+/app/src/Contract/NotationInterface.php:8: warning: Compound Ouxsoft::LuckByDice::Contract::NotationInterface is not documented.
+/app/src/Turn.php:24: warning: Compound Ouxsoft::LuckByDice::Turn is not documented.
+/app/src/Notation.php:21: warning: Compound Ouxsoft::LuckByDice::Notation is not documented.
+/app/src/Contract/DiceInterface.php:16: warning: Compound Ouxsoft::LuckByDice::Contract::DiceInterface is not documented.
+/app/src/Contract/LuckInterface.php:14: warning: Compound Ouxsoft::LuckByDice::Contract::LuckInterface is not documented.
+/app/src/Dice.php:24: warning: Compound Ouxsoft::LuckByDice::Dice is not documented.
 /app/src/Factory/ContainerFactory.php:19: warning: Compound Ouxsoft::LuckByDice::Factory::ContainerFactory is not documented.
-/app/src/Parser.php:14: warning: Compound Ouxsoft::LuckByDice::Parser is not documented.
 /app/src/Factory/ConcreteFactory.php:23: warning: Compound Ouxsoft::LuckByDice::Factory::ConcreteFactory is not documented.
+/app/src/Contract/CollectionInterface.php:14: warning: Compound Ouxsoft::LuckByDice::Contract::CollectionInterface is not documented.
+/app/src/Contract/TurnInterface.php:11: warning: Compound Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
 /app/src/Factory/TurnFactory.php:18: warning: Compound Ouxsoft::LuckByDice::Factory::TurnFactory is not documented.
-/app/src/Collection.php:21: warning: Compound Ouxsoft::LuckByDice::Collection is not documented.
-/app/src/Luck.php:14: warning: Compound Ouxsoft::LuckByDice::Luck is not documented.
-/app/src/Collection.php:23: warning: documented symbol `Ouxsoft\LuckByDice\Collection::array' was not declared or defined.
-/app/src/Collection.php:27: warning: documented symbol `Ouxsoft\LuckByDice\Collection::int' was not declared or defined.
-/app/src/Collection.php:31: warning: documented symbol `Ouxsoft\LuckByDice\Collection::int' was not declared or defined.
-/app/src/Turn.php:22: warning: documented symbol `Ouxsoft\LuckByDice\Turn::Cup' was not declared or defined.
-/app/src/Turn.php:26: warning: documented symbol `Ouxsoft\LuckByDice\Turn::Parser' was not declared or defined.
-/app/src/Turn.php:30: warning: documented symbol `Ouxsoft\LuckByDice\Turn::int' was not declared or defined.
-/app/src/Turn.php:18: warning: Found unknown command `\LuckByDice'
+/app/src/Collection.php:28: warning: Compound Ouxsoft::LuckByDice::Collection is not documented.
+/app/src/Luck.php:16: warning: Compound Ouxsoft::LuckByDice::Luck is not documented.
+/app/src/Collection.php:30: warning: documented symbol `Ouxsoft\LuckByDice\Collection::array' was not declared or defined.
+/app/src/Collection.php:34: warning: documented symbol `Ouxsoft\LuckByDice\Collection::int' was not declared or defined.
+/app/src/Collection.php:38: warning: documented symbol `Ouxsoft\LuckByDice\Collection::int' was not declared or defined.
+/app/src/Collection.php:42: warning: documented symbol `Ouxsoft\LuckByDice\Collection::int' was not declared or defined.
+/app/src/Luck.php:18: warning: documented symbol `Ouxsoft\LuckByDice\Luck::int' was not declared or defined.
+/app/src/Luck.php:22: warning: documented symbol `Ouxsoft\LuckByDice\Luck::int' was not declared or defined.
+/app/src/Turn.php:26: warning: documented symbol `Ouxsoft\LuckByDice\Turn::Cup' was not declared or defined.
+/app/src/Turn.php:30: warning: documented symbol `Ouxsoft\LuckByDice\Turn::Notation' was not declared or defined.
+/app/src/Turn.php:34: warning: documented symbol `Ouxsoft\LuckByDice\Turn::int' was not declared or defined.
+/app/src/Turn.php:38: warning: documented symbol `Ouxsoft\LuckByDice\Turn::Luck' was not declared or defined.
 /app/src/Turn.php:21: warning: Found unknown command `\LuckByDice'
-/app/src/Turn.php:21: warning: Found unknown command `\Contract'
-/app/src/Turn.php:26: warning: Found unknown command `\LivingMarkup'
-/app/src/Turn.php:29: warning: Found unknown command `\LuckByDice'
-/app/src/Turn.php:32: warning: Found unknown command `\LuckByDice'
-/app/src/Cup.php:29: warning: Member offsetExists($offset) (function) of class Ouxsoft::LuckByDice::Cup is not documented.
-/app/src/Cup.php:34: warning: Member offsetGet($offset) (function) of class Ouxsoft::LuckByDice::Cup is not documented.
-/app/src/Cup.php:39: warning: Member offsetSet($offset, $value) (function) of class Ouxsoft::LuckByDice::Cup is not documented.
-/app/src/Cup.php:44: warning: Member offsetUnset($offset) (function) of class Ouxsoft::LuckByDice::Cup is not documented.
-/app/src/Cup.php:49: warning: Member current() (function) of class Ouxsoft::LuckByDice::Cup is not documented.
-/app/src/Cup.php:54: warning: Member next() (function) of class Ouxsoft::LuckByDice::Cup is not documented.
-/app/src/Cup.php:59: warning: Member key() (function) of class Ouxsoft::LuckByDice::Cup is not documented.
-/app/src/Cup.php:64: warning: Member valid() (function) of class Ouxsoft::LuckByDice::Cup is not documented.
-/app/src/Cup.php:69: warning: Member rewind() (function) of class Ouxsoft::LuckByDice::Cup is not documented.
-/app/src/Cup.php:74: warning: Member reverse() (function) of class Ouxsoft::LuckByDice::Cup is not documented.
-/app/src/Luck.php:17: warning: Member get() (function) of class Ouxsoft::LuckByDice::Luck is not documented.
-/app/src/Luck.php:22: warning: Member set(int $luck) (function) of class Ouxsoft::LuckByDice::Luck is not documented.
-/app/src/Factory/ConcreteFactory.php:24: warning: Member makeParser(Container &$container) (function) of class Ouxsoft::LuckByDice::Factory::ConcreteFactory is not documented.
+/app/src/Turn.php:24: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:24: warning: Found unknown command `\Contract'
+/app/src/Turn.php:29: warning: Found unknown command `\LivingMarkup'
+/app/src/Turn.php:33: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:37: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:42: warning: Found unknown command `\LuckByDice'
+/app/src/Cup.php:77: warning: Member next() (function) of class Ouxsoft::LuckByDice::Cup is not documented.
+/app/src/Cup.php:82: warning: Member key() (function) of class Ouxsoft::LuckByDice::Cup is not documented.
+/app/src/Cup.php:95: warning: Member rewind() (function) of class Ouxsoft::LuckByDice::Cup is not documented.
+/app/src/Cup.php:100: warning: Member reverse() (function) of class Ouxsoft::LuckByDice::Cup is not documented.
+/app/src/Contract/CollectionInterface.php:15: warning: Member __construct(int $amount, int $sides, int $modifier, int $multiplier) (function) of class Ouxsoft::LuckByDice::Contract::CollectionInterface is not documented.
+/app/src/Contract/CollectionInterface.php:17: warning: Member count() (function) of class Ouxsoft::LuckByDice::Contract::CollectionInterface is not documented.
+/app/src/Contract/CollectionInterface.php:19: warning: Member roll() (function) of class Ouxsoft::LuckByDice::Contract::CollectionInterface is not documented.
+/app/src/Contract/CollectionInterface.php:21: warning: Member getModifier() (function) of class Ouxsoft::LuckByDice::Contract::CollectionInterface is not documented.
+/app/src/Contract/CollectionInterface.php:23: warning: Member getMultiplier() (function) of class Ouxsoft::LuckByDice::Contract::CollectionInterface is not documented.
+/app/src/Contract/CollectionInterface.php:25: warning: Member getSides() (function) of class Ouxsoft::LuckByDice::Contract::CollectionInterface is not documented.
+/app/src/Contract/DiceInterface.php:17: warning: Member __construct($sides) (function) of class Ouxsoft::LuckByDice::Contract::DiceInterface is not documented.
+/app/src/Contract/DiceInterface.php:19: warning: Member roll() (function) of class Ouxsoft::LuckByDice::Contract::DiceInterface is not documented.
+/app/src/Contract/DiceInterface.php:21: warning: Member getSides() (function) of class Ouxsoft::LuckByDice::Contract::DiceInterface is not documented.
+/app/src/Contract/LuckInterface.php:15: warning: Member __construct(int $luck=0) (function) of class Ouxsoft::LuckByDice::Contract::LuckInterface is not documented.
+/app/src/Contract/LuckInterface.php:17: warning: Member update($rollOutcome, $rollMax) (function) of class Ouxsoft::LuckByDice::Contract::LuckInterface is not documented.
+/app/src/Contract/LuckInterface.php:19: warning: Member getPhi() (function) of class Ouxsoft::LuckByDice::Contract::LuckInterface is not documented.
+/app/src/Contract/LuckInterface.php:21: warning: Member get() (function) of class Ouxsoft::LuckByDice::Contract::LuckInterface is not documented.
+/app/src/Contract/LuckInterface.php:23: warning: Member set(int $luck) (function) of class Ouxsoft::LuckByDice::Contract::LuckInterface is not documented.
+/app/src/Contract/NotationInterface.php:9: warning: Member encode(Cup $cup) (function) of class Ouxsoft::LuckByDice::Contract::NotationInterface is not documented.
+/app/src/Contract/NotationInterface.php:10: warning: Member decode(string $expression) (function) of class Ouxsoft::LuckByDice::Contract::NotationInterface is not documented.
+/app/src/Contract/TurnInterface.php:12: warning: Member __construct(Notation $notation, Cup $cup, Luck $luck, string $expression=null) (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
+/app/src/Contract/TurnInterface.php:19: warning: Member setNotation(string $notation) (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
+/app/src/Contract/TurnInterface.php:21: warning: Member getNotation() (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
+/app/src/Contract/TurnInterface.php:23: warning: Member getLuck() (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
+/app/src/Contract/TurnInterface.php:25: warning: Member setLuck(int $luck) (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
+/app/src/Contract/TurnInterface.php:27: warning: Member roll() (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
+/app/src/Contract/TurnInterface.php:29: warning: Member __toString() (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
+/app/src/Factory/ConcreteFactory.php:24: warning: Member makeNotation(Container &$container) (function) of class Ouxsoft::LuckByDice::Factory::ConcreteFactory is not documented.
 /app/src/Factory/ConcreteFactory.php:29: warning: Member makeCup(Container &$container) (function) of class Ouxsoft::LuckByDice::Factory::ConcreteFactory is not documented.
 /app/src/Factory/ConcreteFactory.php:34: warning: Member makeLuck(Container &$container) (function) of class Ouxsoft::LuckByDice::Factory::ConcreteFactory is not documented.
-/app/src/Turn.php:18: warning: Found unknown command `\LuckByDice'
 /app/src/Turn.php:21: warning: Found unknown command `\LuckByDice'
-/app/src/Turn.php:21: warning: Found unknown command `\Contract'
-/app/src/Turn.php:26: warning: Found unknown command `\LivingMarkup'
-/app/src/Turn.php:29: warning: Found unknown command `\LuckByDice'
-/app/src/Turn.php:32: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:24: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:24: warning: Found unknown command `\Contract'
+/app/src/Turn.php:29: warning: Found unknown command `\LivingMarkup'
+/app/src/Turn.php:33: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:37: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:42: warning: Found unknown command `\LuckByDice'

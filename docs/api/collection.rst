@@ -2,6 +2,7 @@ Collection
 ==========
 
 :Qualified name: ``Ouxsoft\LuckByDice\Collection``
+:Implements: :interface:`CollectionInterface`
 
 .. php:class:: Collection
 
@@ -13,6 +14,28 @@ Collection
     :param int $sides:
     :param int $modifier:
     :param int $multiplier:
+
+  .. php:method:: public count () -> int
+
+    :returns: int -- 
+
+  .. php:method:: public getMaxOutcome () -> int
+
+    Get max potential of outcome
+
+    :returns: int -- 
+
+  .. php:method:: public getModifier () -> int
+
+    :returns: int -- 
+
+  .. php:method:: public getMultiplier () -> int
+
+    :returns: int -- 
+
+  .. php:method:: public getSides () -> int
+
+    :returns: int -- 
 
   .. php:method:: public roll () -> int
 

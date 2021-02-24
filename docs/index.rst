@@ -3,6 +3,15 @@
 Welcome to LuckByDice Documentation
 =====================================
 
+Dice rolls add an element of chance and risk to game engines. Dice roll outcome can be used to events occurring.
+Even with a roll a good player can figure out their odds of performing the necessary actions. Note that a roll is
+affected by the stat Luck and in return affect the stat Luck.
+
+Formula:
+
+Roll Outcome (x) = Round ((Random (0 – MaxRoll) + 1) * (Random (0 – Luck) *.01 + 1))
+
+
 .. code-block:: php
 
     require '../vendor/autoload.php';
@@ -49,6 +58,5 @@ Indices and tables
 
 * :ref:`genindex`
 * :ref:`search`
-
 
 .. |alt text| image:: https://github.com/ouxsoft/LuckByDice/raw/master/docs/logo.jpg

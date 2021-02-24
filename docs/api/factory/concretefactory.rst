@@ -14,7 +14,7 @@ ConcreteFactory
 
     :param Container & $container:
 
-  .. php:method:: public makeParser (Container & $container)
+  .. php:method:: public makeNotation (Container & $container)
 
     :param Container & $container:
 

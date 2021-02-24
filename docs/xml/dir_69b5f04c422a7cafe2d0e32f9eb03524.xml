@@ -3,6 +3,11 @@
   <compounddef id="dir_69b5f04c422a7cafe2d0e32f9eb03524" kind="dir">
     <compoundname>/app/src/Contract</compoundname>
     <innerfile refid="AbstractFactoryInterface_8php">AbstractFactoryInterface.php</innerfile>
+    <innerfile refid="CollectionInterface_8php">CollectionInterface.php</innerfile>
+    <innerfile refid="DiceInterface_8php">DiceInterface.php</innerfile>
+    <innerfile refid="LuckInterface_8php">LuckInterface.php</innerfile>
+    <innerfile refid="NotationInterface_8php">NotationInterface.php</innerfile>
+    <innerfile refid="TurnInterface_8php">TurnInterface.php</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

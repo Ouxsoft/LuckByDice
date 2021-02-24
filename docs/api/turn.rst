@@ -2,15 +2,17 @@ Turn
 ====
 
 :Qualified name: ``Ouxsoft\LuckByDice\Turn``
+:Implements: :interface:`TurnInterface`
 
 .. php:class:: Turn
 
-  .. php:method:: public __construct (Parser $parser, Cup $cup[, string $expression])
+  .. php:method:: public __construct (Notation $notation, Cup $cup, Luck $luck[, string $expression])
 
-    Expression constructor.
+    :class:`Turn` constructor.
 
-    :param Parser $parser:
+    :param Notation $notation:
     :param Cup $cup:
+    :param Luck $luck:
     :param string $expression:
       Default: ``null``
     :returns: Turn::setByString()
@@ -19,13 +21,33 @@ Turn
 
     :returns: string -- 
 
+  .. php:method:: public getLuck () -> int
+
+    Get :class:`Luck`
+
+    :returns: int -- 
+
+  .. php:method:: public getNotation () -> string
+
+    Get cup notation
+
+    :returns: string -- "1d4+3*2,1d5,d5,10d5"
+
   .. php:method:: public roll () -> int
 
     Roll each dice group and total
 
     :returns: int -- 
 
-  .. php:method:: public set (string $expression)
+  .. php:method:: public setLuck (int $luck)
 
-    :param string $expression:
+    Set :class:`Luck`
+
+    :param int $luck:
+
+  .. php:method:: public setNotation (string $notation)
+
+    Set cup notation
+
+    :param string $notation:
 

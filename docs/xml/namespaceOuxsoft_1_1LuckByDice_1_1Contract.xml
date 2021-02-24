@@ -3,6 +3,11 @@
   <compounddef id="namespaceOuxsoft_1_1LuckByDice_1_1Contract" kind="namespace" language="PHP">
     <compoundname>Ouxsoft::LuckByDice::Contract</compoundname>
     <innerclass refid="interfaceOuxsoft_1_1LuckByDice_1_1Contract_1_1AbstractFactoryInterface" prot="public">Ouxsoft::LuckByDice::Contract::AbstractFactoryInterface</innerclass>
+    <innerclass refid="interfaceOuxsoft_1_1LuckByDice_1_1Contract_1_1CollectionInterface" prot="public">Ouxsoft::LuckByDice::Contract::CollectionInterface</innerclass>
+    <innerclass refid="interfaceOuxsoft_1_1LuckByDice_1_1Contract_1_1DiceInterface" prot="public">Ouxsoft::LuckByDice::Contract::DiceInterface</innerclass>
+    <innerclass refid="interfaceOuxsoft_1_1LuckByDice_1_1Contract_1_1LuckInterface" prot="public">Ouxsoft::LuckByDice::Contract::LuckInterface</innerclass>
+    <innerclass refid="interfaceOuxsoft_1_1LuckByDice_1_1Contract_1_1NotationInterface" prot="public">Ouxsoft::LuckByDice::Contract::NotationInterface</innerclass>
+    <innerclass refid="interfaceOuxsoft_1_1LuckByDice_1_1Contract_1_1TurnInterface" prot="public">Ouxsoft::LuckByDice::Contract::TurnInterface</innerclass>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

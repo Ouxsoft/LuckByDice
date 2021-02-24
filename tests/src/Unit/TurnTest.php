@@ -28,13 +28,46 @@ class TurnTest extends TestCase
     }
 
     /**
-     * @covers \Ouxsoft\LuckByDice\Turn::set
+     * @covers \Ouxsoft\LuckByDice\Turn::setNotation
      */
-    public function testSet()
+    public function testSetNotation()
     {
-        $this->turn->set("d3+3*3");
+        $this->turn->setNotation('d3+3*3');
         $outcome = $this->turn->roll();
         $this->assertIsInt($outcome);
+    }
+
+    /**
+     * @covers \Ouxsoft\LuckByDice\Turn::getNotation
+     */
+    public function testGetNotation()
+    {
+        $notation = 'd3+3*3';
+        $this->turn->setNotation($notation);
+        $outcome = $this->turn->getNotation();
+        $this->assertEquals($outcome, $notation);
+    }
+
+    /**
+     * @covers \Ouxsoft\LuckByDice\Turn::getLuck
+     */
+    public function testGetLuck()
+    {
+        $luck = 3;
+        $this->turn->setLuck($luck);
+        $outcome = $this->turn->getLuck();
+        $this->assertEquals($outcome, $luck);
+    }
+
+    /**
+     * @covers \Ouxsoft\LuckByDice\Turn::setLuck
+     */
+    public function testSetLuck()
+    {
+        $luck = 2;
+        $this->turn->setLuck($luck);
+        $outcome = $this->turn->getLuck();
+        $this->assertEquals($outcome, $luck);
     }
 
     /**
@@ -42,7 +75,7 @@ class TurnTest extends TestCase
      */
     public function testRoll()
     {
-        $this->turn->set("1d4,2d5,6d6+3,d5*2");
+        $this->turn->setNotation('1d4,2d5,6d6+3,d5*2');
         $outcome = $this->turn->roll();
         $this->assertIsInt($outcome);
     }
@@ -52,7 +85,7 @@ class TurnTest extends TestCase
      */
     public function test__toString()
     {
-        $this->turn->set("d6");
+        $this->turn->setNotation('d6');
         $outcome = (string) $this->turn;
         $this->assertIsString($outcome);
     }

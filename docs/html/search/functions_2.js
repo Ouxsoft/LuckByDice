@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['getinstance',['getInstance',['../classOuxsoft_1_1LuckByDice_1_1Factory_1_1TurnFactory.html#a64130d78ef69252fbb5ee59268abef16',1,'Ouxsoft::LuckByDice::Factory::TurnFactory']]]
+  ['count',['count',['../classOuxsoft_1_1LuckByDice_1_1Collection.html#ac284603b9ac313bc398c32b11932fb43',1,'Ouxsoft::LuckByDice::Collection']]],
+  ['current',['current',['../classOuxsoft_1_1LuckByDice_1_1Cup.html#a6abd735f6f67f98a89ca443231d81e7f',1,'Ouxsoft::LuckByDice::Cup']]]
 ];
