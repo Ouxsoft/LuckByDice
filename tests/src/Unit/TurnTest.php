@@ -10,6 +10,7 @@
 
 namespace Ouxsoft\LivingMarkup\Tests\Unit;
 
+use Ouxsoft\LuckByDice\Turn;
 use PHPUnit\Framework\TestCase;
 use Ouxsoft\LuckByDice\Factory\TurnFactory;
 
@@ -25,6 +26,18 @@ class TurnTest extends TestCase
     public function tearDown(): void
     {
         unset($this->turn);
+    }
+
+    /**
+     * @covers \Ouxsoft\LuckByDice\Turn::__construct
+     */
+    public function test__construct() {
+        $this->assertInstanceOf(Turn::class, $this->turn);
+
+        $notation = 'd6';
+        $this->turn = TurnFactory::getInstance($notation);
+        $outcome = $this->turn->getNotation();
+        $this->assertEquals($notation, $outcome);
     }
 
     /**

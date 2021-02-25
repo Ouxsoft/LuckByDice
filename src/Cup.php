@@ -79,7 +79,10 @@ class Cup implements
         $this->index++;
     }
 
-    public function key()
+    /**
+     * @return int
+     */
+    public function key() : int
     {
         return $this->index;
     }

@@ -99,8 +99,8 @@ class Turn implements TurnInterface
     }
 
     /**
-     * Roll each dice group and total
-     * @return int
+     * Roll each dice group, update luck, and return outcome
+     * @return int total
      */
     public function roll() : int
     {

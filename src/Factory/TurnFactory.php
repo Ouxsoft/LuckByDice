@@ -17,9 +17,10 @@ use Ouxsoft\LuckByDice\Turn;
 class TurnFactory
 {
     /**
+     * @param string|null $notation
      * @return Turn
      */
-    public static function getInstance(): Turn
+    public static function getInstance(string $notation = null): Turn
     {
         $abstractFactory = new ConcreteFactory();
 
@@ -28,7 +29,8 @@ class TurnFactory
         return new Turn(
             $container['notation'],
             $container['cup'],
-            $container['luck']
+            $container['luck'],
+            $notation
         );
     }
 }

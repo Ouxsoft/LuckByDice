@@ -18,8 +18,8 @@ use Ouxsoft\LuckByDice\Contract\CollectionInterface;
 
 /**
  * Class Collection
- * A Collection resides inside a Cup and contains one or more Dice with same amount of sides that can be later rolled
- * along with a modifier for the roll and a multiplier.
+ * A Collection resides inside a Cup and contains one or more Dice with same amount of sides as well as a modifier and
+ * a multiplier for the roll outcome.
  * @package Ouxsoft\LuckByDice
  */
 class Collection implements
@@ -54,7 +54,7 @@ class Collection implements
     public function __construct(int $amount, int $sides, int $modifier, int $multiplier)
     {
         if ($amount < 1) {
-            throw new OutOfRangeException('A DiceGroup must have at least one dice.');
+            throw new OutOfRangeException('A collection must have at least one dice.');
         }
 
         for ($i = 1; $i <= $amount; $i++) {
