@@ -34,18 +34,17 @@ class Luck implements LuckInterface
     }
 
     /**
-     * @param $rollOutcome
-     * @param $rollMax
+     * Update luck based on percentage of roll outcome
+     * @param float $rollPercent min 0 to max 1
      */
-    public function update($rollOutcome, $rollMax) : void
+    public function update(float $rollPercent = 0.5) : void
     {
-        $rollPercent = ($rollOutcome/$rollMax);
+        $low = (1 - (1/$this->phi));
+        $high = (1/$this->phi);
 
-        // 0.38196601125
-        if($rollPercent < (1 - (1/$this->phi))) {
+        if($rollPercent <= $low) {
             $this->luck--;
-        // 0.61803398875
-        } elseif ($rollPercent > (1/$this->phi)) {
+        } elseif ($rollPercent >= $high) {
             $this->luck++;
         }
 

@@ -21,6 +21,9 @@ CollectionInterface
   .. php:method:: public getMultiplier ()
 
 
+  .. php:method:: public getOutcomePercent ()
+
+
   .. php:method:: public getSides ()
 
 

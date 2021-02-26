@@ -33,6 +33,12 @@ Collection
 
     :returns: int -- 
 
+  .. php:method:: public getOutcomePercent () -> float
+
+    Compute percent outcome of previous roll
+
+    :returns: float -- 
+
   .. php:method:: public getSides () -> int
 
     :returns: int -- 

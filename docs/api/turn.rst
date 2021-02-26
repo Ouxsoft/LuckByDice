@@ -35,9 +35,9 @@ Turn
 
   .. php:method:: public roll () -> int
 
-    Roll each dice group and total
+    Roll each dice group, update luck, and return outcome
 
-    :returns: int -- 
+    :returns: int -- total
 
   .. php:method:: public setLuck (int $luck)
 

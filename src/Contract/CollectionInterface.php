@@ -23,4 +23,6 @@ interface CollectionInterface
     public function getMultiplier() : int;
 
     public function getSides() : int;
+
+    public function getOutcomePercent() : float;
 }

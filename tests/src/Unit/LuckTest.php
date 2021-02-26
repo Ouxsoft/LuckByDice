@@ -41,20 +41,20 @@ class LuckTest extends TestCase
     public function testUpdate()
     {
         // luck decreases
-        $this->luck->update(20, 100);
+        $this->luck->update(.2);
         $this->assertEquals(5, $this->luck->get() );
 
         // luck increases
-        $this->luck->update(70, 100);
+        $this->luck->update(.7);
         $this->assertEquals(6, $this->luck->get() );
 
         // luck remains the same
-        $this->luck->update(50, 100);
+        $this->luck->update(.5);
         $this->assertEquals(6, $this->luck->get() );
 
         // luck can no go below zero
         $this->luck->set(0);
-        $this->luck->update(1, 100);
+        $this->luck->update(.1);
         $this->assertEquals(0, $this->luck->get() );
     }
 

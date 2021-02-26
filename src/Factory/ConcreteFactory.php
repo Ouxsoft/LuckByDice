@@ -17,21 +17,19 @@ use Ouxsoft\LuckByDice\Notation;
 use Ouxsoft\LuckByDice\Cup;
 use Ouxsoft\LuckByDice\Luck;
 
-use Pimple\Container;
-
 class ConcreteFactory implements AbstractFactoryInterface
 {
-    public function makeNotation(Container &$container): Notation
+    public function makeNotation(): Notation
     {
         return new Notation();
     }
 
-    public function makeCup(Container &$container): Cup
+    public function makeCup(): Cup
     {
         return new Cup();
     }
 
-    public function makeLuck(Container &$container): Luck
+    public function makeLuck(): Luck
     {
         return new Luck();
     }

@@ -6,15 +6,12 @@ ConcreteFactory
 
 .. php:class:: ConcreteFactory
 
-  .. php:method:: public makeCup (Container & $container)
+  .. php:method:: public makeCup ()
 
-    :param Container & $container:
 
-  .. php:method:: public makeLuck (Container & $container)
+  .. php:method:: public makeLuck ()
 
-    :param Container & $container:
 
-  .. php:method:: public makeNotation (Container & $container)
+  .. php:method:: public makeNotation ()
 
-    :param Container & $container:
 

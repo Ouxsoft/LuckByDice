@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+// TODO: Delete this file
 
 require "../vendor/autoload.php";
 
@@ -7,9 +9,10 @@ use Ouxsoft\LuckByDice\Luck;
 
 $turn = TurnFactory::getInstance();
 
-$turn->setNotation("1d4,3d8+2");
+$turn->setNotation("d4,3d8+2,4d20+1*30");
 
-for($i = 0; $i < 100; $i++){
+echo "Running check to ensure luck outcome is variable";
+for($i = 0; $i < 1000; $i++){
 	echo "Roll Outcome: ";
 	echo $turn->roll();
 	echo PHP_EOL;

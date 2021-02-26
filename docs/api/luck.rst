@@ -27,8 +27,10 @@ Luck
 
     :param int $luck:
 
-  .. php:method:: public update ($rollOutcome, $rollMax)
+  .. php:method:: public update ([])
 
-    :param $rollOutcome:
-    :param $rollMax:
+    Update luck based on percentage of roll outcome
+
+    :param float $rollPercent:
+      Default: ``0.5``
 

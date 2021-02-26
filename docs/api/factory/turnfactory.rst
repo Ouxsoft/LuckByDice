@@ -5,7 +5,9 @@ TurnFactory
 
 .. php:class:: TurnFactory
 
-  .. php:staticmethod:: static getInstance () -> Turn
+  .. php:staticmethod:: static getInstance ([]) -> Turn
 
+    :param string $notation:
+      Default: ``null``
     :returns: :class:`Turn` -- 
 

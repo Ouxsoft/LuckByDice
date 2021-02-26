@@ -108,9 +108,11 @@ class Turn implements TurnInterface
 
         foreach ($this->cup as $collection) {
             $rollOutcome = $collection->roll();
-            $rollMax = $collection->getMaxOutcome();
-            $this->luck->update($rollOutcome, $rollMax);
-            $total += $rollOutcome;
+
+            $total += ($rollOutcome + $collection->getModifier()) * $collection->getMultiplier();
+
+            $outcomePercent = $collection->getOutcomePercent();
+            $this->luck->update($outcomePercent);
         }
 
         $this->total = $total;

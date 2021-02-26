@@ -42,6 +42,10 @@ class Collection implements
      * @var int
      */
     private $sides;
+    /**
+     * @var
+     */
+    private $total;
 
     /**
      * DiceGroup constructor.
@@ -87,10 +91,10 @@ class Collection implements
             $total += $dice->roll();
         }
 
-        $total += $this->modifier;
-        $total *= $this->multiplier;
+        // store last total
+        $this->total = $total;
 
-        return $total;
+        return $this->total;
     }
 
     /**
@@ -123,6 +127,21 @@ class Collection implements
      */
     public function getMaxOutcome() : int
     {
-        return (count($this->dice) * $this->sides + $this->modifier) * $this->multiplier;
+        return (count($this->dice) * $this->sides);
     }
+
+    /**
+     * Compute percent outcome of previous roll
+     * @return float
+     */
+    public function getOutcomePercent() : float
+    {
+        /*
+         * Convert dice outcomes to percent outcomes.
+         * Start counts at 0 opposed to 1 as dice outcomes start
+         * Example using 1d4: 1/4 = 0/3; 2/4 = 1/3; 3/4 = 2/3; 4/4 = 3/3
+         */
+        return ($this->total - $this->count()) / ($this->getMaxOutcome() - $this->count());
+    }
+
 }

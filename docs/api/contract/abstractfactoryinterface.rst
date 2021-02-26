@@ -5,3 +5,12 @@ AbstractFactoryInterface
 
 .. php:interface:: AbstractFactoryInterface
 
+  .. php:method:: public makeCup ()
+
+
+  .. php:method:: public makeLuck ()
+
+
+  .. php:method:: public makeNotation ()
+
+

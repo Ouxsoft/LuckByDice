@@ -1,4 +1,4 @@
-|alt text|
+|logo|
 
 Welcome to LuckByDice Documentation
 =====================================
@@ -50,7 +50,8 @@ Navigation
 .. toctree::
    :maxdepth: 1
    :caption: Project Information
-   
+
+   project/code-of-conduct.rst
    Classes <api.rst>
 
 Indices and tables
@@ -59,4 +60,6 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`search`
 
-.. |alt text| image:: https://github.com/ouxsoft/LuckByDice/raw/master/docs/logo.jpg
+.. |logo| image:: https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/logo.png
+  :width: 400
+  :alt: LuckByDice

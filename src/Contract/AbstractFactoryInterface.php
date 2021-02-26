@@ -10,12 +10,18 @@
 
 namespace Ouxsoft\LuckByDice\Contract;
 
-use Pimple\Container;
-
+use Ouxsoft\LuckByDice\Cup;
+use Ouxsoft\LuckByDice\Luck;
+use Ouxsoft\LuckByDice\Notation;
 /**
  * Interface AbstractFactoryInterface
  * @package Ouxsoft\LuckByDice\Contract
  */
 interface AbstractFactoryInterface
 {
+    public function makeNotation(): Notation;
+
+    public function makeCup(): Cup;
+
+    public function makeLuck(): Luck;
 }

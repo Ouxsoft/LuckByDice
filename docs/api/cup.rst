@@ -9,8 +9,9 @@ Cup
 
     :returns: CollectionInterface
 
-  .. php:method:: public key ()
+  .. php:method:: public key () -> int
 
+    :returns: int -- 
 
   .. php:method:: public next ()
 
