@@ -3,19 +3,11 @@
 Welcome to LuckByDice Documentation
 =====================================
 
-Dice rolls add an element of chance and risk to game engines. They can be used to determine whether events occurring
-withing a game engine while allowing a skilled player to figure out their odds of performing the necessary actions.
+Dice rolls add an element of chance and risk to game engines. They can be used to determine whether events within
+a game engine occur while still allowing skill progression and a skilled player to figure out their odds of performing
+the necessary actions.
 
-This library simulates turns taken rolling dice. But in addition, it features a concept of luck that is modified by
-and modifies the roll outcome. Thereby simulating both the natual elusivity and ebb and flow of luck itself.
-
-Formulas:
-
-.. code-block:: txt
-
-    Roll Outcome (x) = Round ((Random (0 – MaxRoll) + 1) * (Random (0 – Luck) *.01 + 1))
-    Luck Increases when Roll Outcome Percentage >= (1 / &phi;);
-    Luck Decreases when Roll Outcome Percentage <= (1 - (1 / &phi;))
+This library simulates turns taken while rolling dice with luck.
 
 .. code-block:: php
 
@@ -55,7 +47,9 @@ Navigation
 .. toctree::
    :maxdepth: 1
    :caption: Project Information
-
+   
+   project/dice-notation.rst
+   project/luck.rst
    project/code-of-conduct.rst
    Classes <api.rst>
 
