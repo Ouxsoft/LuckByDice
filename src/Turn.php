@@ -99,7 +99,7 @@ class Turn implements TurnInterface
     }
 
     /**
-     * Roll each dice group, update luck, and return outcome
+     * Roll each dice group, update luck, and return outcome with luck modifier applied
      * @return int total
      */
     public function roll() : int
@@ -115,7 +115,10 @@ class Turn implements TurnInterface
             $this->luck->update($outcomePercent);
         }
 
-        $this->total = $total;
+        // apply luck to total
+        $total *= mt_rand(0,$this->getLuck()) * .01 + 1;
+
+        $this->total = (int) round($total, 0,PHP_ROUND_HALF_UP);
 
         return $this->total;
     }
