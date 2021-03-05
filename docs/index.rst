@@ -19,6 +19,9 @@ This library simulates turns taken while rolling dice with luck.
     $turn->set("1d4,2d5,6d6+3,d5*2");
     echo $turn->roll();
 
+    // based on the outcome luck increased or decreased
+    echo $turn->getLuck();
+
 
 Installation
 ------------
