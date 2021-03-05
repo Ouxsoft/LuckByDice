@@ -10,10 +10,9 @@
 
 namespace Ouxsoft\LivingMarkup\Tests\Unit;
 
-use Laminas\Http\Exception\OutOfRangeException;
+use \OutOfRangeException;
 use Ouxsoft\LuckByDice\Dice;
 use PHPUnit\Framework\TestCase;
-use Ouxsoft\LuckByDice\Factory\TurnFactory;
 
 class DiceTest extends TestCase
 {
@@ -37,7 +36,7 @@ class DiceTest extends TestCase
         $slides = $this->dice->getSides();
         $this->assertEquals(6, $slides);
 
-        $this->expectException(\OutOfRangeException::class);
+        $this->expectException(OutOfRangeException::class);
         $this->dice = new Dice(1);
     }
 
