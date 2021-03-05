@@ -55,7 +55,7 @@ class Collection implements
      * @param int $modifier
      * @param int $multiplier
      */
-    public function __construct(int $amount, int $sides, int $modifier, int $multiplier)
+    public function __construct(int $amount, int $sides, int $modifier = 1, int $multiplier = 1)
     {
         if ($amount < 1) {
             throw new OutOfRangeException('A collection must have at least one dice.');
