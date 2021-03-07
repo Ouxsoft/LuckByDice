@@ -7,7 +7,8 @@ Dice rolls add an element of chance and risk to game engines. They can be used t
 a game engine occur while still allowing skill progression and a skilled player to figure out their odds of performing
 the necessary actions.
 
-This library simulates turns taken while rolling dice with luck.
+This library simulates turns taken while rolling dice. But adds an ebb and flow to the outcome using
+a luck.
 
 .. code-block:: php
 
@@ -19,8 +20,11 @@ This library simulates turns taken while rolling dice with luck.
     $turn->set("1d4,2d5,6d6+3,d5*2");
     echo $turn->roll();
 
-    // based on the outcome luck increased or decreased
+    // based on the outcome luck increased (+1) or decreased (-1)
     echo $turn->getLuck();
+
+    // our luck changing effects our next roll
+    echo $turn->roll();
 
 
 Installation
