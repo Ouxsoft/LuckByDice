@@ -26,6 +26,8 @@ a luck.
     // our luck effects our next roll
     echo $turn->roll();
 
+This graph shows 10,000 consecutive `10d10` rolls with fluctuations in luck that impact outcome.
+|graph|
 
 Installation
 ------------
@@ -69,3 +71,7 @@ Indices and tables
 .. |logo| image:: https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/logo.png
   :width: 400
   :alt: LuckByDice
+
+.. |graph| image:: https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/statistics.png
+  :width: 400
+  :alt: Statistics
