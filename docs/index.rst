@@ -23,7 +23,7 @@ a luck.
     // based on the outcome luck increased (+1) or decreased (-1)
     echo $turn->getLuck();
 
-    // our luck changing effects our next roll
+    // our luck effects our next roll
     echo $turn->roll();
 
 
