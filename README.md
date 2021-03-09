@@ -17,7 +17,10 @@
 
 A library for simulating luck based dice rolls from dice notations written in PHP.
 
-This graph shows 10,000 consecutive `10d10` LuckByDice rolls. Notice how changes in luck that impact outcome and vice versa.
+
+Dice notation supported: `d2,1d4,2d6+1,3d8*2,4d10+5*10`
+
+This graph shows 10,000 consecutive `10d10` LuckByDice rolls. Notice how outcome impacts luck and vice versa.
 <p align="center"><img src="https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/statistics.png" alt="statistics"/></p>
 
 ## Installation
