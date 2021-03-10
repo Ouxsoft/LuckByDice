@@ -22,6 +22,10 @@ class Luck implements LuckInterface
      * @var int
      */
     private $phi;
+    /**
+     * @var int
+     */
+    private $max;
 
     /**
      * Luck constructor.
@@ -51,6 +55,13 @@ class Luck implements LuckInterface
         if($this->luck < 0){
             $this->luck = 0;
         }
+
+        if (
+            isset($this->max)
+            && ($this->luck > $this->max)
+        ) {
+            $this->luck = $this->max;
+        }
     }
 
     /**
@@ -60,6 +71,16 @@ class Luck implements LuckInterface
     public function getPhi() : float
     {
         return (1 + sqrt(5)) / 2;
+    }
+
+    /**
+     * Set max
+     * @param int $max
+     * @return void
+     */
+    public function setMax(int $max) : void
+    {
+        $this->max = $max;
     }
 
     /**

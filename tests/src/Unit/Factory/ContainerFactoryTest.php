@@ -31,7 +31,7 @@ class ContainerFactoryTest extends TestCase
     }
 
     /**
-     * @covers \Ouxsoft\LuckByDice\Factory\TurnFactory::buildContainer
+     * @covers \Ouxsoft\LuckByDice\Factory\ContainerFactory::buildContainer
      */
     public function testBuildContainer()
     {

@@ -68,6 +68,18 @@ class LuckTest extends TestCase
     }
 
     /**
+     * @covers \Ouxsoft\LuckByDice\Luck::setMax
+     */
+    public function testSetMax()
+    {
+        $this->luck->setMax(1);
+        $this->luck->update(1);
+        $this->luck->update(1);
+        $this->luck->update(1);
+        $this->assertEquals(1, $this->luck->get());
+    }
+
+    /**
      * @covers \Ouxsoft\LuckByDice\Luck::get
      */
     public function testGet()
