@@ -42,8 +42,10 @@ class Notation implements NotationInterface
             $expression .= 'd' . $collection->getSides();
 
             $modifier = $collection->getModifier();
-            if ($modifier > 1) {
-                $expression .= '+' . $modifier;
+            if ($modifier > 0) {
+                $expression .= '+' . abs($modifier);
+            } elseif ($modifier < 0) {
+                $expression .= '-' . abs($modifier);
             }
 
             $multiplier = $collection->getMultiplier();
@@ -73,8 +75,15 @@ class Notation implements NotationInterface
             $unsorted = explode('*', $unsorted[1]);
             $multiplier = (int) ((isset($unsorted[1])) ? $unsorted[1] : 1);
 
-            $unsorted = explode('+', $unsorted[0]);
-            $modifier = (int) ((isset($unsorted[1])) ? $unsorted[1] : 0);
+            $modifier = 0;
+            if (strpos($unsorted[0], '+') !== false) {
+                $unsorted = explode('+', $unsorted[0]);
+                $modifier = (int) ((isset($unsorted[1])) ? $unsorted[1] : 0);
+            } elseif (strpos($unsorted[0], '-') !== false) {
+                $unsorted = explode('-', $unsorted[0]);
+                $modifier = (int) 0 - ((isset($unsorted[1])) ? $unsorted[1] : 0);
+            }
+
             $sides = (int) $unsorted[0];
 
             $cup[] = new Collection($amount, $sides, $modifier, $multiplier);

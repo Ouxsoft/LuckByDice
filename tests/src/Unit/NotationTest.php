@@ -32,10 +32,12 @@ class NotationTest extends TestCase
      */
     public function testDecode()
     {
-        $notation = "d4,2d6,3d8+2,4d10*2,5d20+10*2";
+        $notation = "d4,2d6,3d8+2,4d10*2,5d20+10*2,6d20-2";
         $this->turn->setNotation($notation);
         $outcome = $this->turn->getNotation();
         $this->assertEquals($notation, $outcome);
+
+
     }
 
     /**
@@ -43,7 +45,7 @@ class NotationTest extends TestCase
      */
     public function testEncode()
     {
-        $notation = "d4,2d6,3d8+2,4d10*2,5d20+10*2";
+        $notation = "d4,2d6,3d8+2,4d10*2,5d20+10*2,6d20-2";
         $this->turn->setNotation($notation);
         $outcome = $this->turn->getNotation();
         $this->assertEquals($notation, $outcome);

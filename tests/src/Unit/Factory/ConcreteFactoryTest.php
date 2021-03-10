@@ -14,6 +14,7 @@ use Ouxsoft\LuckByDice\Cup;
 use Ouxsoft\LuckByDice\Factory\ConcreteFactory;
 use Ouxsoft\LuckByDice\Luck;
 use Ouxsoft\LuckByDice\Notation;
+use Ouxsoft\LuckByDice\Contract\AbstractFactoryInterface;
 use PHPUnit\Framework\TestCase;
 
 class ConcreteFactoryTest extends TestCase
@@ -28,6 +29,11 @@ class ConcreteFactoryTest extends TestCase
     public function tearDown(): void
     {
         unset($this->abstractFactory);
+    }
+
+    public function testInterface()
+    {
+        $this->assertInstanceOf(AbstractFactoryInterface::class, $this->abstractFactory);
     }
 
     /**

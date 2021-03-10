@@ -31,9 +31,9 @@ class ContainerFactoryTest extends TestCase
     }
 
     /**
-     * @covers \Ouxsoft\LuckByDice\Factory\TurnFactory::getInstance
+     * @covers \Ouxsoft\LuckByDice\Factory\TurnFactory::buildContainer
      */
-    public function testGetInstance()
+    public function testBuildContainer()
     {
         $this->assertInstanceOf(Container::class, $this->container);
     }
