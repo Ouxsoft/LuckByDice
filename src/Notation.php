@@ -19,6 +19,24 @@ use Ouxsoft\LuckByDice\Contract\NotationInterface;
  */
 class Notation implements NotationInterface
 {
+    private $separator = ',';
+
+    /**
+     * @param $separator
+     */
+    public function setSeparator($separator) : void
+    {
+        $this->separator = $separator;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSeparator() : string
+    {
+        return $this->separator;
+    }
+
     /**
      * @param Cup $cup
      * @return string
@@ -31,7 +49,7 @@ class Notation implements NotationInterface
             if ($firstIteration) {
                 $firstIteration = false;
             } else {
-                $expression .= ',';
+                $expression .= $this->separator;
             }
 
             $amount = count($collection);
@@ -65,7 +83,7 @@ class Notation implements NotationInterface
     {
         $cup = new Cup();
 
-        $expressionParts = explode(',', strtolower($expression));
+        $expressionParts = explode($this->separator, strtolower($expression));
 
         foreach ($expressionParts as $expressionPart) {
             $unsorted = explode('d', $expressionPart);

@@ -29,7 +29,7 @@ class Turn implements TurnInterface
     /**
      * @var Notation
      */
-    private $notation;
+    public $notation;
     /**
      * @var int
      */

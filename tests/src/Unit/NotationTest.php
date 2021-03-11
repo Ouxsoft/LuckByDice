@@ -28,6 +28,26 @@ class NotationTest extends TestCase
     }
 
     /**
+     * @covers \Ouxsoft\LuckByDice\Notation::setSeparator
+     */
+    public function testSetSeparator()
+    {
+        $separator = ';';
+        $this->turn->notation->setSeparator($separator);
+        $this->assertEquals($separator, $this->turn->notation->getSeparator($separator));
+    }
+
+    /**
+     * @covers \Ouxsoft\LuckByDice\Notation::getSeparator
+     */
+    public function testGetSeparator()
+    {
+        $separator = ';';
+        $this->turn->notation->setSeparator($separator);
+        $this->assertEquals($separator, $this->turn->notation->getSeparator($separator));
+    }
+
+    /**
      * @covers \Ouxsoft\LuckByDice\Notation::decode
      */
     public function testDecode()
@@ -36,8 +56,6 @@ class NotationTest extends TestCase
         $this->turn->setNotation($notation);
         $outcome = $this->turn->getNotation();
         $this->assertEquals($notation, $outcome);
-
-
     }
 
     /**
