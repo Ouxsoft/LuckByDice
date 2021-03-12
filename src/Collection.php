@@ -46,6 +46,10 @@ class Collection implements
      * @var
      */
     private $total;
+    /**
+     * @var array
+     */
+    private $diceOutcome;
 
     /**
      * DiceGroup constructor.
@@ -86,15 +90,31 @@ class Collection implements
     public function roll() : int
     {
         $total = 0;
+        $diceOutcome = [];
 
         foreach ($this->dice as $dice) {
-            $total += $dice->roll();
+            $roll = $dice->roll();
+            $total += $roll;
+            $diceOutcome[] = [
+                'roll' => $roll,
+                'sides' => $dice->getSides()
+            ];
         }
 
         // store last total
         $this->total = $total;
+        $this->diceOutcome = $diceOutcome;
 
         return $this->total;
+    }
+
+    /**
+     * Get dice from last roll
+     * @return array
+     */
+    public function getLastRollDice() : array
+    {
+        return $this->diceOutcome;
     }
 
     /**

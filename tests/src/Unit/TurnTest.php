@@ -70,10 +70,7 @@ class TurnTest extends TestCase
         $this->turn->notation->set('1d4,2d5,6d6+3,d5*2');
         $outcome = $this->turn->roll();
         $this->assertIsInt($outcome);
-
-        
     }
-
 
     /**
      * @covers \Ouxsoft\LuckByDice\Turn::setLimitMinRoll

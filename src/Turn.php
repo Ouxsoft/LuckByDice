@@ -46,6 +46,10 @@ class Turn implements TurnInterface
      * @var bool whether total with luck applied may greater than max dice potential
      */
     private $limitMaxRoll = false;
+    /**
+     * @var array
+     */
+    private $collectionOutcome;
 
     /**
      * Turn constructor.
@@ -131,6 +135,7 @@ class Turn implements TurnInterface
         $total = 0;
         $minPotential = 0;
         $maxPotential = 0;
+        $collectionOutcome = [];
 
         foreach ($this->cup as $collection) {
             $rollOutcome = $collection->roll();
@@ -140,12 +145,21 @@ class Turn implements TurnInterface
             $minPotential += ($collection->getMinOutcome() + $collection->getModifier() * $collection->getMultiplier());
             $maxPotential += ($collection->getMaxOutcome() + $collection->getModifier() * $collection->getMultiplier());
 
+            $collectionOutcome[] = [
+                'dice' => $collection->getLastRollDice(),
+                'modifier' => $collection->getModifier(),
+                'multiplier' => $collection->getMultiplier()
+            ];
+
             $outcomePercent = $collection->getOutcomePercent();
             $this->luck->update($outcomePercent);
         }
 
         // apply luck to total
         $total = $this->luck->modify($total);
+
+        // TODO: add luck dice
+        $this->collectionOutcome = $collectionOutcome;
 
         // whether roll modified by luck can be less than min potential
         if(
@@ -168,6 +182,15 @@ class Turn implements TurnInterface
         $this->total = $total;
 
         return $this->total;
+    }
+
+    /**
+     * Gets the last roll collection
+     * @return array
+     */
+    public function getLastRollCollection() : array
+    {
+        return $this->collectionOutcome;
     }
 
     /**

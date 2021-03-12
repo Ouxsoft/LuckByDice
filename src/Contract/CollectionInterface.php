@@ -18,6 +18,8 @@ interface CollectionInterface
 
     public function roll() : int;
 
+    public function getLastRollDice() : array;
+
     public function getModifier() : int;
 
     public function getMultiplier() : int;
