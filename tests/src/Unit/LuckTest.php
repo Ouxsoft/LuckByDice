@@ -42,20 +42,20 @@ class LuckTest extends TestCase
     {
         // luck decreases
         $this->luck->update(.2);
-        $this->assertEquals(5, $this->luck->get() );
+        $this->assertEquals(5, $this->luck->get());
 
         // luck increases
         $this->luck->update(.7);
-        $this->assertEquals(6, $this->luck->get() );
+        $this->assertEquals(6, $this->luck->get());
 
         // luck remains the same
         $this->luck->update(.5);
-        $this->assertEquals(6, $this->luck->get() );
+        $this->assertEquals(6, $this->luck->get());
 
-        // luck can no go below zero
+        // luck less than zero
         $this->luck->set(0);
         $this->luck->update(.1);
-        $this->assertEquals(0, $this->luck->get() );
+        $this->assertLessThanOrEqual(0, $this->luck->get());
     }
 
     /**
@@ -99,5 +99,31 @@ class LuckTest extends TestCase
         $this->luck->set($luck);
         $outcome = $this->luck->get();
         $this->assertEquals($luck, $outcome);
+    }
+
+
+    /**
+     * @covers \Ouxsoft\LuckByDice\Luck::getApplicablePercent
+     */
+    public function testGetApplicablePercent()
+    {
+        $luck = 1000;
+        $this->luck->set($luck);
+        $outcome = $this->luck->getApplicablePercent();
+
+        $this->assertGreaterThanOrEqual(1, $outcome);
+        $this->assertLessThanOrEqual(100, $luck * 0.01 + 1);
+    }
+
+    /**
+     * @covers \Ouxsoft\LuckByDice\Luck::modify
+     */
+    public function testModify()
+    {
+        $this->luck->set(100);
+        $outcome = $this->luck->modify(255);
+
+        $this->assertGreaterThanOrEqual(1, $outcome);
+        $this->assertLessThanOrEqual(25500, $outcome);
     }
 }

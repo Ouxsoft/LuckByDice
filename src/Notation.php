@@ -21,6 +21,43 @@ class Notation implements NotationInterface
 {
     private $separator = ',';
 
+    private $cup;
+
+    /**
+     * Notation constructor.
+     * @param Cup $cup
+     */
+    public function __construct(Cup $cup)
+    {
+        $this->cup = &$cup;
+    }
+
+    /**
+     * Set cup notation
+     * @param string $notation "1d4+3*2,1d5,d5,10d5"
+     */
+    public function set(string $notation) : void
+    {
+        $this->decode($notation);
+    }
+
+    /**
+     * Get cup notation
+     * @return string "1d4+3*2,1d5,d5,10d5"
+     */
+    public function get() : string
+    {
+        return $this->encode();
+    }
+
+    /**
+     * @see Notation::get()
+     */
+    public function __toString () : string
+    {
+        return $this->get();
+    }
+
     /**
      * @param $separator
      */
@@ -38,14 +75,13 @@ class Notation implements NotationInterface
     }
 
     /**
-     * @param Cup $cup
      * @return string
      */
-    public function encode(Cup $cup) : string
+    private function encode() : string
     {
         $expression = '';
         $firstIteration = true;
-        foreach ($cup as $collection) {
+        foreach ($this->cup as $collection) {
             if ($firstIteration) {
                 $firstIteration = false;
             } else {
@@ -57,7 +93,12 @@ class Notation implements NotationInterface
                 $expression .= $amount;
             }
 
-            $expression .= 'd' . $collection->getSides();
+            $sides = $collection->getSides();
+            if($sides == 100) {
+                $expression .= 'd%';
+            } else {
+                $expression .= 'd' . $sides;
+            }
 
             $modifier = $collection->getModifier();
             if ($modifier > 0) {
@@ -77,11 +118,10 @@ class Notation implements NotationInterface
 
     /**
      * @param string $expression
-     * @return Cup
      */
-    public function decode(string $expression): Cup
+    private function decode(string $expression) : void
     {
-        $cup = new Cup();
+        $this->cup->empty();
 
         $expressionParts = explode($this->separator, strtolower($expression));
 
@@ -102,11 +142,13 @@ class Notation implements NotationInterface
                 $modifier = (int) 0 - ((isset($unsorted[1])) ? $unsorted[1] : 0);
             }
 
-            $sides = (int) $unsorted[0];
+            if( $unsorted[0] == '%'){
+                $sides = 100;
+            } else {
+                $sides = (int) $unsorted[0];
+            }
 
-            $cup[] = new Collection($amount, $sides, $modifier, $multiplier);
+            $this->cup[] = new Collection($amount, $sides, $modifier, $multiplier);
         }
-
-        return $cup;
     }
 }

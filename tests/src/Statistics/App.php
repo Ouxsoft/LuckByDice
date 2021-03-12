@@ -6,7 +6,7 @@ use Ouxsoft\LuckByDice\Factory\TurnFactory;
 
 $turn = TurnFactory::getInstance();
 
-$turn->setNotation('10d10');
+$turn->notation->set('10d10');
 
 $fp = fopen('data.csv', 'w');
 

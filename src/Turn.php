@@ -38,6 +38,14 @@ class Turn implements TurnInterface
      * @var Luck
      */
     private $luck;
+    /**
+     * @var bool whether total with luck applied may be less than min dice potential
+     */
+    private $limitMinRoll = false;
+    /**
+     * @var bool whether total with luck applied may greater than max dice potential
+     */
+    private $limitMaxRoll = false;
 
     /**
      * Turn constructor.
@@ -53,31 +61,13 @@ class Turn implements TurnInterface
         Luck $luck,
         string $expression = null
     ) {
-        $this->notation = $notation;
-        $this->cup = $cup;
-        $this->luck = $luck;
+        $this->notation = &$notation;
+        $this->cup = &$cup;
+        $this->luck = &$luck;
 
         if ($expression !== null) {
-            $this->setNotation($expression);
+            $this->notation->set($expression);
         }
-    }
-
-    /**
-     * Set cup notation
-     * @param string $notation "1d4+3*2,1d5,d5,10d5"
-     */
-    public function setNotation(string $notation) : void
-    {
-        $this->cup = $this->notation->decode($notation);
-    }
-
-    /**
-     * Get cup notation
-     * @return string "1d4+3*2,1d5,d5,10d5"
-     */
-    public function getNotation() : string
-    {
-        return $this->notation->encode($this->cup);
     }
 
     /**
@@ -99,26 +89,83 @@ class Turn implements TurnInterface
     }
 
     /**
+     * Set whether outcome modified by luck can exceed max dice potential
+     * @param bool $limitMinRoll
+     */
+    public function setLimitMinRoll(bool $limitMinRoll) : void
+    {
+        $this->limitMinRoll = $limitMinRoll;
+    }
+
+    /**
+     * Get whether a limit is set on min roll
+     */
+    public function getLimitMinRoll() : bool
+    {
+        return $this->limitMinRoll;
+    }
+
+    /**
+     * Set whether outcome modified by luck can exceed max dice potential
+     * @param bool $limitMaxRoll
+     */
+    public function setLimitMaxRoll(bool $limitMaxRoll) : void
+    {
+        $this->limitMaxRoll = $limitMaxRoll;
+    }
+
+    /**
+     * Get whether a limit is set on max roll
+     */
+    public function getLimitMaxRoll() : bool
+    {
+        return $this->limitMaxRoll;
+    }
+
+    /**
      * Roll each dice group, update luck, and return outcome with luck modifier applied
      * @return int total
      */
     public function roll() : int
     {
         $total = 0;
+        $minPotential = 0;
+        $maxPotential = 0;
 
         foreach ($this->cup as $collection) {
             $rollOutcome = $collection->roll();
 
             $total += ($rollOutcome + $collection->getModifier()) * $collection->getMultiplier();
 
+            $minPotential += ($collection->getMinOutcome() + $collection->getModifier() * $collection->getMultiplier());
+            $maxPotential += ($collection->getMaxOutcome() + $collection->getModifier() * $collection->getMultiplier());
+
             $outcomePercent = $collection->getOutcomePercent();
             $this->luck->update($outcomePercent);
         }
 
         // apply luck to total
-        $total *= mt_rand(0,$this->getLuck()) * .01 + 1;
+        $total = $this->luck->modify($total);
 
-        $this->total = (int) round($total, 0,PHP_ROUND_HALF_UP);
+        // whether roll modified by luck can be less than min potential
+        if(
+            $this->limitMinRoll
+            && ($total < $minPotential)
+        ) {
+            $this->total = $minPotential;
+            return $this->total;
+        }
+
+        // whether roll modified by luck can exceed dice max potential
+        if(
+            $this->limitMaxRoll
+            && ($total > $maxPotential)
+        ) {
+            $this->total = $maxPotential;
+            return $this->total;
+        }
+
+        $this->total = $total;
 
         return $this->total;
     }

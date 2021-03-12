@@ -16,6 +16,7 @@ use Ouxsoft\LuckByDice\Luck;
 use Ouxsoft\LuckByDice\Notation;
 use Ouxsoft\LuckByDice\Contract\AbstractFactoryInterface;
 use PHPUnit\Framework\TestCase;
+use Pimple\Container;
 
 class ConcreteFactoryTest extends TestCase
 {
@@ -41,7 +42,9 @@ class ConcreteFactoryTest extends TestCase
      */
     public function testMakeNotation()
     {
-        $this->assertInstanceOf(Notation::class, $this->abstractFactory->makeNotation());
+        $container = new Container();
+        $container['cup'] = new Cup();
+        $this->assertInstanceOf(Notation::class, $this->abstractFactory->makeNotation($container));
     }
 
     /**

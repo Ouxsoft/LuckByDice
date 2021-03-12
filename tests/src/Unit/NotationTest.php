@@ -28,6 +28,42 @@ class NotationTest extends TestCase
     }
 
     /**
+     * @cover \Ouxsoft\LuckByDice\Notation::__construct()
+     */
+    public function test__construct()
+    {
+        $this->assertObjectHasAttribute( 'cup', $this->turn->notation);
+    }
+
+    /**
+     * @covers \Ouxsoft\LuckByDice\Notation::set
+     * @covers \Ouxsoft\LuckByDice\Notation::decode
+     * @covers \Ouxsoft\LuckByDice\Notation::__toString
+     */
+    public function testSet()
+    {
+        $notation = "d4,2d6,3d8+2,4d10*2,5d20+10*2,6d20-2,10d%";
+        $this->turn->notation->set($notation);
+        $outcome = $this->turn->notation->get();
+        $this->assertEquals($notation, $outcome);
+
+        $outcome = (string) $this->turn->notation;
+        $this->assertEquals($notation, $outcome);
+    }
+
+    /**
+     * @covers \Ouxsoft\LuckByDice\Notation::get
+     * @covers \Ouxsoft\LuckByDice\Notation::encode
+     */
+    public function testGet()
+    {
+        $notation = "d4,2d6,3d8+2,4d10*2,5d20+10*2,6d20-2,10d%";
+        $this->turn->notation->set($notation);
+        $outcome = $this->turn->notation->get();
+        $this->assertEquals($notation, $outcome);
+    }
+
+    /**
      * @covers \Ouxsoft\LuckByDice\Notation::setSeparator
      */
     public function testSetSeparator()
@@ -45,27 +81,5 @@ class NotationTest extends TestCase
         $separator = ';';
         $this->turn->notation->setSeparator($separator);
         $this->assertEquals($separator, $this->turn->notation->getSeparator($separator));
-    }
-
-    /**
-     * @covers \Ouxsoft\LuckByDice\Notation::decode
-     */
-    public function testDecode()
-    {
-        $notation = "d4,2d6,3d8+2,4d10*2,5d20+10*2,6d20-2";
-        $this->turn->setNotation($notation);
-        $outcome = $this->turn->getNotation();
-        $this->assertEquals($notation, $outcome);
-    }
-
-    /**
-     * @covers \Ouxsoft\LuckByDice\Notation::encode
-     */
-    public function testEncode()
-    {
-        $notation = "d4,2d6,3d8+2,4d10*2,5d20+10*2,6d20-2";
-        $this->turn->setNotation($notation);
-        $outcome = $this->turn->getNotation();
-        $this->assertEquals($notation, $outcome);
     }
 }

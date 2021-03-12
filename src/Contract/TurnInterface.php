@@ -16,10 +16,6 @@ interface TurnInterface
         string $expression = null
     );
 
-    public function setNotation(string $notation) : void;
-
-    public function getNotation() : string;
-
     public function getLuck() : int;
 
     public function setLuck(int $luck);

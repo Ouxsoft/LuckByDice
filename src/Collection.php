@@ -122,6 +122,15 @@ class Collection implements
     }
 
     /**
+     * Get min potential of outcome
+     * @return int
+     */
+    public function getMinOutcome() : int
+    {
+        return (count($this->dice) * 1);
+    }
+
+    /**
      * Get max potential of outcome
      * @return int
      */

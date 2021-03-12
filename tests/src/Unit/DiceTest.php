@@ -11,6 +11,7 @@
 namespace Ouxsoft\LivingMarkup\Tests\Unit;
 
 use \OutOfRangeException;
+use Ouxsoft\LuckByDice\Contract\DiceInterface;
 use Ouxsoft\LuckByDice\Dice;
 use PHPUnit\Framework\TestCase;
 
@@ -26,6 +27,11 @@ class DiceTest extends TestCase
     public function tearDown(): void
     {
         unset($this->dice);
+    }
+
+    public function testImplements()
+    {
+        $this->assertInstanceOf(DiceInterface::class, $this->dice);
     }
 
     /**

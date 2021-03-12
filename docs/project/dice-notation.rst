@@ -33,14 +33,17 @@ Example of rolling two ten sided dice and adding two to the total and multiplyin
 
     2d10+2*8
 
+Example of a percent or 100 side dice
+
+.. code-block:: php
+
+    d%
+
 Example of rolling all above collections of dice at once
 
 .. code-block:: php
 
-    d2,2d4,3d6+2,4d8*3,2d10+2*8
-
-
-
+    d2,2d4,3d6+2,4d8*3,2d10+2*8,d%
 
 
 

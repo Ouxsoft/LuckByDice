@@ -16,8 +16,7 @@ a luck.
 
     use Ouxsoft\LuckByDice\Factory\TurnFactory;
 
-    $turn = TurnFactory::getInstance();
-    $turn->set("1d4,2d5,6d6+3,d5*2");
+    $turn = TurnFactory::getInstance('d4,2d6,3d8+2,4d10*2,5d20+10*2,6d20-2,d%');
     echo $turn->roll();
 
     // based on the outcome luck increased (+1) or decreased (-1)

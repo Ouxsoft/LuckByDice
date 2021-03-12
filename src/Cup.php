@@ -27,6 +27,12 @@ class Cup implements
     private $container = [];
     private $index = 0;
 
+    public function empty() : void
+    {
+        $this->container = [];
+        $this->index = 0;
+    }
+
     /**
      * @param mixed $offset
      * @return bool

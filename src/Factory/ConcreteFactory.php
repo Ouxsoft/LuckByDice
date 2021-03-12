@@ -14,19 +14,20 @@ namespace Ouxsoft\LuckByDice\Factory;
 
 use Ouxsoft\LuckByDice\Contract\AbstractFactoryInterface;
 use Ouxsoft\LuckByDice\Notation;
+use Pimple\Container;
 use Ouxsoft\LuckByDice\Cup;
 use Ouxsoft\LuckByDice\Luck;
 
 class ConcreteFactory implements AbstractFactoryInterface
 {
-    public function makeNotation(): Notation
-    {
-        return new Notation();
-    }
-
     public function makeCup(): Cup
     {
         return new Cup();
+    }
+
+    public function makeNotation(Container $container): Notation
+    {
+        return new Notation($container['cup']);
     }
 
     public function makeLuck(): Luck

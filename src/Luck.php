@@ -15,17 +15,21 @@ use Ouxsoft\LuckByDice\Contract\LuckInterface;
 class Luck implements LuckInterface
 {
     /**
-     * @var int
+     * @var int an elusive modifier based on random over time
      */
     private $luck;
     /**
-     * @var int
+     * @var int the golden ration computed during runtime
      */
     private $phi;
     /**
-     * @var int
+     * @var int the maximum value allowed for luck
      */
     private $max;
+    /**
+     * @var int the minimum value allowed for luck
+     */
+    private $min;
 
     /**
      * Luck constructor.
@@ -52,8 +56,8 @@ class Luck implements LuckInterface
             $this->luck++;
         }
 
-        if($this->luck < 0){
-            $this->luck = 0;
+        if($this->luck < $this->min){
+            $this->luck = $this->min;
         }
 
         if (
@@ -84,6 +88,16 @@ class Luck implements LuckInterface
     }
 
     /**
+     * Set min
+     * @param int $min
+     * @return void
+     */
+    public function setMin(int $min) : void
+    {
+        $this->min = $min;
+    }
+
+    /**
      * @return int
      */
     public function get() : int
@@ -97,5 +111,34 @@ class Luck implements LuckInterface
     public function set(int $luck) : void
     {
         $this->luck = $luck;
+    }
+
+    /**
+     * Get applicable luck as random percentage based on current luck
+     *
+     * @return float
+     */
+    public function getApplicablePercent() : float
+    {
+        if($this->luck <= 0){
+            return 1 - mt_rand(0, abs($this->luck)) * .01;
+        } else if($this->luck == 0){
+            return 1;
+        }
+
+        return 1 + mt_rand(0, abs($this->luck)) * .01;
+    }
+
+    /**
+     * Modifies a number based on current luck
+     *
+     * @param int $number
+     * @return int
+     */
+    public function modify(int $number) : int
+    {
+        $number *= $this->getApplicablePercent();
+
+        return (int) round($number, 0,PHP_ROUND_HALF_UP);
     }
 }

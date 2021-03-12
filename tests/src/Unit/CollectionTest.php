@@ -95,6 +95,15 @@ class CollectionTest extends TestCase
     }
 
     /**
+     * @covers \Ouxsoft\LuckByDice\Collection::getMinOutcome
+     */
+    public function testGetMinOutcome()
+    {
+        $minOutcome = $this->collection->getMinOutcome();
+        $this->assertEquals(4, $minOutcome);
+    }
+
+    /**
      * @covers \Ouxsoft\LuckByDice\Collection::getMaxOutcome
      */
     public function testGetMaxOutcome()

@@ -36,29 +36,8 @@ class TurnTest extends TestCase
 
         $notation = 'd6';
         $this->turn = TurnFactory::getInstance($notation);
-        $outcome = $this->turn->getNotation();
+        $outcome = $this->turn->notation->get();
         $this->assertEquals($notation, $outcome);
-    }
-
-    /**
-     * @covers \Ouxsoft\LuckByDice\Turn::setNotation
-     */
-    public function testSetNotation()
-    {
-        $this->turn->setNotation('d3+3*3');
-        $outcome = $this->turn->roll();
-        $this->assertIsInt($outcome);
-    }
-
-    /**
-     * @covers \Ouxsoft\LuckByDice\Turn::getNotation
-     */
-    public function testGetNotation()
-    {
-        $notation = 'd3+3*3';
-        $this->turn->setNotation($notation);
-        $outcome = $this->turn->getNotation();
-        $this->assertEquals($outcome, $notation);
     }
 
     /**
@@ -88,9 +67,61 @@ class TurnTest extends TestCase
      */
     public function testRoll()
     {
-        $this->turn->setNotation('1d4,2d5,6d6+3,d5*2');
+        $this->turn->notation->set('1d4,2d5,6d6+3,d5*2');
         $outcome = $this->turn->roll();
         $this->assertIsInt($outcome);
+
+        
+    }
+
+
+    /**
+     * @covers \Ouxsoft\LuckByDice\Turn::setLimitMinRoll
+     */
+    public function testSetLimitMinRoll()
+    {
+        $this->turn->setLimitMinRoll(true);
+        $this->assertTrue($this->turn->getLimitMinRoll());
+
+        $this->turn->setLimitMinRoll(false);
+        $this->assertFalse($this->turn->getLimitMinRoll());
+    }
+
+    /**
+     * @covers \Ouxsoft\LuckByDice\Turn::getLimitMinRoll
+     */
+    public function testGetLimitMinRoll()
+    {
+        $this->turn->setLimitMinRoll(true);
+        $this->assertTrue($this->turn->getLimitMinRoll());
+
+        $this->turn->setLimitMinRoll(false);
+        $this->assertFalse($this->turn->getLimitMinRoll());
+    }
+
+
+    /**
+     * @covers \Ouxsoft\LuckByDice\Turn::setLimitMaxRoll
+     */
+    public function testSetLimitMaxRoll()
+    {
+        $this->turn->setLimitMaxRoll(true);
+        $this->assertTrue($this->turn->getLimitMaxRoll());
+
+        $this->turn->setLimitMaxRoll(false);
+        $this->assertFalse($this->turn->getLimitMaxRoll());
+    }
+
+    /**
+     * @covers \Ouxsoft\LuckByDice\Turn::getLimitMaxRoll
+     */
+    public function testGetLimitMaxRoll()
+    {
+        $this->turn->setLimitMaxRoll(true);
+        $this->assertTrue($this->turn->getLimitMaxRoll());
+
+        $this->turn->setLimitMaxRoll(false);
+        $this->assertFalse($this->turn->getLimitMaxRoll());
     }
 
     /**
@@ -98,7 +129,7 @@ class TurnTest extends TestCase
      */
     public function test__toString()
     {
-        $this->turn->setNotation('d6');
+        $this->turn->notation->set('d6');
         $outcome = (string) $this->turn;
         $this->assertIsString($outcome);
     }

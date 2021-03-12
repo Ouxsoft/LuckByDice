@@ -18,3 +18,4 @@ Luck Increases when Roll Outcome Percentage >= (1 / &phi;);
 Luck Decreases when Roll Outcome Percentage <= (1 - (1 / &phi;))
 
 Roll Outcome (x) = Round ((Random (0 – MaxRoll) + 1) * (Random (0 – Luck) *.01 + 1))
+
