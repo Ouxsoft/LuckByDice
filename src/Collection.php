@@ -83,7 +83,7 @@ class Collection implements
     }
 
     /**
-     * Roll each dice for total then add modifier and apply multiplier
+     * Roll each dice for total
      *
      * @return int
      */
@@ -161,15 +161,15 @@ class Collection implements
 
     /**
      * Compute percent outcome of previous roll
+     *
+     * Convert dice outcomes to percent outcomes.
+     * Dice outcomes start counting at one. This formula works by starting the counts at 0.
+     * Example using 1d4: 1/4 = 0/3; 2/4 = 1/3; 3/4 = 2/3; 4/4 = 3/3
+     *
      * @return float
      */
     public function getOutcomePercent() : float
     {
-        /*
-         * Convert dice outcomes to percent outcomes.
-         * Start counts at 0 opposed to 1 as dice outcomes start
-         * Example using 1d4: 1/4 = 0/3; 2/4 = 1/3; 3/4 = 2/3; 4/4 = 3/3
-         */
         return ($this->total - $this->count()) / ($this->getMaxOutcome() - $this->count());
     }
 
