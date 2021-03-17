@@ -155,31 +155,19 @@ class Turn implements TurnInterface
             $this->luck->update($outcomePercent);
         }
 
-        // apply luck to total
+        // if enabled apply luck to total
         $total = $this->luck->modify($total);
 
         // TODO: add luck dice
         $this->collectionOutcome = $collectionOutcome;
 
-        // whether roll modified by luck can be less than min potential
-        if(
-            $this->limitMinRoll
-            && ($total < $minPotential)
-        ) {
-            $this->total = $minPotential;
-            return $this->total;
-        }
-
-        // whether roll modified by luck can exceed dice max potential
-        if(
-            $this->limitMaxRoll
-            && ($total > $maxPotential)
-        ) {
-            $this->total = $maxPotential;
-            return $this->total;
-        }
-
         $this->total = $total;
+
+        if( $this->limitMinRoll && ($total < $minPotential)) {
+            $this->total = $minPotential;
+        } elseif ( $this->limitMaxRoll && ($total > $maxPotential)) {
+            $this->total = $maxPotential;
+        }
 
         return $this->total;
     }

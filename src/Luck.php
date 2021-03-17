@@ -30,6 +30,10 @@ class Luck implements LuckInterface
      * @var int the minimum value allowed for luck
      */
     private $min;
+    /**
+     * @var bool used to determine whether luck is enabled or disabled
+     */
+    private $active;
 
     /**
      * Luck constructor.
@@ -39,6 +43,43 @@ class Luck implements LuckInterface
     {
         $this->phi = $this->getPhi();
         $this->luck = $luck;
+        $this->active = true;
+        $this->min = 0;
+    }
+
+    /**
+     * Get Phi / The Golden Ratio
+     * @return float
+     */
+    public function getPhi() : float
+    {
+        return (1 + sqrt(5)) / 2;
+    }
+
+    /**
+     * Enable luck
+     */
+    public function enable() : void
+    {
+        $this->active = true;
+    }
+
+    /**
+     * Disable luck
+     */
+    public function disable() : void
+    {
+        $this->active = false;
+    }
+
+    /**
+     * Get whether enabled or disabled
+     *
+     * @return bool
+     */
+    public function getActiveStatus() : bool
+    {
+        return $this->active;
     }
 
     /**
@@ -58,23 +99,12 @@ class Luck implements LuckInterface
 
         if($this->luck < $this->min){
             $this->luck = $this->min;
-        }
-
-        if (
+        } else if (
             isset($this->max)
             && ($this->luck > $this->max)
         ) {
             $this->luck = $this->max;
         }
-    }
-
-    /**
-     * Get Phi / The Golden Ratio
-     * @return float
-     */
-    public function getPhi() : float
-    {
-        return (1 + sqrt(5)) / 2;
     }
 
     /**
@@ -114,22 +144,6 @@ class Luck implements LuckInterface
     }
 
     /**
-     * Get applicable luck as random percentage based on current luck
-     *
-     * @return float
-     */
-    public function getApplicablePercent() : float
-    {
-        if($this->luck <= 0){
-            return 1 - mt_rand(0, abs($this->luck)) * .01;
-        } else if($this->luck == 0){
-            return 1;
-        }
-
-        return 1 + mt_rand(0, abs($this->luck)) * .01;
-    }
-
-    /**
      * Modifies a number based on current luck
      *
      * @param int $number
@@ -137,8 +151,28 @@ class Luck implements LuckInterface
      */
     public function modify(int $number) : int
     {
-        $number *= $this->getApplicablePercent();
+        if($this->active){
+            $number *= $this->getApplicablePercent();
 
-        return (int) round($number, 0,PHP_ROUND_HALF_UP);
+            return (int) round($number, 0,PHP_ROUND_HALF_UP);
+        }
+
+        return $number;
+    }
+
+    /**
+     * Get applicable luck as random percentage based on current luck
+     *
+     * @return float
+     */
+    public function getApplicablePercent() : float
+    {
+        if($this->luck < 0){
+            return 1 - mt_rand(0, abs($this->luck)) * .01;
+        } else if($this->luck == 0){
+            return 1;
+        }
+
+        return 1 + mt_rand(0, abs($this->luck)) * .01;
     }
 }

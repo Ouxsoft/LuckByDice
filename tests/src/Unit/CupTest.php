@@ -31,6 +31,15 @@ class CupTest extends TestCase
     }
 
     /**
+     * @covers \Ouxsoft\LuckByDice\Cup::empty
+     */
+    public function testEmpty()
+    {
+        $this->cup->empty();
+        $this->assertArrayNotHasKey(0, $this->cup);
+    }
+
+    /**
      * @covers \Ouxsoft\LuckByDice\Cup::offsetExists
      */
     public function testOffsetExists()
@@ -55,6 +64,9 @@ class CupTest extends TestCase
         $collection = new Collection(1, 8, 1, 1);
         $this->cup[] = $collection;
         $this->assertEquals($collection, $this->cup->offsetGet(2));
+
+        $this->cup['test'] = $collection;
+        $this->assertEquals($collection, $this->cup->offsetGet('test'));
     }
 
     /**
