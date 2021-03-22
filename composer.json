@@ -32,7 +32,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Ouxsoft\\LuckByDice\\Tests\\": "tests/src/"
+      "Ouxsoft\\LuckByDiceTests\\": "tests/src/"
     }
   },
   "scripts": {

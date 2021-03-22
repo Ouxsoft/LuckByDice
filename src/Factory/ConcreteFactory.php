@@ -13,10 +13,14 @@ declare(strict_types=1);
 namespace Ouxsoft\LuckByDice\Factory;
 
 use Ouxsoft\LuckByDice\Contract\AbstractFactoryInterface;
+use Ouxsoft\LuckByDice\Factory\TurnFactory;
+use Ouxsoft\LuckByDice\LuckAdjustment\AbstractLuckAdjustment;
+use Ouxsoft\LuckByDice\LuckAdjustment\DefaultLuckAdjustment;
+use Ouxsoft\LuckByDice\LuckAdjustment\FickleLuckAdjustment;
 use Ouxsoft\LuckByDice\Notation;
-use Pimple\Container;
 use Ouxsoft\LuckByDice\Cup;
 use Ouxsoft\LuckByDice\Luck;
+use Pimple\Container;
 
 class ConcreteFactory implements AbstractFactoryInterface
 {
@@ -34,4 +38,5 @@ class ConcreteFactory implements AbstractFactoryInterface
     {
         return new Luck();
     }
+
 }

@@ -11,29 +11,28 @@
 namespace Ouxsoft\LuckByDice;
 
 use Ouxsoft\LuckByDice\Contract\LuckInterface;
+use Ouxsoft\LuckByDice\LuckAdjustment\DefaultLuckAdjustment;
+use Ouxsoft\LuckByDice\LuckAdjustment\FickleLuckAdjustment;
 
 class Luck implements LuckInterface
 {
+    /** @var int DefaultLuckAdjustment */
+    const DEFAULT_ADJUSTMENT = 0;
+    /** @var int FickleLuckAdjustment */
+    const FICKLE_ADJUSTMENT = 1;
+
     /**
      * @var int an elusive modifier based on random over time
      */
-    private $luck;
-    /**
-     * @var int the golden ration computed during runtime
-     */
-    private $phi;
-    /**
-     * @var int the maximum value allowed for luck
-     */
-    private $max;
-    /**
-     * @var int the minimum value allowed for luck
-     */
-    private $min;
+    protected $luck = 0;
     /**
      * @var bool used to determine whether luck is enabled or disabled
      */
-    private $active;
+    private $active = true;
+    /**
+     * @var AlgorithmInterface
+     */
+    public $adjustment;
 
     /**
      * Luck constructor.
@@ -41,19 +40,9 @@ class Luck implements LuckInterface
      */
     public function __construct(int $luck = 0)
     {
-        $this->phi = $this->getPhi();
-        $this->luck = $luck;
-        $this->active = true;
-        $this->min = 0;
-    }
+        $this->setAdjustment();
 
-    /**
-     * Get Phi / The Golden Ratio
-     * @return float
-     */
-    public function getPhi() : float
-    {
-        return (1 + sqrt(5)) / 2;
+        $this->set($luck);
     }
 
     /**
@@ -83,48 +72,36 @@ class Luck implements LuckInterface
     }
 
     /**
+     * Set the luck adjustment algorithm
+     * @param int $algorithm
+     */
+    public function setAdjustment(int $algorithm = 0) : void
+    {
+        switch($algorithm){
+            case self::FICKLE_ADJUSTMENT:
+                $this->adjustment = new FickleLuckAdjustment();
+            case self::DEFAULT_ADJUSTMENT;
+            default:
+                $this->adjustment = new DefaultLuckAdjustment();
+        }
+    }
+
+    /**
+     * Get name of selected adjustment algorithm
+     * @return string
+     */
+    public function getAdjustment() : string
+    {
+        return $this->adjustment->getName();
+    }
+
+    /**
      * Update luck based on percentage of roll outcome
      * @param float $rollPercent min 0 to max 1
      */
     public function update(float $rollPercent = 0.5) : void
     {
-        $low = (1 - (1/$this->phi));
-        $high = (1/$this->phi);
-
-        if($rollPercent <= $low) {
-            $this->luck--;
-        } elseif ($rollPercent >= $high) {
-            $this->luck++;
-        }
-
-        if($this->luck < $this->min){
-            $this->luck = $this->min;
-        } else if (
-            isset($this->max)
-            && ($this->luck > $this->max)
-        ) {
-            $this->luck = $this->max;
-        }
-    }
-
-    /**
-     * Set max
-     * @param int $max
-     * @return void
-     */
-    public function setMax(int $max) : void
-    {
-        $this->max = $max;
-    }
-
-    /**
-     * Set min
-     * @param int $min
-     * @return void
-     */
-    public function setMin(int $min) : void
-    {
-        $this->min = $min;
+        $this->luck += $this->adjustment->run($this->luck, $rollPercent);
     }
 
     /**

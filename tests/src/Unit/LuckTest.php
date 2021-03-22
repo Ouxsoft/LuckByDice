@@ -8,10 +8,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ouxsoft\LivingMarkup\Tests\Unit;
+namespace Ouxsoft\LuckByDiceTests\Unit;
 
-use Ouxsoft\LuckByDice\Luck;
 use PHPUnit\Framework\TestCase;
+use Ouxsoft\LuckByDice\Luck;
 
 class LuckTest extends TestCase
 {
@@ -81,49 +81,15 @@ class LuckTest extends TestCase
 
         // test min / luck less than zero
         $this->luck->set(0);
-        $this->luck->update(.1);
+        $this->luck->update(.01);
         $this->assertLessThanOrEqual(0, $this->luck->get());
 
         // test max
-        $this->luck->setMax(1);
+        $this->luck->adjustment->setMax(1);
         $this->luck->set(1);
         $this->luck->update(1);
         $this->assertEquals(1, $this->luck->get());
 
-    }
-
-    /**
-     * @covers \Ouxsoft\LuckByDice\Luck::getPhi
-     */
-    public function testGetPhi()
-    {
-        $phi = $this->luck->getPhi();
-        $this->assertEquals(1.6180339887499, $phi);
-    }
-
-    /**
-     * @covers \Ouxsoft\LuckByDice\Luck::setMax
-     */
-    public function testSetMax()
-    {
-        $this->luck->setMax(1);
-        $this->luck->update(1);
-        $this->luck->update(1);
-        $this->luck->update(1);
-        $this->assertEquals(1, $this->luck->get());
-    }
-
-    /**
-     * @covers \Ouxsoft\LuckByDice\Luck::setMin
-     */
-    public function testSetMin()
-    {
-        $this->luck->set(0);
-        $this->luck->setMin(-1);
-        $this->luck->update(0.01);
-        $this->luck->update(0.01);
-        $this->luck->update(0.01);
-        $this->assertEquals(-1, $this->luck->get());
     }
 
     /**
@@ -156,7 +122,7 @@ class LuckTest extends TestCase
     {
         // if luck < 0
         $luck = -100;
-        $this->luck->setMin($luck);
+        $this->luck->adjustment->setMin($luck);
         $this->luck->set($luck);
         $outcome = $this->luck->getApplicablePercent();
         $this->assertGreaterThanOrEqual(0, $outcome);

@@ -10,13 +10,9 @@
 
 namespace Ouxsoft\LuckByDice\Contract;
 
-interface LuckInterface
+interface LuckAdjustmentInterface
 {
-    public function __construct(int $luck = 0);
-
-    public function update(float $rollPercent = 0.5) : void;
-
-    public function get(): int;
-
-    public function set(int $luck): void;
+    public function setMax(int $max): void;
+    public function setMin(int $min): void;
+    public function run(int $luck, float $rollPercent = 0.5): int;
 }

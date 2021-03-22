@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Ouxsoft\LivingMarkup\Tests\Unit;
+namespace Ouxsoft\LuckByDiceTests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use Ouxsoft\LuckByDice\Factory\TurnFactory;

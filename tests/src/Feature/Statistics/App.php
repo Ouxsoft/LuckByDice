@@ -1,6 +1,7 @@
 <?php
+namespace Ouxsoft\LuckByDiceTests\Feature\Statistics;
 
-require '../../../vendor/autoload.php';
+require '../../../../vendor/autoload.php';
 
 use Ouxsoft\LuckByDice\Factory\TurnFactory;
 

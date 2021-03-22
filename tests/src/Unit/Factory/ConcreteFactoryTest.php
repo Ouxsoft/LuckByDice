@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Ouxsoft\LivingMarkup\Tests\Unit\Factory;
+namespace Ouxsoft\LuckByDiceTests\Unit\Factory;
 
 use Ouxsoft\LuckByDice\Cup;
 use Ouxsoft\LuckByDice\Factory\ConcreteFactory;
