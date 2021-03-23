@@ -10,6 +10,12 @@
 
 namespace Ouxsoft\LuckByDice\LuckAdjustment;
 
+/**
+ * Class DefaultLuckAdjustment
+ * @package Ouxsoft\LuckByDice\LuckAdjustment
+ *
+ * Based on the Golden Ratio / Phi
+ */
 class DefaultLuckAdjustment extends AbstractLuckAdjustment
 {
     /**

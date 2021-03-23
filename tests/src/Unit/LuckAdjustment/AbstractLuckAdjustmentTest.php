@@ -53,8 +53,8 @@ class AbstractLuckAdjustmentTest extends TestCase
     public function testSetMin()
     {
         $value = 1;
-        $this->luckAdjustment->setMax($value);
-        $this->assertEquals($value, $this->luckAdjustment->getMax());
+        $this->luckAdjustment->setMin($value);
+        $this->assertEquals($value, $this->luckAdjustment->getMin());
     }
 
     /**
@@ -63,8 +63,8 @@ class AbstractLuckAdjustmentTest extends TestCase
     public function testGetMin()
     {
         $value = 1;
-        $this->luckAdjustment->setMax($value);
-        $this->assertEquals($value, $this->luckAdjustment->getMax());
+        $this->luckAdjustment->setMin($value);
+        $this->assertEquals($value, $this->luckAdjustment->getMin());
     }
 
     /**
@@ -73,4 +73,15 @@ class AbstractLuckAdjustmentTest extends TestCase
     public function testGetName(){
         $this->assertEquals(DefaultLuckAdjustment::class, $this->luckAdjustment->getName());
     }
+
+    /**
+     * @covers \Ouxsoft\LuckByDice\LuckAdjustment\AbstractLuckAdjustment::run
+     */
+    public function testRun(){
+        $this->assertEquals(-1, $this->luckAdjustment->run(1,0));
+
+        $this->assertEquals(1, $this->luckAdjustment->run(1,1));
+    }
+
+
 }
