@@ -11,6 +11,10 @@ All releases must adhere to [SemVer 2](https://semver.org/) naming convention an
 ## LivingMarkup [Unreleased]
 Released: TBD. Notable changes:
 
+## LivingMarkup 1.0.0
+Released: 2021-07-26. Notable changes:
+* Removed: Pimple/Pimple container dependency [bec5ae2](https://github.com/Ouxsoft/LuckByDice/commit/bec5ae219a100f986b180926d523707192ca79a0).
+
 ## LivingMarkup 0.1.0
 Released: 2021-03-08. Notable changes:
 * Added: Luck, Dice notation parser, Dice, Collection, and Cup [35b224e](https://github.com/ouxsoft/LuckByDice/commit/35b224efb59c05922dc13903381959961b6fa69c)
