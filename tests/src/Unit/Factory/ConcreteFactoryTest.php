@@ -16,7 +16,7 @@ use Ouxsoft\LuckByDice\Luck;
 use Ouxsoft\LuckByDice\Notation;
 use Ouxsoft\LuckByDice\Contract\AbstractFactoryInterface;
 use PHPUnit\Framework\TestCase;
-use Pimple\Container;
+use Ouxsoft\LuckByDice\Factory\Container;
 
 class ConcreteFactoryTest extends TestCase
 {

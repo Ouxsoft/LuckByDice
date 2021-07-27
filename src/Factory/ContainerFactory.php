@@ -13,7 +13,6 @@ declare(strict_types=1);
 namespace Ouxsoft\LuckByDice\Factory;
 
 use Ouxsoft\LuckByDice\Contract\AbstractFactoryInterface;
-use Pimple\Container;
 
 class ContainerFactory
 {

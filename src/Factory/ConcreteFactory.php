@@ -20,7 +20,6 @@ use Ouxsoft\LuckByDice\LuckAdjustment\FickleLuckAdjustment;
 use Ouxsoft\LuckByDice\Notation;
 use Ouxsoft\LuckByDice\Cup;
 use Ouxsoft\LuckByDice\Luck;
-use Pimple\Container;
 
 class ConcreteFactory implements AbstractFactoryInterface
 {

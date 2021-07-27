@@ -13,7 +13,7 @@ namespace Ouxsoft\LuckByDice\Contract;
 use Ouxsoft\LuckByDice\Cup;
 use Ouxsoft\LuckByDice\Luck;
 use Ouxsoft\LuckByDice\Notation;
-use Pimple\Container;
+use Ouxsoft\LuckByDice\Factory\Container;
 
 /**
  * Interface AbstractFactoryInterface

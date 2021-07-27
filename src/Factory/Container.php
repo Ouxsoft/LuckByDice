@@ -8,13 +8,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Ouxsoft\LuckByDice\Contract;
+declare(strict_types=1);
 
-interface LuckAdjustmentInterface
+namespace Ouxsoft\LuckByDice\Factory;
+
+use ArrayObject;
+
+class Container extends ArrayObject
 {
-    public function setMax(int $max): void;
 
-    public function setMin(int $min): void;
-
-    public function run(int $luck, float $rollPercent = 0.5): int;
 }

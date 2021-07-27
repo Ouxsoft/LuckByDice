@@ -13,7 +13,7 @@ namespace Ouxsoft\LuckByDiceTests\Unit\Factory;
 use Ouxsoft\LuckByDice\Factory\ConcreteFactory;
 use Ouxsoft\LuckByDice\Factory\ContainerFactory;
 use PHPUnit\Framework\TestCase;
-use Pimple\Container;
+use Ouxsoft\LuckByDice\Factory\Container;
 
 class ContainerFactoryTest extends TestCase
 {
