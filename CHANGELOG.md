@@ -11,6 +11,10 @@ All releases must adhere to [SemVer 2](https://semver.org/) naming convention an
 ## LivingMarkup [Unreleased]
 Released: TBD. Notable changes:
 
+## LivingMarkup 1.2.0
+Released: 2021-08-18. Notable changes: [1683b63](https://github.com/Ouxsoft/LuckByDice/commit/1683b639ab0e06b595b9bcfb7d201285fee7e52d)
+* Added: Min and Max potential calculations to cup and collection.
+
 ## LivingMarkup 1.0.0
 Released: 2021-07-26. Notable changes:
 * Removed: Pimple/Pimple container dependency [bec5ae2](https://github.com/Ouxsoft/LuckByDice/commit/bec5ae219a100f986b180926d523707192ca79a0).

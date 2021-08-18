@@ -129,7 +129,7 @@ class CollectionTest extends TestCase
     public function testGetMinPotential()
     {
         $minPotential = $this->collection->getMinPotential();
-        $this->assertEquals(10, $minPotential);
+        $this->assertEquals(18, $minPotential);
     }
 
     /**
@@ -138,7 +138,7 @@ class CollectionTest extends TestCase
     public function testGetMaxPotential()
     {
         $maxPotential = $this->collection->getMaxPotential();
-        $this->assertEquals(30, $maxPotential);
+        $this->assertEquals(78, $maxPotential);
     }
 
     /**
