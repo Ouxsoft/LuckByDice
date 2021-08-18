@@ -30,32 +30,36 @@ class Collection implements
      * @var array
      */
     private $dice = [];
+
     /**
      * @var int
      */
     private $modifier;
+
     /**
      * @var int
      */
     private $multiplier;
+
     /**
      * @var int
      */
     private $sides;
+
     /**
      * @var
      */
     private $total;
+    
     /**
      * @var array
      */
     private $diceOutcome;
 
     /**
-     * DiceGroup constructor.
-     *
-     * @param int $sides
+     * Collection constructor.
      * @param int $amount
+     * @param int $sides
      * @param int $modifier
      * @param int $multiplier
      */
@@ -147,7 +151,7 @@ class Collection implements
      */
     public function getMinOutcome() : int
     {
-        return (count($this->dice) * 1);
+        return count($this->dice);
     }
 
     /**
@@ -173,4 +177,27 @@ class Collection implements
         return ($this->total - $this->count()) / ($this->getMaxOutcome() - $this->count());
     }
 
+    /**
+     * Get the minimum potential of a collections
+     *
+     * Takes into account minimal outcome, modifier, and multiplier
+     *
+     * @return int
+     */
+    public function getMinPotential() : int
+    {
+        return ($this->getMinOutcome() + $this->getModifier()) * $this->getMultiplier();
+    }
+
+    /**
+     * Get the maximum potential of a collections
+     *
+     * Takes into account maximum outcome, modifier, and multiplier
+     *
+     * @return int
+     */
+    public function getMaxPotential() : int
+    {
+        return ($this->getMaxOutcome() + $this->getModifier()) * $this->getMultiplier();
+    }
 }

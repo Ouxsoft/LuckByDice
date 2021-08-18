@@ -45,8 +45,9 @@ class CollectionTest extends TestCase
         $multiplier = $this->collection->getMultiplier();
         $this->assertEquals(3, $multiplier);
 
-    //    $this->getExpectedException();
-    //    $collection = new Collection(1, 1);
+        $this->expectException(OutOfRangeException::class);
+        $this->expectExceptionMessage('A collection must have at least one dice.');
+        $invalidCollection = new Collection(0, 6);
     }
 
     /**
@@ -95,6 +96,16 @@ class CollectionTest extends TestCase
     }
 
     /**
+     * @covers \Ouxsoft\LuckByDice\Collection::getLastRollDice
+     */
+    public function testGetLastRollDice()
+    {
+        $this->collection->roll();
+        $lastRoll = $this->collection->getLastRollDice();
+        $this->assertIsArray($lastRoll);
+    }
+
+    /**
      * @covers \Ouxsoft\LuckByDice\Collection::getMinOutcome
      */
     public function testGetMinOutcome()
@@ -112,6 +123,23 @@ class CollectionTest extends TestCase
         $this->assertEquals(24, $maxOutcome);
     }
 
+    /**
+     * @covers \Ouxsoft\LuckByDice\Collection::getMinPotential
+     */
+    public function testGetMinPotential()
+    {
+        $minPotential = $this->collection->getMinPotential();
+        $this->assertEquals(10, $minPotential);
+    }
+
+    /**
+     * @covers \Ouxsoft\LuckByDice\Collection::getMaxPotential
+     */
+    public function testGetMaxPotential()
+    {
+        $maxPotential = $this->collection->getMaxPotential();
+        $this->assertEquals(30, $maxPotential);
+    }
 
     /**
      * @covers \Ouxsoft\LuckByDice\Collection::getOutcomePercent

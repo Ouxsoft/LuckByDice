@@ -142,13 +142,12 @@ class Turn implements TurnInterface
 
             $total += ($rollOutcome + $collection->getModifier()) * $collection->getMultiplier();
 
-            $minPotential += ($collection->getMinOutcome() + $collection->getModifier() * $collection->getMultiplier());
-            $maxPotential += ($collection->getMaxOutcome() + $collection->getModifier() * $collection->getMultiplier());
-
             $collectionOutcome[] = [
                 'dice' => $collection->getLastRollDice(),
                 'modifier' => $collection->getModifier(),
-                'multiplier' => $collection->getMultiplier()
+                'multiplier' => $collection->getMultiplier(),
+                'min' => $collection->getMinPotential(),
+                'max' => $collection->getMaxPotential()
             ];
 
             $outcomePercent = $collection->getOutcomePercent();
@@ -163,13 +162,53 @@ class Turn implements TurnInterface
 
         $this->total = $total;
 
-        if( $this->limitMinRoll && ($total < $minPotential)) {
-            $this->total = $minPotential;
-        } elseif ( $this->limitMaxRoll && ($total > $maxPotential)) {
-            $this->total = $maxPotential;
+        // enforce min limit
+        if($this->limitMinRoll) {
+            $cupMinPotential = $this->getMinPotential();
+
+            if ($total < $cupMinPotential) {
+                $this->total = $cupMinPotential;
+            }
+        }
+
+        // enforce max limit
+        if($this->limitMaxRoll) {
+            $cupMaxPotential = $this->getMaxPotential();
+
+            if ($total < $cupMaxPotential) {
+                $this->total = $cupMaxPotential;
+            }
         }
 
         return $this->total;
+    }
+
+    /**
+     * Get minimum potential of all collections in cup
+     *
+     * @return int
+     */
+    public function getMinPotential() : int
+    {
+        $total = 0;
+        foreach($this->cup as $collection){
+            $total += $collection->getMinPotential();
+        }
+        return $total;
+    }
+
+    /**
+     * Get maximum potential of all collections in cup
+     *
+     * @return int
+     */
+    public function getMaxPotential() : int
+    {
+        $total = 0;
+        foreach($this->cup as $collection){
+            $total += $collection->getMaxPotential();
+        }
+        return $total;
     }
 
     /**
@@ -179,6 +218,14 @@ class Turn implements TurnInterface
     public function getLastRollCollection() : array
     {
         return $this->collectionOutcome;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNotation() : string
+    {
+        return $this->notation->get();
     }
 
     /**
