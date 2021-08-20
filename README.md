@@ -22,6 +22,9 @@ Example of supported dice notation: `d4,2d6,3d8+2,4d10*2,5d20+10*2,6d20-2,d%`
 This graph shows 10,000 consecutive `10d10` LuckByDice rolls. Notice how outcome impacts luck and vice versa.
 <p align="center"><img src="https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/statistics.png" alt="statistics"/></p>
 
+This shows an example of from an CLI interactive test:
+<p align="center"><img src="https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/interactive-test.png" alt="statistics"/></p>
+
 ## Installation
 
 
@@ -38,6 +41,8 @@ Install with [Git](https://git-scm.com/):
 ```shell script
 git clone git@github.com:ouxsoft/LuckByDice.git
 ```
+
+
 
 ## Documentation
 Read our docs for usage [luckbydice.readthedocs.io](https://luckbydice.readthedocs.io).
