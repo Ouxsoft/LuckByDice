@@ -7,7 +7,6 @@
 <a href="https://codecov.io/gh/ouxsoft/LuckByDice">
   <img src="https://codecov.io/gh/ouxsoft/LuckByDice/branch/main/graph/badge.svg?token=XGN6H6MAUP"/>
 </a>
-
 </p>
 
 <p align="center">
@@ -41,8 +40,6 @@ Install with [Git](https://git-scm.com/):
 ```shell script
 git clone git@github.com:ouxsoft/LuckByDice.git
 ```
-
-
 
 ## Documentation
 Read our docs for usage [luckbydice.readthedocs.io](https://luckbydice.readthedocs.io).
