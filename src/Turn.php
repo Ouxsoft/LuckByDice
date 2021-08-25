@@ -143,6 +143,7 @@ class Turn implements TurnInterface
             $total += ($rollOutcome + $collection->getModifier()) * $collection->getMultiplier();
 
             $collectionOutcome[] = [
+                'sides' => $collection->getSides(),
                 'dice' => $collection->getLastRollDice(),
                 'modifier' => $collection->getModifier(),
                 'multiplier' => $collection->getMultiplier(),
