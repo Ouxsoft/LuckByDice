@@ -13,8 +13,6 @@ use Ouxsoft\LuckByDice\Factory\TurnFactory;
 function drawCup($value){
     $faceValue = str_pad($value, 8, ' ', STR_PAD_BOTH);
     return <<<TEXT
-
-
                ( (
                 ) )
             ..........
@@ -65,8 +63,8 @@ function drawScale($min, $max)
 {
     return <<<TEXT
 
-<--{$min}------------------------------------------------{$max}-->
-     Min                                              Max
+ <--{$min}-----------------------------------------------{$max}-->
+    Min                                              Max
 
 
 TEXT;
@@ -79,19 +77,20 @@ $turn->notation->set($notation);
 
 $roll = $turn->roll();
 
-echo '' . PHP_EOL;
-echo ' ' . PHP_EOL;
+echo PHP_EOL . PHP_EOL;
 echo ' Rolling Cup Full of Dice!' . PHP_EOL;
 echo ' ' . PHP_EOL;
-echo ' Luck : ' . $turn->getLuck() . PHP_EOL;
-echo ' Notation : '. $turn->getNotation() . PHP_EOL;
-echo drawCup($roll);
+echo ' Luck : ' . $turn->getLuck() . PHP_EOL . PHP_EOL;
+echo ' Cup '. $turn->getNotation() . PHP_EOL;
 echo drawScale($turn->getMinPotential(),$turn->getMaxPotential());
+echo drawCup($roll);
 
 foreach($turn->getLastRollCollection() as $collection) {
-    echo drawCollection($collection['dice']);
-
-    echo '  +' . $collection['modifier'] . '*' . $collection['multiplier'] . PHP_EOL;
+    echo PHP_EOL;
+    echo ' Collection (' . count($collection['dice']) . 'd' . $collection['sides'] . '+' . $collection['modifier'] .
+        ')*' . $collection['multiplier'] . PHP_EOL;
     echo drawScale($collection['min'], $collection['max']);
-
+    echo drawCollection($collection['dice']);
 }
+
+echo PHP_EOL;

@@ -23,7 +23,7 @@ This graph shows 10,000 consecutive `10d10` LuckByDice rolls. Notice how outcome
 <p align="center"><img src="https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/statistics.png" alt="statistics"/></p>
 
 This shows an example of from an CLI interactive test:
-<p align="center"><img src="https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/interactive-test.png" alt="statistics"/></p>
+<img src="https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/interactive-test.png" alt="statistics"/>
 
 ## Installation
 
