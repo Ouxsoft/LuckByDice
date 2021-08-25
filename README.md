@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/logo.png" alt="LuckByDice"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/Ouxsoft/LuckByDice/main/docs/logo.png" alt="LuckByDice"/></p>
 
 <p align="center">
 <a href="https://travis-ci.com/github/ouxsoft/LuckByDice"><img src="https://travis-ci.com/ouxsoft/LuckByDice.svg?branch=main" alt="Build Status"></a>
