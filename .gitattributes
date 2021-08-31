@@ -1,0 +1,17 @@
+#
+# Configure line ending normalisation for this repository.
+# See http://schacon.github.io/git/gitattributes.html for more information.
+#
+
+# Auto detect text files and perform LF normalization
+*       text=auto
+
+*.txt   text
+*.php   text diff=php
+*.xml   text diff=xml
+
+# Shell scripts require LF
+*.sh    text eol=lf
+
+# Batch scripts require CRLF
+*.bat   text eol=crlf

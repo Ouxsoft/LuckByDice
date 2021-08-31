@@ -1,4 +1,4 @@
-#!/usr/bin/php
+#!/usr/local/bin/php
 <?php
 /**
  * $ php Game.php 2d10,6d6+2*1
@@ -6,91 +6,44 @@
 
 namespace Ouxsoft\LuckByDiceTests\Feature\Statistics;
 
-require '../../../vendor/autoload.php';
+require __DIR__ . '/../../../vendor/autoload.php';
 
 use Ouxsoft\LuckByDice\Factory\TurnFactory;
-
-function drawCup($value){
-    $faceValue = str_pad($value, 8, ' ', STR_PAD_BOTH);
-    return <<<TEXT
-               ( (
-                ) )
-            ..........
-            |        |
-      TOTAL |$faceValue|] 
-             \      /     
-              `----'
-
-
-TEXT;
-}
-
-function drawDice($roll, $sides){
-    $sides = str_pad($sides, 5, '_', STR_PAD_BOTH);
-    $roll = str_pad($roll, 5, ' ', STR_PAD_BOTH);
-    return [
-        "   .-----.",
-        "  /$sides/|",
-        " |     | |",
-        " |$roll| |",
-        " |_____|/ "
-    ];
-}
-
-function drawCollection($dice){
-
-    $drawnDice = [];
-    foreach($dice as $die){
-        $drawnDice[] = drawDice($die['roll'], $die['sides']);
-    }
-
-    $screenWidth = exec('tput cols');
-    $dieHeight = count($drawnDice[0]);
-    $diceWidth = strlen($drawnDice[0][0]);
-    $output = '';
-
-    for($line = 0; $line < $dieHeight; $line++){
-        foreach($drawnDice as $key => $drawnDie){
-            $output .= $drawnDie[$line];
-        }
-        $output .= PHP_EOL;
-    }
-
-    return $output;
-}
-
-function drawScale($min, $max)
-{
-    return <<<TEXT
-
- <--{$min}-----------------------------------------------{$max}-->
-    Min                                              Max
-
-
-TEXT;
-}
+use Ouxsoft\LuckByDice\AsciiDraw;
 
 $turn = TurnFactory::getInstance();
+$draw = new AsciiDraw();
 
 $notation = !empty($argv[1]) ? $argv[1] : '10d6,1d2+12*2,3d3,d%';
 $turn->notation->set($notation);
 
-$roll = $turn->roll();
+do {
+    $roll = $turn->roll();
 
-echo PHP_EOL . PHP_EOL;
-echo ' Rolling Cup Full of Dice!' . PHP_EOL;
-echo ' ' . PHP_EOL;
-echo ' Luck : ' . $turn->getLuck() . PHP_EOL . PHP_EOL;
-echo ' Cup '. $turn->getNotation() . PHP_EOL;
-echo drawScale($turn->getMinPotential(),$turn->getMaxPotential());
-echo drawCup($roll);
+    echo PHP_EOL .
+        PHP_EOL .
+        ' Rolling Cup Full of Dice!' . PHP_EOL .
+        ' ' . PHP_EOL .
+        ' Luck : ' . $turn->getLuck() .
+        PHP_EOL .
+        PHP_EOL .
+        ' Cup '. $turn->getNotation() . PHP_EOL .
+        $draw->scale($turn->getMinPotential(),$turn->getMaxPotential()) .
+        $draw->cup($roll);
 
-foreach($turn->getLastRollCollection() as $collection) {
-    echo PHP_EOL;
-    echo ' Collection (' . count($collection['dice']) . 'd' . $collection['sides'] . '+' . $collection['modifier'] .
-        ')*' . $collection['multiplier'] . PHP_EOL;
-    echo drawScale($collection['min'], $collection['max']);
-    echo drawCollection($collection['dice']);
-}
+    foreach($turn->getLastRollCollection() as $collection) {
+        echo PHP_EOL .
+            'Collection (' . count($collection['dice']) . 'd' . $collection['sides'] . '+' . $collection['modifier'] .
+            ')*' .
+            $collection['multiplier'] . PHP_EOL .
+            $draw->scale($collection['min'], $collection['max']) .
+            $draw->collection($collection['dice']);
+    }
 
-echo PHP_EOL;
+    echo PHP_EOL .
+        'Roll again? (y/n)?';
+
+    $handle = fopen ("php://stdin","r");
+    $line = fgets($handle);
+} while (trim($line) == 'y');
+fclose($handle);

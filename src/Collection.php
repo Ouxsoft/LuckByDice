@@ -47,7 +47,7 @@ class Collection implements
     private $sides;
 
     /**
-     * @var
+     * @var int
      */
     private $total;
     

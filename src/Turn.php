@@ -156,6 +156,9 @@ class Turn implements TurnInterface
         }
 
         // if enabled apply luck to total
+        // luck needs to modify an Outcome
+        // distribute luck to collection
+        // if modifier granter then total add luck dice to outcome only not collection
         $total = $this->luck->modify($total);
 
         // TODO: add luck dice
