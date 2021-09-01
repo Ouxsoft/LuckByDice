@@ -22,7 +22,7 @@ do {
 
     echo PHP_EOL .
         PHP_EOL .
-        ' Rolling Cup Full of Dice!' . PHP_EOL .
+        ' A cup with collections of similar dice was rolled and a total was computed' . PHP_EOL .
         ' ' . PHP_EOL .
         ' Luck : ' . $turn->getLuck() .
         PHP_EOL .
@@ -43,7 +43,7 @@ do {
     echo PHP_EOL .
         'Roll again? (y/n)?';
 
-    $handle = fopen ("php://stdin","r");
+    $handle = fopen('php://stdin','r');
     $line = fgets($handle);
 } while (trim($line) == 'y');
 fclose($handle);

@@ -15,19 +15,12 @@
 <a href="#tada-php-support" title="PHP Versions Supported"><img alt="PHP Versions Supported" src="https://img.shields.io/badge/php-7.3%20to%208.0-777bb3.svg?logo=php&logoColor=white&labelColor=555555"></a>
 </p>
 
-A library for simulating luck based dice rolls from dice notations written in PHP.
+A library for simulating luck based dice rolls based on dice notations written in PHP.
 
-Example of supported dice notation: 
-```
-d4,2d6,3d8+2,4d10*2,5d20+10*2,6d20-2,d%
-```
+<img src="https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/interactive-test.gif" alt="CLI Test Example"/>
 
 This graph shows 10,000 consecutive `10d10` LuckByDice rolls. Notice how outcome impacts luck and vice versa.
 <p align="center"><img src="https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/statistics.png" alt="statistics"/></p>
-
-CLI interactive test example.
-
-<img src="https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/interactive-test.png" alt="statistics"/>
 
 ## Installation
 
