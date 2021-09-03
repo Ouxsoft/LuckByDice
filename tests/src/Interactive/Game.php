@@ -9,10 +9,10 @@ namespace Ouxsoft\LuckByDiceTests\Feature\Statistics;
 require __DIR__ . '/../../../vendor/autoload.php';
 
 use Ouxsoft\LuckByDice\Factory\TurnFactory;
-use Ouxsoft\LuckByDice\AsciiDraw;
+use Ouxsoft\LuckByDice\Draw\Ascii;
 
 $turn = TurnFactory::getInstance();
-$draw = new AsciiDraw();
+$draw = new Ascii();
 
 $notation = !empty($argv[1]) ? $argv[1] : '10d6,1d2+12*2,3d3,d%';
 $turn->notation->set($notation);

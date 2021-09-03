@@ -17,7 +17,7 @@
 
 A library for simulating luck based dice rolls based on dice notations written in PHP.
 
-<img src="https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/interactive-test.gif" alt="CLI Test Example"/>
+<img src="https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/interactive-test.gif" width="600" alt="CLI Test Example"/>
 
 This graph shows 10,000 consecutive `10d10` LuckByDice rolls. Notice how outcome impacts luck and vice versa.
 <p align="center"><img src="https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/statistics.png" alt="statistics"/></p>
@@ -41,7 +41,13 @@ git clone git@github.com:ouxsoft/LuckByDice.git
 ### Via Docker
 Build and test using [Docker](https://www.docker.com/products/docker-desktop):
 ```
-docker build --target standard --tag luckbydice:latest -f Dockerfile .
+# Build test container
+docker build --target test --tag luckbydice:latest -f Dockerfile .
+
+# Run unit tests
+docker run -i -t luckbydice:latest composer test
+
+# Run interactive test
 docker run -i -t luckbydice:latest tests/src/Interactive/Game.php 4d6+3*2,d4*2,d8
 ```
 
