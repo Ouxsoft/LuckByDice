@@ -12,7 +12,7 @@ declare(strict_types=1);
 
 namespace Ouxsoft\LuckByDice;
 
-use Ouxsoft\LuckByDice\Contract\TurnInterface;
+use Ouxsoft\LuckByDice\Contract\OutcomeInterface;
 
 /**
  * Outcome
@@ -20,7 +20,7 @@ use Ouxsoft\LuckByDice\Contract\TurnInterface;
  *
  * @package Ouxsoft\LuckByDice
  */
-class Outcome implements OuctomeInterface
+class Outcome implements OutcomeInterface
 {
     /**
      * @var int the minimal that an outcome can be
