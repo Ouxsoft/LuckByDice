@@ -11,14 +11,14 @@
 
 declare(strict_types=1);
 
-namespace Ouxsoft\LuckByDice;
+namespace Ouxsoft\LuckByDice\Draw;
 
 /**
  * Class AsciiDraw
  * Aids in visualizing objects output to CLI
  * @package Ouxsoft\LuckByDice
  */
-class AsciiDraw
+class Ascii
 {
 
     /**

@@ -68,7 +68,6 @@ RUN dos2unix /application/tests/src/Interactive/Game.php
 # Install composer and vendor packages
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 ENV PATH="~/.composer/vendor/bin:./vendor/bin:${PATH}"
-RUN composer install --no-dev --no-interaction
 
 # allow webserver to use modify application
 RUN chown -R $group:$user /application/
@@ -78,9 +77,10 @@ USER $user
 #######################################
 # Testing (Development Environment)
 #######################################
-FROM build AS testing
+FROM build AS test
 
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
+RUN composer install --no-interaction
 
 RUN pecl install xdebug \
     && echo "xdebug.remote_enable=on\n" >> "$PHP_INI_DIR/conf.d/docker-php-ext-xdebug.ini" \
@@ -95,6 +95,7 @@ RUN pecl install xdebug \
 # Standard (Production Environment)
 #######################################
 FROM build AS standard
+RUN composer install --no-dev --no-interaction
 
 #######################################
 # Sphinx (Build documentation)
