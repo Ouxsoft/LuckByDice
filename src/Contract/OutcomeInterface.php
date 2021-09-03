@@ -12,6 +12,8 @@ declare(strict_types=1);
 
 namespace Ouxsoft\LuckByDice\Contract;
 
+use Ouxsoft\LuckByDice\Dice;
+
 interface OutcomeInterface
 {
 
