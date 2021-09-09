@@ -11,6 +11,10 @@ All releases must adhere to [SemVer 2](https://semver.org/) naming convention an
 ## LivingMarkup [Unreleased]
 Released: TBD. Notable changes:
 
+## LivingMarkup 1.3.0
+Released: 2021-09-09. Notable changes:
+* Added: Dice values [9bcde49](https://github.com/Ouxsoft/LuckByDice/commit/9bcde496886b4da7a5fbf36a97e848a3723944d6)
+
 ## LivingMarkup 1.2.0
 Released: 2021-08-18. Notable changes: [1683b63](https://github.com/Ouxsoft/LuckByDice/commit/1683b639ab0e06b595b9bcfb7d201285fee7e52d)
 * Added: Min and Max potential calculations to cup and collection.
