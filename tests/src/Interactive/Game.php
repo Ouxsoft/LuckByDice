@@ -21,7 +21,6 @@ $turn->notation->set($notation);
 do {
     $roll = $turn->roll();
 
-    var_export($roll);
     echo PHP_EOL .
         PHP_EOL .
         ' A cup with collections of similar dice was rolled and a total was computed' . PHP_EOL .
