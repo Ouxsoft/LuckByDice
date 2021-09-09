@@ -47,9 +47,9 @@ class Turn implements TurnInterface
      */
     private $limitMaxRoll = false;
     /**
-     * @var array
+     * @var array containing of Outcome
      */
-    private $collectionOutcome;
+    private $outcome;
 
     /**
      * Turn constructor.
@@ -135,21 +135,11 @@ class Turn implements TurnInterface
         $total = 0;
         $minPotential = 0;
         $maxPotential = 0;
-        $collectionOutcome = [];
 
         foreach ($this->cup as $collection) {
             $rollOutcome = $collection->roll();
 
             $total += ($rollOutcome + $collection->getModifier()) * $collection->getMultiplier();
-
-            $collectionOutcome[] = [
-                'sides' => $collection->getSides(),
-                'dice' => $collection->getLastRollDice(),
-                'modifier' => $collection->getModifier(),
-                'multiplier' => $collection->getMultiplier(),
-                'min' => $collection->getMinPotential(),
-                'max' => $collection->getMaxPotential()
-            ];
 
             $outcomePercent = $collection->getOutcomePercent();
             $this->luck->update($outcomePercent);
@@ -162,7 +152,6 @@ class Turn implements TurnInterface
         $total = $this->luck->modify($total);
 
         // TODO: add luck dice
-        $this->collectionOutcome = $collectionOutcome;
 
         $this->total = $total;
 
@@ -216,12 +205,12 @@ class Turn implements TurnInterface
     }
 
     /**
-     * Gets the last roll collection
-     * @return array
+     * Gets a Cup containing all Collections
+     * @return Cup
      */
-    public function getLastRollCollection() : array
+    public function getCup() : Cup
     {
-        return $this->collectionOutcome;
+        return $this->cup;
     }
 
     /**

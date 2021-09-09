@@ -9,6 +9,7 @@ namespace Ouxsoft\LuckByDiceTests\Feature\Statistics;
 require __DIR__ . '/../../../vendor/autoload.php';
 
 use Ouxsoft\LuckByDice\Factory\TurnFactory;
+use Ouxsoft\LuckByDice\Collection;
 use Ouxsoft\LuckByDice\Draw\Ascii;
 
 $turn = TurnFactory::getInstance();
@@ -20,6 +21,7 @@ $turn->notation->set($notation);
 do {
     $roll = $turn->roll();
 
+    var_export($roll);
     echo PHP_EOL .
         PHP_EOL .
         ' A cup with collections of similar dice was rolled and a total was computed' . PHP_EOL .
@@ -31,13 +33,11 @@ do {
         $draw->scale($turn->getMinPotential(),$turn->getMaxPotential()) .
         $draw->cup($roll);
 
-    foreach($turn->getLastRollCollection() as $collection) {
+    foreach($turn->getCup() as $collection) {
         echo PHP_EOL .
-            'Collection (' . count($collection['dice']) . 'd' . $collection['sides'] . '+' . $collection['modifier'] .
-            ')*' .
-            $collection['multiplier'] . PHP_EOL .
-            $draw->scale($collection['min'], $collection['max']) .
-            $draw->collection($collection['dice']);
+            'Collection: ' . $collection->getNotation() . PHP_EOL .
+            $draw->scale($collection->getMinOutcome(), $collection->getMaxOutcome()) .
+            $draw->collection($collection);
     }
 
     echo PHP_EOL .

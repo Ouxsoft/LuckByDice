@@ -15,11 +15,13 @@ namespace Ouxsoft\LuckByDice;
 use Countable;
 use OutOfRangeException;
 use Ouxsoft\LuckByDice\Contract\CollectionInterface;
+use Ouxsoft\LuckByDice\Contract\OutcomeInterface;
 
 /**
  * Class Collection
- * A Collection resides inside a Cup and contains one or more Dice with same amount of sides as well as a modifier and
- * a multiplier for the roll outcome.
+ * A Collection resides inside a Cup and contains one or more Dice with same amount of sides.
+ * A Collection also features a modifier and a multiplier for the roll outcome.
+ * A Collection only contains an Outcome of all dice contained within after it has been rolled.
  * @package Ouxsoft\LuckByDice
  */
 class Collection implements
@@ -45,16 +47,6 @@ class Collection implements
      * @var int
      */
     private $sides;
-
-    /**
-     * @var int
-     */
-    private $total;
-    
-    /**
-     * @var array
-     */
-    private $diceOutcome;
 
     /**
      * Collection constructor.
@@ -87,38 +79,48 @@ class Collection implements
     }
 
     /**
-     * Roll each dice for total
+     * Roll each dice and returns Total
      *
      * @return int
      */
     public function roll() : int
     {
-        $total = 0;
-        $diceOutcome = [];
-
-        foreach ($this->dice as $dice) {
-            $roll = $dice->roll();
-            $total += $roll;
-            $diceOutcome[] = [
-                'roll' => $roll,
-                'sides' => $dice->getSides()
-            ];
+        foreach ($this->dice as &$dice) {
+            $dice->roll();
         }
 
-        // store last total
-        $this->total = $total;
-        $this->diceOutcome = $diceOutcome;
-
-        return $this->total;
+        return $this->getTotal();
     }
 
     /**
-     * Get dice from last roll
+     * Gets an array containing Dice
      * @return array
      */
-    public function getLastRollDice() : array
+    public function getDice() : array
     {
-        return $this->diceOutcome;
+        return $this->dice;
+    }
+
+    /**
+     * Get value of rolled dice without modifier or multiplier
+     * @return int
+     */
+    public function getValue() : int
+    {
+        $value = 0;
+        foreach($this->dice as $dice){
+            $value += $dice->getValue();
+        }
+        return $value;
+    }
+
+    /**
+     * Gets total value of Collection with modifier and multipier applied
+     * @return int
+     */
+    public function getTotal() : int
+    {
+        return ($this->getValue() + $this->getModifier()) * $this->getMultiplier();
     }
 
     /**
@@ -151,7 +153,7 @@ class Collection implements
      */
     public function getMinOutcome() : int
     {
-        return count($this->dice);
+        return $this->count();
     }
 
     /**
@@ -160,7 +162,7 @@ class Collection implements
      */
     public function getMaxOutcome() : int
     {
-        return (count($this->dice) * $this->sides);
+        return ($this->count() * $this->sides);
     }
 
     /**
@@ -174,7 +176,7 @@ class Collection implements
      */
     public function getOutcomePercent() : float
     {
-        return ($this->total - $this->count()) / ($this->getMaxOutcome() - $this->count());
+        return ($this->getValue() - $this->count()) / ($this->getMaxOutcome() - $this->count());
     }
 
     /**
@@ -199,5 +201,17 @@ class Collection implements
     public function getMaxPotential() : int
     {
         return ($this->getMaxOutcome() + $this->getModifier()) * $this->getMultiplier();
+    }
+
+    /**
+     * Get the notation for the collection
+     * @return string
+     */
+    public function getNotation() : string
+    {
+        return $this->count() . 'd' .
+            $this->getSides() . '+' .
+            $this->getModifier() . '*' .
+            $this->getMultiplier();
     }
 }

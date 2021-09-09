@@ -21,17 +21,43 @@ Turn
 
     :returns: string -- 
 
+  .. php:method:: public getCup () -> Cup
+
+    Gets a :class:`Cup` containing all Collections
+
+    :returns: :class:`Cup` -- 
+
+  .. php:method:: public getLimitMaxRoll ()
+
+    Get whether a limit is set on max roll
+
+
+  .. php:method:: public getLimitMinRoll ()
+
+    Get whether a limit is set on min roll
+
+
   .. php:method:: public getLuck () -> int
 
     Get :class:`Luck`
 
     :returns: int -- 
 
+  .. php:method:: public getMaxPotential () -> int
+
+    Get maximum potential of all collections in cup
+
+    :returns: int -- 
+
+  .. php:method:: public getMinPotential () -> int
+
+    Get minimum potential of all collections in cup
+
+    :returns: int -- 
+
   .. php:method:: public getNotation () -> string
 
-    Get cup notation
-
-    :returns: string -- "1d4+3*2,1d5,d5,10d5"
+    :returns: string -- 
 
   .. php:method:: public roll () -> int
 
@@ -39,15 +65,21 @@ Turn
 
     :returns: int -- total
 
+  .. php:method:: public setLimitMaxRoll (bool $limitMaxRoll)
+
+    Set whether outcome modified by luck can exceed max dice potential
+
+    :param bool $limitMaxRoll:
+
+  .. php:method:: public setLimitMinRoll (bool $limitMinRoll)
+
+    Set whether outcome modified by luck can exceed max dice potential
+
+    :param bool $limitMinRoll:
+
   .. php:method:: public setLuck (int $luck)
 
     Set :class:`Luck`
 
     :param int $luck:
-
-  .. php:method:: public setNotation (string $notation)
-
-    Set cup notation
-
-    :param string $notation:
 

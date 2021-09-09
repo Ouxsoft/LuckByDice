@@ -15,12 +15,16 @@ interface TurnInterface
         Luck $luck,
         string $expression = null
     );
-
-    public function getLuck() : int;
-
+    public function getLuck(): int;
     public function setLuck(int $luck);
-
-    public function roll() : int;
-
-    public function __toString() : string;
+    public function setLimitMinRoll(bool $limitMinRoll): void;
+    public function getLimitMinRoll(): bool;
+    public function setLimitMaxRoll(bool $limitMaxRoll): void;
+    public function getLimitMaxRoll(): bool;
+    public function roll(): int;
+    public function getMinPotential(): int;
+    public function getMaxPotential(): int;
+    public function getCup(): Cup;
+    public function getNotation(): string;
+    public function __toString(): string;
 }

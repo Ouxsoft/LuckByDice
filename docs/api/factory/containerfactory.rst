@@ -5,8 +5,8 @@ ContainerFactory
 
 .. php:class:: ContainerFactory
 
-  .. php:staticmethod:: static buildContainer (AbstractFactoryInterface $abstractFactory)
+  .. php:staticmethod:: static buildContainer (AbstractFactoryInterface $abstractFactory) -> Container
 
     :param AbstractFactoryInterface $abstractFactory:
-    :returns: Container
+    :returns: :class:`Container` -- 
 

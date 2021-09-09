@@ -48,6 +48,7 @@ class CollectionTest extends TestCase
         $this->expectException(OutOfRangeException::class);
         $this->expectExceptionMessage('A collection must have at least one dice.');
         $invalidCollection = new Collection(0, 6);
+        unset($invalidCollection);
     }
 
     /**
@@ -93,16 +94,6 @@ class CollectionTest extends TestCase
     {
         $sides = $this->collection->getSides();
         $this->assertEquals(6, $sides);
-    }
-
-    /**
-     * @covers \Ouxsoft\LuckByDice\Collection::getLastRollDice
-     */
-    public function testGetLastRollDice()
-    {
-        $this->collection->roll();
-        $lastRoll = $this->collection->getLastRollDice();
-        $this->assertIsArray($lastRoll);
     }
 
     /**
