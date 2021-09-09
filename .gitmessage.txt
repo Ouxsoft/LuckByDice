@@ -1,0 +1,10 @@
+# Summary, imperative, start upper case, don't end with period
+##########50 characters ##########################
+Issue ID: Subject
+##########72 characters ################################################
+Problem
+# Problem, task, reason for commit
+Solution
+# Solution or list of Changes
+Notes
+# Special instructions, testing steps, etc.
