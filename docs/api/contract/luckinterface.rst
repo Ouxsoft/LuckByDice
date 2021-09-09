@@ -13,9 +13,6 @@ LuckInterface
   .. php:method:: public get ()
 
 
-  .. php:method:: public getPhi ()
-
-
   .. php:method:: public set (int $luck)
 
     :param int $luck:

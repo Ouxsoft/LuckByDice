@@ -6,6 +6,7 @@ echo "Run Doxyfile"
 /usr/bin/doxygen Doxyfile
 
 echo "run Doxyphp2sphinx"
+/usr/bin/doxygen Doxyfile
 /usr/local/bin/doxyphp2sphinx Ouxsoft::LuckByDice
 
 echo "Complete"

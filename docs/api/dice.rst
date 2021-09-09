@@ -16,7 +16,19 @@ Dice
 
     :returns: int -- 
 
+  .. php:method:: public getValue () -> int
+
+    :returns: int -- 
+
   .. php:method:: public roll () -> int
 
     :returns: int -- 
+
+  .. php:method:: public setSides (int $sides)
+
+    :param int $sides:
+
+  .. php:method:: public setValue (int $value)
+
+    :param int $value:
 

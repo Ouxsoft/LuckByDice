@@ -12,19 +12,19 @@ namespace Ouxsoft\LuckByDice\Contract;
 
 interface CollectionInterface
 {
-    public function __construct(int $amount, int $sides, int $modifier, int $multiplier);
-
-    public function count() : int;
-
-    public function roll() : int;
-
-    public function getLastRollDice() : array;
-
-    public function getModifier() : int;
-
-    public function getMultiplier() : int;
-
-    public function getSides() : int;
-
-    public function getOutcomePercent() : float;
+    public function __construct(int $amount, int $sides, int $modifier = 1, int $multiplier = 1);
+    public function count(): int;
+    public function roll(): int;
+    public function getDice(): array;
+    public function getValue(): int;
+    public function getTotal(): int;
+    public function getModifier(): int;
+    public function getMultiplier(): int;
+    public function getSides(): int;
+    public function getMinOutcome(): int;
+    public function getMaxOutcome(): int;
+    public function getOutcomePercent(): float;
+    public function getMinPotential(): int;
+    public function getMaxPotential(): int;
+    public function getNotation(): string;
 }

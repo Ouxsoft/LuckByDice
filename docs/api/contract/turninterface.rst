@@ -16,7 +16,22 @@ TurnInterface
   .. php:method:: public __toString ()
 
 
+  .. php:method:: public getCup ()
+
+
+  .. php:method:: public getLimitMaxRoll ()
+
+
+  .. php:method:: public getLimitMinRoll ()
+
+
   .. php:method:: public getLuck ()
+
+
+  .. php:method:: public getMaxPotential ()
+
+
+  .. php:method:: public getMinPotential ()
 
 
   .. php:method:: public getNotation ()
@@ -25,11 +40,15 @@ TurnInterface
   .. php:method:: public roll ()
 
 
+  .. php:method:: public setLimitMaxRoll (bool $limitMaxRoll)
+
+    :param bool $limitMaxRoll:
+
+  .. php:method:: public setLimitMinRoll (bool $limitMinRoll)
+
+    :param bool $limitMinRoll:
+
   .. php:method:: public setLuck (int $luck)
 
     :param int $luck:
-
-  .. php:method:: public setNotation (string $notation)
-
-    :param string $notation:
 

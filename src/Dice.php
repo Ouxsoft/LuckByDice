@@ -17,12 +17,20 @@ use OutOfRangeException;
 
 /**
  * Class Dice
- * A dice has two or more sides and can be roll
+ * A dice has two or more sides, can be roll, and features a value after rolling
  * @package Ouxsoft\LuckByDice
  */
 class Dice implements DiceInterface
 {
+    /**
+     * @var int the total number of difference sides marked with dots/pips
+     */
     private $sides;
+
+    /**
+     * @var int the state of the roll. What number is on the surface after a roll. An unrolled dice has no value
+     */
+    private $value;
 
     /**
      * Dice constructor.
@@ -42,14 +50,40 @@ class Dice implements DiceInterface
      */
     public function roll() : int
     {
-        return mt_rand(1, $this->sides);
+        $this->value = mt_rand(1, $this->sides);
+        return $this->value;
     }
 
     /**
      * @return int
      */
-    public function getSides() : int
+    public function getSides(): int
     {
         return $this->sides;
     }
+
+    /**
+     * @param int $sides
+     */
+    public function setSides(int $sides): void
+    {
+        $this->sides = $sides;
+    }
+
+    /**
+     * @return int
+     */
+    public function getValue(): ?int
+    {
+        return $this->value;
+    }
+
+    /**
+     * @param int $value
+     */
+    public function setValue(int $value): void
+    {
+        $this->value = $value;
+    }
+
 }

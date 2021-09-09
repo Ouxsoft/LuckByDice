@@ -95,6 +95,7 @@ RUN pecl install xdebug \
 # Standard (Production Environment)
 #######################################
 FROM build AS standard
+
 RUN composer install --no-dev --no-interaction
 
 #######################################
@@ -126,9 +127,8 @@ RUN pip install sphinxcontrib-phpdomain \
  && pip install sphinx_rtd_theme \
  && pip install doxyphp2sphinx
 
-# Need rstgenerator.py from https://github.com/silverfoxy/doxyphp2sphinx
-# otherwise docs won't build
-# PR made https://github.com/mike42/doxyphp2sphinx/pull/5
+# Install rstgenerator.py for build https://github.com/silverfoxy/doxyphp2sphinx
+# PR pending made https://github.com/mike42/doxyphp2sphinx/pull/5
 
 RUN apt-get update \
  && apt-get install --no-install-recommends -y \
@@ -139,6 +139,13 @@ RUN apt-get update \
  && wget https://raw.githubusercontent.com/silverfoxy/doxyphp2sphinx/master/doxyphp2sphinx/rstgenerator.py \
     -O /usr/local/lib/python3.7/dist-packages/doxyphp2sphinx/rstgenerator.py
 
+COPY docs /app/docs
+COPY src /app/src
+
 WORKDIR "/app/docs"
+
+RUN doxygen Doxyfile
+RUN doxyphp2sphinx Ouxsoft::LuckByDice
+
 
 SHELL ["/bin/bash", "-c"]

@@ -12,6 +12,7 @@ ConcreteFactory
   .. php:method:: public makeLuck ()
 
 
-  .. php:method:: public makeNotation ()
+  .. php:method:: public makeNotation (Container $container)
 
+    :param Container $container:
 

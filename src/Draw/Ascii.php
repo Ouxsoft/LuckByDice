@@ -13,6 +13,8 @@ declare(strict_types=1);
 
 namespace Ouxsoft\LuckByDice\Draw;
 
+use Ouxsoft\LuckByDice\Collection;
+
 /**
  * Class AsciiDraw
  * Aids in visualizing objects output to CLI
@@ -20,7 +22,6 @@ namespace Ouxsoft\LuckByDice\Draw;
  */
 class Ascii
 {
-
     /**
      * @param int $value the outcome for the cup
      * @return string
@@ -59,15 +60,15 @@ class Ascii
     }
 
     /**
-     * @param array $dice
+     * @param Collection $collection
      * @return string
      */
-    public function collection(array $dice) : string
+    public function collection(Collection $collection) : string
     {
-
+        // build an array of dice to be combined line by line
         $drawnDice = [];
-        foreach($dice as $die){
-            $drawnDice[] = $this->dice($die['roll'], $die['sides']);
+        foreach($collection->getDice() as $die){
+            $drawnDice[] = $this->dice($die->getValue(), $die->getSides());
         }
 
         $screenWidth = exec('tput cols');

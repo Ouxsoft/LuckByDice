@@ -44,11 +44,15 @@ Build and test using [Docker](https://www.docker.com/products/docker-desktop):
 # Build test container
 docker build --target test --tag luckbydice:latest -f Dockerfile .
 
-# Run unit tests
-docker run -i -t luckbydice:latest composer test
+# Run Interactive test
+docker run -it luckbydice:latest tests/src/Interactive/Game.php 4d6+3*2,d4*2,d8
 
-# Run interactive test
-docker run -i -t luckbydice:latest tests/src/Interactive/Game.php 4d6+3*2,d4*2,d8
+# Run Unit tests
+docker run -it --mount type=bind,source="$(pwd)"/,target=/app luckbydice:latest composer test
+
+# Generate Docs
+docker build --target docs --tag luckbydice:docs-latest -f Dockerfile .
+docker run -it --mount type=bind,source="$(pwd)"/docs,target=/app/docs luckbydice:docs-latest bash -c "doxygen Doxyfile && doxyphp2sphinx Ouxsoft::LuckByDice"
 ```
 
 ## Documentation

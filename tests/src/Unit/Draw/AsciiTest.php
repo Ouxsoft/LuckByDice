@@ -50,8 +50,8 @@ class AsciiTest extends TestCase
         $turn = TurnFactory::getInstance();
         $turn->notation->set('10d6,1d2+12*2,3d3,d%');
         $turn->roll();
-        foreach($turn->getLastRollCollection() as $collection){
-            $this->assertIsString($this->draw->collection($collection['dice']));
+        foreach($turn->getCup() as $collection){
+            $this->assertIsString($this->draw->collection($collection));
         }
     }
 
