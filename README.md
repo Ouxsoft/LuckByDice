@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/Ouxsoft/LuckByDice/main/docs/logo.png" alt="LuckByDice"/></p>
+# ![LuckByDice](https://raw.githubusercontent.com/Ouxsoft/LuckByDice/main/docs/logo.png)
 
 [![Build Status](https://api.travis-ci.com/Ouxsoft/luckbydice.svg?branch=main&status=passed)](https://travis-ci.com/github/Ouxsoft/LuckByDice)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/08ce9a4f9d2041ed8d815ff6ad664242)](https://www.codacy.com/gh/Ouxsoft/LuckByDice/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ouxsoft/LuckByDice&amp;utm_campaign=Badge_Grade)
@@ -12,24 +12,40 @@
 
 ## Installation
 
-### Via Composer
-Install with [Composer](https://getcomposer.org/download/):
+Install using [Composer](https://getcomposer.org/download/):
 ```shell script
-composer require ouxsoft/luckbydice
+$ composer require ouxsoft/luckbydice
+```
+
+## Basic Usage
+```php
+<?php
+
+use Ouxsoft\LuckByDice\Factory\TurnFactory;
+
+$turn = TurnFactory::getInstance();
+$turn->notation->set('10d10,1d6+3*7,d%');
+echo $turn->roll();
 ```
 
 ## About
-A library for simulating luck based dice rolls based on dice notations written in PHP.
+LuckByDice is a PHP library for simulating luck based dice rolls based on dice notations written in PHP.
 
+**Interactive Test**
 <img src="https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/interactive-test.gif" width="600" alt="CLI Test Example"/>
 
-This graph shows 10,000 consecutive `10d10` LuckByDice rolls. Notice how outcome impacts luck and vice versa.
+**Statistical Test**
+
+This graph illustrates 10,000 consecutive `10d10` rolls. 
 <p align="center"><img src="https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/statistics.png" alt="statistics"/></p>
+Notice how outcome impacts luck and vice versa.
 
-## Documentation
-Read our docs for usage [luckbydice.readthedocs.io](https://luckbydice.readthedocs.io).
+### Documentation
+*  [Dice Notation](https://luckbydice.readthedocs.io/en/latest/project/dice-notation.html)
+*  [Luck](https://luckbydice.readthedocs.io/en/latest/project/luck.html)
+*  [Classes](https://luckbydice.readthedocs.io/en/latest/api.html)
 
-## Contributing
+### Contributing
 LuckByDice is an open source project. If you find a problem or want to discuss new features or improvements
 please create an issue, and/or if possible create a pull request.
 
