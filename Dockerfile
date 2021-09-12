@@ -83,13 +83,9 @@ RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 RUN composer install --no-interaction
 
 RUN pecl install xdebug \
-    && echo "xdebug.remote_enable=on\n" >> "$PHP_INI_DIR/conf.d/docker-php-ext-xdebug.ini" \
-    && echo "xdebug.remote_autostart=on\n" >> "$PHP_INI_DIR/conf.d/docker-php-ext-xdebug.ini" \
-    && echo "xdebug.remote_port=9000\n" >> "$PHP_INI_DIR/conf.d/docker-php-ext-xdebug.ini" \
-    && echo "xdebug.remote_handler=dbgp\n" >> "$PHP_INI_DIR/conf.d/docker-php-ext-xdebug.ini" \
-    && echo "xdebug.remote_connect_back=1\n" >> "$PHP_INI_DIR/conf.d/docker-php-ext-xdebug.ini" \
-    && docker-php-ext-enable xdebug \
-    && rm -rf /tmp/*
+ && echo "xdebug.mode=coverage\n" >> "$PHP_INI_DIR/conf.d/docker-php-ext-xdebug.ini" \
+ && docker-php-ext-enable xdebug \
+ && rm -rf /tmp/*
 
 #######################################
 # Standard (Production Environment)

@@ -31,7 +31,7 @@ class Collection implements
     /**
      * @var array
      */
-    private $dice = [];
+    public $dice = [];
 
     /**
      * @var int
@@ -115,12 +115,60 @@ class Collection implements
     }
 
     /**
-     * Gets total value of Collection with modifier and multipier applied
+     * Get bonus of dice without modifier or multiplier
+     * @return int
+     */
+    public function getBonus() : int
+    {
+        $bonus = 0;
+        foreach($this->dice as $dice){
+            $bonus += $dice->getBonus();
+        }
+        return $bonus;
+    }
+
+    /**
+     * Distributes a new bonus across all dice
+     * @param int $amount
+     * @return int returns the remaining bonus amount left to distribute
+     */
+    public function setBonus(int $amount) : int
+    {
+        // distribute bonus to all dice
+        foreach($this->dice as &$dice) {
+            if($amount == 0) {
+                $dice->setBonus(0);
+                continue;
+            }
+
+            // a dices bonus may not exceed the amount of sides
+            $bonus = $dice->getSides() - $dice->getValue();
+            if($amount > $bonus){
+                $dice->setBonus($bonus);
+                $amount -= $bonus;
+            } else {
+                $dice->setBonus($amount);
+                $amount = 0;
+            }
+        }
+
+        // distribute bonus by rearranging dice
+        shuffle($this->dice);
+
+        return $amount;
+    }
+
+    /**
+     * Gets total value of each dice within Collection with modifier and multiplier applied
      * @return int
      */
     public function getTotal() : int
     {
-        return ($this->getValue() + $this->getModifier()) * $this->getMultiplier();
+        $total = 0;
+        foreach($this->dice as $dice){
+            $total += $dice->getTotal();
+        }
+        return ($total + $this->getModifier()) * $this->getMultiplier();
     }
 
     /**

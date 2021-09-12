@@ -16,7 +16,9 @@ $turn = TurnFactory::getInstance();
 $draw = new Ascii();
 
 $notation = !empty($argv[1]) ? $argv[1] : '10d6,1d2+12*2,3d3,d%';
+$luck = !empty($argv[2]) ? $argv[2] : '0';
 $turn->notation->set($notation);
+$turn->setLuck($luck);
 
 do {
     $roll = $turn->roll();

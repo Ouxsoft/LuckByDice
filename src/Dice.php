@@ -29,8 +29,30 @@ class Dice implements DiceInterface
 
     /**
      * @var int the state of the roll. What number is on the surface after a roll. An unrolled dice has no value
+     *          the value is not the total as a dices face value may be modified by luck algorithms
      */
     private $value;
+
+    /**
+     * @var int the amount to change the dices value based on luck
+     */
+    private $bonus;
+
+    /**
+     * @return int
+     */
+    public function getBonus(): int
+    {
+        return $this->bonus;
+    }
+
+    /**
+     * @param int $bonus
+     */
+    public function setBonus(int $bonus): void
+    {
+        $this->bonus = $bonus;
+    }
 
     /**
      * Dice constructor.
@@ -76,6 +98,16 @@ class Dice implements DiceInterface
     public function getValue(): ?int
     {
         return $this->value;
+    }
+
+    /**
+     * The dices value with bonus from luck applied
+     *
+     * @return int|null
+     */
+    public function getTotal(): int
+    {
+        return $this->value + $this->bonus;
     }
 
     /**

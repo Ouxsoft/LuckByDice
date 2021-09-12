@@ -41,7 +41,6 @@ class Luck implements LuckInterface
     public function __construct(int $luck = 0)
     {
         $this->setAdjustment();
-
         $this->set($luck);
     }
 
@@ -75,14 +74,16 @@ class Luck implements LuckInterface
      * Set the luck adjustment algorithm
      * @param int $algorithm
      */
-    public function setAdjustment(int $algorithm = 0) : void
+    public function setAdjustment(int $algorithm = self::DEFAULT_ADJUSTMENT) : void
     {
         switch($algorithm){
             case self::FICKLE_ADJUSTMENT:
                 $this->adjustment = new FickleLuckAdjustment();
+                break;
             case self::DEFAULT_ADJUSTMENT;
             default:
                 $this->adjustment = new DefaultLuckAdjustment();
+                break;
         }
     }
 

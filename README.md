@@ -54,10 +54,10 @@ For local package development use [Docker](https://www.docker.com/products/docke
 # Build test container
 docker build --target test --tag luckbydice:latest -f Dockerfile .
 
-# Run Interactive test
+# Play a Interactive test
 docker run -it luckbydice:latest tests/src/Interactive/Game.php 4d6+3*2,d4*2,d8
 
-# Run Unit tests
+# Run a Unit test
 docker run -it --mount type=bind,source="$(pwd)"/,target=/app luckbydice:latest composer test
 
 # Build Docs

@@ -42,22 +42,28 @@ class Ascii
     }
 
     /**
-     * @param int $roll
+     * @param int $value
+     * @param int $total
      * @param int $sides
      * @return string[]
      */
-    public function dice(int $roll, int $sides) : array
+    public function dice(int $value, int $total, int $sides) : array
     {
-        $sides = str_pad((string) $sides, 5, '_', STR_PAD_BOTH);
-        $roll = str_pad((string) $roll, 5, ' ', STR_PAD_BOTH);
+        $value = ($value == $total) ? '*' : $value;
+        $value = str_pad((string) $value, 3, ' ', STR_PAD_BOTH);
+        $total = str_pad((string) $total, 6, ' ', STR_PAD_BOTH);
+        $sides = str_pad((string) $sides, 6, ' ', STR_PAD_BOTH);
         return [
-            "   .-----.",
-            "  /$sides/|",
-            " |     | |",
-            " |$roll| |",
-            " |_____|/ "
+            "    .+------+",
+            "  .'$total.'|",
+            " +---+--+'  |",
+            " |      |$value|",
+            " |$sides|   +",
+            " |      | .' ",
+            " +------+'   "
         ];
     }
+
 
     /**
      * @param Collection $collection
@@ -68,7 +74,7 @@ class Ascii
         // build an array of dice to be combined line by line
         $drawnDice = [];
         foreach($collection->getDice() as $die){
-            $drawnDice[] = $this->dice($die->getValue(), $die->getSides());
+            $drawnDice[] = $this->dice($die->getValue(), $die->getTotal(), $die->getSides());
         }
 
         $screenWidth = exec('tput cols');

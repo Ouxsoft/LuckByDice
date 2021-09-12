@@ -121,13 +121,4 @@ class TurnTest extends TestCase
         $this->assertFalse($this->turn->getLimitMaxRoll());
     }
 
-    /**
-     * @covers \Ouxsoft\LuckByDice\Turn::__toString
-     */
-    public function test__toString()
-    {
-        $this->turn->notation->set('d6');
-        $outcome = (string) $this->turn;
-        $this->assertIsString($outcome);
-    }
 }

@@ -31,10 +31,6 @@ class Turn implements TurnInterface
      */
     public $notation;
     /**
-     * @var int
-     */
-    private $total;
-    /**
      * @var Luck
      */
     private $luck;
@@ -46,10 +42,6 @@ class Turn implements TurnInterface
      * @var bool whether total with luck applied may greater than max dice potential
      */
     private $limitMaxRoll = false;
-    /**
-     * @var array containing of Outcome
-     */
-    private $outcome;
 
     /**
      * Turn constructor.
@@ -132,48 +124,45 @@ class Turn implements TurnInterface
      */
     public function roll() : int
     {
-        $total = 0;
-        $minPotential = 0;
-        $maxPotential = 0;
+        $value = 0;
 
-        foreach ($this->cup as $collection) {
-            $rollOutcome = $collection->roll();
+        foreach($this->cup as $collection) {
+            // roll each collection
+            $collection->roll();
 
-            $total += ($rollOutcome + $collection->getModifier()) * $collection->getMultiplier();
+            $value += $collection->getValue();
 
-            $outcomePercent = $collection->getOutcomePercent();
-            $this->luck->update($outcomePercent);
+            // update luck based on outcome percentage of the collection
+            $percent = $collection->getOutcomePercent();
+            $this->luck->update($percent);
         }
 
-        // if enabled apply luck to total
-        // luck needs to modify an Outcome
-        // distribute luck to collection
-        // if modifier granter then total add luck dice to outcome only not collection
-        $total = $this->luck->modify($total);
+        // take luck modifier and distribute to dice
+        // luck modifies actual dice not modifiers or multipliers
+        $amount = $this->luck->modify($value) - $value;
+        foreach($this->cup as $collection){
+            $amount = $collection->setBonus($amount);
+        }
 
         // TODO: add luck dice
+        // there is the potential for an amount to still exist
+        // that could be represented as a luck
+        // if modifier granter then total add luck dice to outcome only not collection
 
-        $this->total = $total;
+        return $this->getTotal();
+    }
 
-        // enforce min limit
-        if($this->limitMinRoll) {
-            $cupMinPotential = $this->getMinPotential();
-
-            if ($total < $cupMinPotential) {
-                $this->total = $cupMinPotential;
-            }
+    public function getTotal() : int
+    {
+        $total = 0;
+        foreach($this->cup as $collection){
+            $total += $collection->getTotal();
         }
+        return $total;
+    }
 
-        // enforce max limit
-        if($this->limitMaxRoll) {
-            $cupMaxPotential = $this->getMaxPotential();
-
-            if ($total < $cupMaxPotential) {
-                $this->total = $cupMaxPotential;
-            }
-        }
-
-        return $this->total;
+    public function getTotalWithoutLuckAdjustments() : int
+    {
     }
 
     /**

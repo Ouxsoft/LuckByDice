@@ -39,7 +39,7 @@ class AsciiTest extends TestCase
      */
     public function testDice()
     {
-        $this->assertIsArray($this->draw->dice(4,6));
+        $this->assertIsArray($this->draw->dice(4,6,6));
     }
 
     /**
