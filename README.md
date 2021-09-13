@@ -40,11 +40,13 @@ Rolls using luck have a natural ebb and flow to roll outcomes. They are well sui
 which may feature unnatural modification.
 
 **CLI Test**
+
 This shows running Turn test rolling a Cup with various Collections of Dice.
 
 ![CLI Test Example](https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/interactive-test.gif)
 
 **Chart Test**
+
 This graph illustrates 10,000 consecutive `10d10` rolls for statistical analysis.
 
 ![Chart Test Example](https://raw.githubusercontent.com/Ouxsoft/LuckByDice/main/docs/statistics.png)
