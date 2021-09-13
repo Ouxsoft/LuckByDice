@@ -34,7 +34,7 @@ echo $this->roll();
 
 ## About
 LuckByDice is a PHP library for simulating dice rolls written in PHP. In addition to being able to emulate standard 
-dice rolls from dice notation, the can also emulate luck. 
+dice rolls from dice notation, it can also emulate luck. 
 
 Rolls using luck have a natural ebb and flow to roll outcomes. They are well suited for use with character luck stat
 which may feature unnatural modification.
