@@ -39,13 +39,13 @@ dice rolls from dice notation, it can also emulate luck.
 Rolls using luck have a natural ebb and flow to roll outcomes. They are well suited for use with character luck stat
 which may feature unnatural modification.
 
-**Interactive Test**
-This shows run tests rolling a Cup with various Collections of Dice.
+**CLI Test**
+This shows running Turn test rolling a Cup with various Collections of Dice.
 
 ![CLI Test Example](https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/interactive-test.gif)
 
-**Statistical Test**
-This graph illustrates 10,000 consecutive `10d10` rolls. 
+**Chart Test**
+This graph illustrates 10,000 consecutive `10d10` rolls for statistical analysis.
 
 ![Chart Test Example](https://raw.githubusercontent.com/Ouxsoft/LuckByDice/main/docs/statistics.png)
 
