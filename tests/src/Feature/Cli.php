@@ -1,15 +1,14 @@
-#!/usr/local/bin/php
 <?php
+#!/usr/local/bin/php
 /**
  * $ php Game.php 2d10,6d6+2*1
  */
 
-namespace Ouxsoft\LuckByDiceTests\Feature\Statistics;
+namespace Ouxsoft\LuckByDiceTests\Feature;
 
 require __DIR__ . '/../../../vendor/autoload.php';
 
 use Ouxsoft\LuckByDice\Factory\TurnFactory;
-use Ouxsoft\LuckByDice\Collection;
 use Ouxsoft\LuckByDice\Draw\Ascii;
 
 $turn = TurnFactory::getInstance();

@@ -23,20 +23,18 @@
 /app/src/Collection.php:47: warning: documented symbol `Ouxsoft\LuckByDice\Collection::int' was not declared or defined.
 /app/src/Dice.php:26: warning: documented symbol `int the total number of difference sides marked with dots Ouxsoft\LuckByDice\Dice::pips' was not declared or defined.
 /app/src/Dice.php:31: warning: documented symbol `int the state of the roll What number is on the surface after a roll An unrolled dice has no Ouxsoft\LuckByDice\Dice::value' was not declared or defined.
+/app/src/Dice.php:37: warning: documented symbol `int the amount to change the dices value based on Ouxsoft\LuckByDice\Dice::luck' was not declared or defined.
 /app/src/Luck.php:19: warning: member with no name found.
-/app/src/Luck.php:21: warning: member with no name found.
-/app/src/Luck.php:25: warning: documented symbol `int an elusive modifier based on random over Ouxsoft\LuckByDice\Luck::time' was not declared or defined.
-/app/src/Luck.php:29: warning: documented symbol `bool used to determine whether luck is enabled or Ouxsoft\LuckByDice\Luck::disabled' was not declared or defined.
-/app/src/Luck.php:33: warning: documented symbol `Ouxsoft\LuckByDice\Luck::AlgorithmInterface' was not declared or defined.
+/app/src/Luck.php:22: warning: member with no name found.
+/app/src/Luck.php:26: warning: documented symbol `int an elusive modifier based on random over Ouxsoft\LuckByDice\Luck::time' was not declared or defined.
+/app/src/Luck.php:30: warning: documented symbol `bool used to determine whether luck is enabled or Ouxsoft\LuckByDice\Luck::disabled' was not declared or defined.
+/app/src/Luck.php:34: warning: documented symbol `Ouxsoft\LuckByDice\Luck::AlgorithmInterface' was not declared or defined.
 /app/src/LuckAdjustment/AbstractLuckAdjustment.php:26: warning: documented symbol `int the minimum value allowed for Ouxsoft\LuckByDice\LuckAdjustment\AbstractLuckAdjustment::luck' was not declared or defined.
 /app/src/LuckAdjustment/AbstractLuckAdjustment.php:30: warning: documented symbol `int the maximum value allowed for Ouxsoft\LuckByDice\LuckAdjustment\AbstractLuckAdjustment::luck' was not declared or defined.
 /app/src/Turn.php:26: warning: documented symbol `Ouxsoft\LuckByDice\Turn::Cup' was not declared or defined.
 /app/src/Turn.php:30: warning: documented symbol `Ouxsoft\LuckByDice\Turn::Notation' was not declared or defined.
-/app/src/Turn.php:34: warning: documented symbol `Ouxsoft\LuckByDice\Turn::int' was not declared or defined.
-/app/src/Turn.php:38: warning: documented symbol `Ouxsoft\LuckByDice\Turn::Luck' was not declared or defined.
-/app/src/Turn.php:42: warning: documented symbol `bool whether total with luck applied may be less than min dice Ouxsoft\LuckByDice\Turn::potential' was not declared or defined.
-/app/src/Turn.php:46: warning: documented symbol `bool whether total with luck applied may greater than max dice Ouxsoft\LuckByDice\Turn::potential' was not declared or defined.
-/app/src/Turn.php:50: warning: documented symbol `array containing of Ouxsoft\LuckByDice\Turn::Outcome' was not declared or defined.
+/app/src/Turn.php:34: warning: documented symbol `Ouxsoft\LuckByDice\Turn::Luck' was not declared or defined.
+/app/src/Turn.php:39: warning: documented symbol `int extra bonuses that could not be absorbed by Ouxsoft\LuckByDice\Turn::dice' was not declared or defined.
 /app/src/Turn.php:22: warning: Found unknown command `\LuckByDice'
 /app/src/Turn.php:25: warning: Found unknown command `\LuckByDice'
 /app/src/Turn.php:25: warning: Found unknown command `\Contract'
@@ -49,14 +47,17 @@
 /app/src/Turn.php:48: warning: Found unknown command `\LuckAdjustment'
 /app/src/Turn.php:54: warning: Found unknown command `\LuckByDice'
 /app/src/Turn.php:59: warning: Found unknown command `\LuckByDice'
+/app/src/Contract/CollectionInterface.php:19: warning: Member getValue() (function) of class Ouxsoft::LuckByDice::Contract::CollectionInterface is not documented.
+/app/src/Contract/CollectionInterface.php:20: warning: Member getTotal() (function) of class Ouxsoft::LuckByDice::Contract::CollectionInterface is not documented.
+/app/src/Collection.php:34: warning: Member $dice (variable) of class Ouxsoft::LuckByDice::Collection is not documented.
 /app/src/Cup.php:30: warning: Member empty() (function) of class Ouxsoft::LuckByDice::Cup is not documented.
 /app/src/Cup.php:83: warning: Member next() (function) of class Ouxsoft::LuckByDice::Cup is not documented.
 /app/src/Cup.php:104: warning: Member rewind() (function) of class Ouxsoft::LuckByDice::Cup is not documented.
 /app/src/Cup.php:109: warning: Member reverse() (function) of class Ouxsoft::LuckByDice::Cup is not documented.
 /app/src/Luck.php:20: warning: Member DEFAULT_ADJUSTMENT (variable) of class Ouxsoft::LuckByDice::Luck is not documented.
-/app/src/Luck.php:22: warning: Member FICKLE_ADJUSTMENT (variable) of class Ouxsoft::LuckByDice::Luck is not documented.
-/app/src/Luck.php:35: warning: Member $adjustment (variable) of class Ouxsoft::LuckByDice::Luck is not documented.
-/app/src/Luck.php:27: warning: Member $luck (variable) of class Ouxsoft::LuckByDice::Luck is not documented.
+/app/src/Luck.php:23: warning: Member FICKLE_ADJUSTMENT (variable) of class Ouxsoft::LuckByDice::Luck is not documented.
+/app/src/Luck.php:36: warning: Member $adjustment (variable) of class Ouxsoft::LuckByDice::Luck is not documented.
+/app/src/Luck.php:28: warning: Member $luck (variable) of class Ouxsoft::LuckByDice::Luck is not documented.
 /app/src/Turn.php:32: warning: Member $notation (variable) of class Ouxsoft::LuckByDice::Turn is not documented.
 /app/src/Contract/AbstractFactoryInterface.php:24: warning: Member makeCup() (function) of class Ouxsoft::LuckByDice::Contract::AbstractFactoryInterface is not documented.
 /app/src/Contract/AbstractFactoryInterface.php:26: warning: Member makeNotation(Container $container) (function) of class Ouxsoft::LuckByDice::Contract::AbstractFactoryInterface is not documented.
@@ -95,16 +96,13 @@
 /app/src/Contract/TurnInterface.php:12: warning: Member __construct(Notation $notation, Cup $cup, Luck $luck, string $expression=null) (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
 /app/src/Contract/TurnInterface.php:18: warning: Member getLuck() (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
 /app/src/Contract/TurnInterface.php:19: warning: Member setLuck(int $luck) (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
-/app/src/Contract/TurnInterface.php:20: warning: Member setLimitMinRoll(bool $limitMinRoll) (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
-/app/src/Contract/TurnInterface.php:21: warning: Member getLimitMinRoll() (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
-/app/src/Contract/TurnInterface.php:22: warning: Member setLimitMaxRoll(bool $limitMaxRoll) (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
-/app/src/Contract/TurnInterface.php:23: warning: Member getLimitMaxRoll() (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
-/app/src/Contract/TurnInterface.php:24: warning: Member roll() (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
-/app/src/Contract/TurnInterface.php:25: warning: Member getMinPotential() (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
-/app/src/Contract/TurnInterface.php:26: warning: Member getMaxPotential() (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
-/app/src/Contract/TurnInterface.php:27: warning: Member getCup() (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
-/app/src/Contract/TurnInterface.php:28: warning: Member getNotation() (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
-/app/src/Contract/TurnInterface.php:29: warning: Member __toString() (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
+/app/src/Contract/TurnInterface.php:20: warning: Member roll() (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
+/app/src/Contract/TurnInterface.php:21: warning: Member getTotal() (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
+/app/src/Contract/TurnInterface.php:22: warning: Member getExtraBonus() (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
+/app/src/Contract/TurnInterface.php:23: warning: Member getMinPotential() (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
+/app/src/Contract/TurnInterface.php:24: warning: Member getMaxPotential() (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
+/app/src/Contract/TurnInterface.php:25: warning: Member getCup() (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
+/app/src/Contract/TurnInterface.php:26: warning: Member getNotation() (function) of class Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
 /app/src/Factory/ConcreteFactory.php:26: warning: Member makeCup() (function) of class Ouxsoft::LuckByDice::Factory::ConcreteFactory is not documented.
 /app/src/Factory/ConcreteFactory.php:31: warning: Member makeNotation(Container $container) (function) of class Ouxsoft::LuckByDice::Factory::ConcreteFactory is not documented.
 /app/src/Factory/ConcreteFactory.php:36: warning: Member makeLuck() (function) of class Ouxsoft::LuckByDice::Factory::ConcreteFactory is not documented.

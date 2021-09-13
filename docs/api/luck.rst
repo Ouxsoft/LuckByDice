@@ -25,6 +25,8 @@ Luck
 
   .. php:method:: public get () -> int
 
+    Gets luck
+
     :returns: int -- 
 
   .. php:method:: public getActiveStatus () -> bool
@@ -54,6 +56,8 @@ Luck
 
   .. php:method:: public set (int $luck)
 
+    Sets luck
+
     :param int $luck:
 
   .. php:method:: public setAdjustment ([])
@@ -61,7 +65,7 @@ Luck
     Set the luck adjustment algorithm
 
     :param int $algorithm:
-      Default: ``0``
+      Default: ``self::DEFAULT_ADJUSTMENT``
 
   .. php:method:: public update ([])
 

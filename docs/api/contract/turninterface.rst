@@ -13,16 +13,10 @@ TurnInterface
     :param string $expression:
       Default: ``null``
 
-  .. php:method:: public __toString ()
-
-
   .. php:method:: public getCup ()
 
 
-  .. php:method:: public getLimitMaxRoll ()
-
-
-  .. php:method:: public getLimitMinRoll ()
+  .. php:method:: public getExtraBonus ()
 
 
   .. php:method:: public getLuck ()
@@ -37,16 +31,11 @@ TurnInterface
   .. php:method:: public getNotation ()
 
 
+  .. php:method:: public getTotal ()
+
+
   .. php:method:: public roll ()
 
-
-  .. php:method:: public setLimitMaxRoll (bool $limitMaxRoll)
-
-    :param bool $limitMaxRoll:
-
-  .. php:method:: public setLimitMinRoll (bool $limitMinRoll)
-
-    :param bool $limitMinRoll:
 
   .. php:method:: public setLuck (int $luck)
 

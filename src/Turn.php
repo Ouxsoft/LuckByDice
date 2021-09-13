@@ -16,7 +16,7 @@ use Ouxsoft\LuckByDice\Contract\TurnInterface;
 
 /**
  * Class Turn
- * A turn is used to set and hold dice.
+ * A Turn rolls a Cup containing a Collection of Dice
  *
  * @package Ouxsoft\LuckByDice
  */
@@ -34,14 +34,11 @@ class Turn implements TurnInterface
      * @var Luck
      */
     private $luck;
+
     /**
-     * @var bool whether total with luck applied may be less than min dice potential
+     * @var int extra bonuses that could not be absorbed by dice
      */
-    private $limitMinRoll = false;
-    /**
-     * @var bool whether total with luck applied may greater than max dice potential
-     */
-    private $limitMaxRoll = false;
+    private $extraBonus = 0;
 
     /**
      * Turn constructor.
@@ -56,7 +53,8 @@ class Turn implements TurnInterface
         Cup $cup,
         Luck $luck,
         string $expression = null
-    ) {
+    )
+    {
         $this->notation = &$notation;
         $this->cup = &$cup;
         $this->luck = &$luck;
@@ -70,7 +68,7 @@ class Turn implements TurnInterface
      * Get Luck
      * @return int
      */
-    public function getLuck() : int
+    public function getLuck(): int
     {
         return $this->luck->get();
     }
@@ -85,52 +83,19 @@ class Turn implements TurnInterface
     }
 
     /**
-     * Set whether outcome modified by luck can exceed max dice potential
-     * @param bool $limitMinRoll
-     */
-    public function setLimitMinRoll(bool $limitMinRoll) : void
-    {
-        $this->limitMinRoll = $limitMinRoll;
-    }
-
-    /**
-     * Get whether a limit is set on min roll
-     */
-    public function getLimitMinRoll() : bool
-    {
-        return $this->limitMinRoll;
-    }
-
-    /**
-     * Set whether outcome modified by luck can exceed max dice potential
-     * @param bool $limitMaxRoll
-     */
-    public function setLimitMaxRoll(bool $limitMaxRoll) : void
-    {
-        $this->limitMaxRoll = $limitMaxRoll;
-    }
-
-    /**
-     * Get whether a limit is set on max roll
-     */
-    public function getLimitMaxRoll() : bool
-    {
-        return $this->limitMaxRoll;
-    }
-
-    /**
      * Roll each dice group, update luck, and return outcome with luck modifier applied
      * @return int total
      */
-    public function roll() : int
+    public function roll(): int
     {
         $value = 0;
 
-        foreach($this->cup as $collection) {
+        foreach ($this->cup as $collection) {
             // roll each collection
             $collection->roll();
 
-            $value += $collection->getValue();
+            // get value without modifier and multiplier
+            $value += $collection->getValue(false);
 
             // update luck based on outcome percentage of the collection
             $percent = $collection->getOutcomePercent();
@@ -140,34 +105,43 @@ class Turn implements TurnInterface
         // take luck modifier and distribute to dice
         // luck modifies actual dice not modifiers or multipliers
         $amount = $this->luck->modify($value) - $value;
-        foreach($this->cup as $collection){
+        foreach ($this->cup as $collection) {
             $amount = $collection->setBonus($amount);
         }
 
-        // TODO: add luck dice
-        // there is the potential for an amount to still exist
+        // there is the potential for an amount to still exist after
         // that could be represented as a luck
         // if modifier granter then total add luck dice to outcome only not collection
+        $this->extraBonus = $amount;
 
         return $this->getTotal();
     }
 
-    public function getTotal() : int
+    /**
+     * Gets the Cups total which contains the outcome of all Collections of Dice
+     * @return int
+     */
+    public function getTotal(): int
     {
         $total = 0;
-        foreach($this->cup as $collection){
-            $total += $collection->getTotal();
+        foreach ($this->cup as $collection) {
+            $total += $collection->getTotal(true);
         }
         return $total;
     }
 
-    public function getTotalWithoutLuckAdjustments() : int
+    /**
+     * Get extra bonuses that could not be absorbed by dice.
+     * This could be used for determining critical, etc. in game engines, etc.
+     * @return int
+     */
+    public function getExtraBonus() : int
     {
+        return $this->extraBonus;
     }
 
     /**
-     * Get minimum potential of all collections in cup
-     *
+     * Get minimum potential of all Collections in Cup
      * @return int
      */
     public function getMinPotential() : int
@@ -180,8 +154,7 @@ class Turn implements TurnInterface
     }
 
     /**
-     * Get maximum potential of all collections in cup
-     *
+     * Get maximum potential of all Collections in Cup
      * @return int
      */
     public function getMaxPotential() : int
@@ -194,7 +167,7 @@ class Turn implements TurnInterface
     }
 
     /**
-     * Gets a Cup containing all Collections
+     * Gets a Cup containing all Collections of Dice
      * @return Cup
      */
     public function getCup() : Cup
@@ -203,18 +176,11 @@ class Turn implements TurnInterface
     }
 
     /**
+     * Get the dice notation for the entire cup
      * @return string
      */
     public function getNotation() : string
     {
         return $this->notation->get();
-    }
-
-    /**
-     * @return string
-     */
-    public function __toString() : string
-    {
-        return (string) $this->total;
     }
 }

@@ -25,17 +25,24 @@ use Ouxsoft\LuckByDice\Factory\TurnFactory;
 
 $turn = TurnFactory::getInstance();
 $turn->notation->set('10d10,1d6+3*7,d%');
-echo $turn->roll();
+echo $turn->roll(); 
+
+// we should be luckier with this next roll
+$this->turn->setLuck(200);
+echo $this->roll();
 ```
 
 ## About
-LuckByDice is a PHP library for simulating luck based dice rolls based on dice notations written in PHP.
+LuckByDice is a PHP library for simulating dice rolls written in PHP. In addition to being able to emulate standard 
+dice rolls from dice notation, the can also emulate luck. 
+
+Rolls using luck have a natural ebb and flow to roll outcomes. They are well suited for use with character luck stat
+which may feature unnatural modification.
 
 **Interactive Test**
 <img src="https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/interactive-test.gif" width="600" alt="CLI Test Example"/>
 
 **Statistical Test**
-
 This graph illustrates 10,000 consecutive `10d10` rolls. 
 <p align="center"><img src="https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/statistics.png" alt="statistics"/></p>
 Notice how outcome impacts luck and vice versa.
@@ -45,22 +52,44 @@ Notice how outcome impacts luck and vice versa.
 *  [Luck](https://luckbydice.readthedocs.io/en/latest/project/luck.html)
 *  [Classes](https://luckbydice.readthedocs.io/en/latest/api.html)
 
+### Author
+Matthew Heroux<br />
+See also the [list of contributors](https://github.com/Ouxsoft/LuckByDice/graphs/contributors) who participated in this project.
+
 ### Contributing
 LuckByDice is an open source project. If you find a problem or want to discuss new features or improvements
-please create an issue, and/or if possible create a pull request.
+create an issue, and/or if possible create a pull request.
 
 For local package development use [Docker](https://www.docker.com/products/docker-desktop):
+
+**Standard container**
 ```
-# Build test container
+docker build --target standard --tag luckbydice:latest -f Dockerfile .
+
+# Run Interactive test
+docker run -it luckbydice:latest php tests/src/Feature/Cli.php 6d6
+```
+
+**Test container**
+```
 docker build --target test --tag luckbydice:latest -f Dockerfile .
+docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydice:latest composer install
 
-# Play a Interactive test
-docker run -it luckbydice:latest tests/src/Interactive/Game.php 4d6+3*2,d4*2,d8
+# Interactive Test using local volume 
+docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydice:latest php tests/src/Feature/Cli.php 1d10+4*2 0
 
-# Run a Unit test
-docker run -it --mount type=bind,source="$(pwd)"/,target=/app luckbydice:latest composer test
+# Statistical Test using local volume
+docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydice:latest php tests/src/Feature/Chart/Run.php
 
+# Unit tests using local volume
+docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydice:latest composer test
+```
+**Docs container**
+```
 # Build Docs
 docker build --target docs --tag luckbydice:docs-latest -f Dockerfile .
 docker run -it --mount type=bind,source="$(pwd)"/docs,target=/app/docs luckbydice:docs-latest bash -c "doxygen Doxyfile && doxyphp2sphinx Ouxsoft::LuckByDice"
 ```
+
+### Acknowledgement
+Thanks to Zachary Whitcomb-Paulson for dice notation expertise.

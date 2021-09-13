@@ -62,8 +62,8 @@ RUN docker-php-source extract \
   rm -rf /tmp/*
 
 # Copy App
-COPY . /application
-RUN dos2unix /application/tests/src/Interactive/Game.php
+COPY composer.json /application
+COPY composer.lock /application
 
 # Install composer and vendor packages
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
@@ -82,6 +82,8 @@ FROM build AS test
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 RUN composer install --no-interaction
 
+# Testing uses bind volume mount
+
 RUN pecl install xdebug \
  && echo "xdebug.mode=coverage\n" >> "$PHP_INI_DIR/conf.d/docker-php-ext-xdebug.ini" \
  && docker-php-ext-enable xdebug \
@@ -91,6 +93,10 @@ RUN pecl install xdebug \
 # Standard (Production Environment)
 #######################################
 FROM build AS standard
+
+# Copy App
+COPY . /application
+RUN dos2unix /application/tests/src/Interactive/Game.php
 
 RUN composer install --no-dev --no-interaction
 

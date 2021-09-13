@@ -17,25 +17,17 @@ Turn
       Default: ``null``
     :returns: Turn::setByString()
 
-  .. php:method:: public __toString () -> string
-
-    :returns: string -- 
-
   .. php:method:: public getCup () -> Cup
 
-    Gets a :class:`Cup` containing all Collections
+    Gets a :class:`Cup` containing all Collections of :class:`Dice`
 
     :returns: :class:`Cup` -- 
 
-  .. php:method:: public getLimitMaxRoll ()
+  .. php:method:: public getExtraBonus () -> int
 
-    Get whether a limit is set on max roll
+    Get extra bonuses that could not be absorbed by dice. This could be used for determining critical, etc. in game engines, etc.
 
-
-  .. php:method:: public getLimitMinRoll ()
-
-    Get whether a limit is set on min roll
-
+    :returns: int -- 
 
   .. php:method:: public getLuck () -> int
 
@@ -45,37 +37,33 @@ Turn
 
   .. php:method:: public getMaxPotential () -> int
 
-    Get maximum potential of all collections in cup
+    Get maximum potential of all Collections in :class:`Cup`
 
     :returns: int -- 
 
   .. php:method:: public getMinPotential () -> int
 
-    Get minimum potential of all collections in cup
+    Get minimum potential of all Collections in :class:`Cup`
 
     :returns: int -- 
 
   .. php:method:: public getNotation () -> string
 
+    Get the dice notation for the entire cup
+
     :returns: string -- 
+
+  .. php:method:: public getTotal () -> int
+
+    Gets the Cups total which contains the outcome of all Collections of :class:`Dice`
+
+    :returns: int -- 
 
   .. php:method:: public roll () -> int
 
     Roll each dice group, update luck, and return outcome with luck modifier applied
 
     :returns: int -- total
-
-  .. php:method:: public setLimitMaxRoll (bool $limitMaxRoll)
-
-    Set whether outcome modified by luck can exceed max dice potential
-
-    :param bool $limitMaxRoll:
-
-  .. php:method:: public setLimitMinRoll (bool $limitMinRoll)
-
-    Set whether outcome modified by luck can exceed max dice potential
-
-    :param bool $limitMinRoll:
 
   .. php:method:: public setLuck (int $luck)
 

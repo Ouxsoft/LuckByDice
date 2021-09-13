@@ -21,6 +21,12 @@ Collection
 
     :returns: int -- 
 
+  .. php:method:: public getBonus () -> int
+
+    Get bonus of dice without modifier or multiplier
+
+    :returns: int -- 
+
   .. php:method:: public getDice () -> array
 
     Gets an array containing :class:`Dice`
@@ -78,16 +84,20 @@ Convert dice outcomes to percent outcomes. :class:`Dice` outcomes start counting
 
     :returns: int -- 
 
-  .. php:method:: public getTotal () -> int
+  .. php:method:: public getTotal ([]) -> int
 
-    Gets total value of :class:`Collection` with modifier and multipier applied
+    Gets total value of each dice within :class:`Collection` with modifier and multiplier applied
 
+    :param bool $adjustments:
+      Default: ``true``
     :returns: int -- 
 
-  .. php:method:: public getValue () -> int
+  .. php:method:: public getValue ([]) -> int
 
-    Get value of rolled dice without modifier or multiplier
+    Get value of rolled dice
 
+    :param bool $adjustments:
+      Default: ``true``
     :returns: int -- 
 
   .. php:method:: public roll () -> int
@@ -95,4 +105,11 @@ Convert dice outcomes to percent outcomes. :class:`Dice` outcomes start counting
     Roll each dice and returns Total
 
     :returns: int -- 
+
+  .. php:method:: public setBonus (int $amount) -> int
+
+    Distributes a new bonus across all dice
+
+    :param int $amount:
+    :returns: int -- returns the remaining bonus amount left to distribute
 

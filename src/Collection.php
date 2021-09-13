@@ -102,16 +102,20 @@ class Collection implements
     }
 
     /**
-     * Get value of rolled dice without modifier or multiplier
+     * Get value of rolled dice
+     * @param bool $adjustments whether to apply modifier and multiplier
      * @return int
      */
-    public function getValue() : int
+    public function getValue(bool $adjustments = true) : int
     {
         $value = 0;
         foreach($this->dice as $dice){
             $value += $dice->getValue();
         }
-        return $value;
+        if(!$adjustments){
+            return $value;
+        }
+        return ($value + $this->getModifier()) * $this->getMultiplier();
     }
 
     /**
@@ -134,6 +138,9 @@ class Collection implements
      */
     public function setBonus(int $amount) : int
     {
+        // rearranging dice as tp distribute bonus evenly
+        shuffle($this->dice);
+
         // distribute bonus to all dice
         foreach($this->dice as &$dice) {
             if($amount == 0) {
@@ -152,21 +159,22 @@ class Collection implements
             }
         }
 
-        // distribute bonus by rearranging dice
-        shuffle($this->dice);
-
         return $amount;
     }
 
     /**
      * Gets total value of each dice within Collection with modifier and multiplier applied
+     * @param bool $adjustments whether to apply modifier and multiplier
      * @return int
      */
-    public function getTotal() : int
+    public function getTotal(bool $adjustments = true) : int
     {
         $total = 0;
         foreach($this->dice as $dice){
             $total += $dice->getTotal();
+        }
+        if(!$adjustments){
+            return $total;
         }
         return ($total + $this->getModifier()) * $this->getMultiplier();
     }
@@ -224,7 +232,7 @@ class Collection implements
      */
     public function getOutcomePercent() : float
     {
-        return ($this->getValue() - $this->count()) / ($this->getMaxOutcome() - $this->count());
+        return ($this->getValue(false) - $this->count()) / ($this->getMaxOutcome() - $this->count());
     }
 
     /**

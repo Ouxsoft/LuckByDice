@@ -18,6 +18,7 @@ class Luck implements LuckInterface
 {
     /** @var int DefaultLuckAdjustment */
     const DEFAULT_ADJUSTMENT = 0;
+
     /** @var int FickleLuckAdjustment */
     const FICKLE_ADJUSTMENT = 1;
 
@@ -62,7 +63,6 @@ class Luck implements LuckInterface
 
     /**
      * Get whether enabled or disabled
-     *
      * @return bool
      */
     public function getActiveStatus() : bool
@@ -106,6 +106,7 @@ class Luck implements LuckInterface
     }
 
     /**
+     * Gets luck
      * @return int
      */
     public function get() : int
@@ -114,6 +115,7 @@ class Luck implements LuckInterface
     }
 
     /**
+     * Sets luck
      * @param int $luck
      */
     public function set(int $luck) : void
@@ -123,7 +125,6 @@ class Luck implements LuckInterface
 
     /**
      * Modifies a number based on current luck
-     *
      * @param int $number
      * @return int
      */
@@ -140,7 +141,6 @@ class Luck implements LuckInterface
 
     /**
      * Get applicable luck as random percentage based on current luck
-     *
      * @return float
      */
     public function getApplicablePercent() : float
