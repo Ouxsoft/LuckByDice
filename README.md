@@ -40,11 +40,13 @@ Rolls using luck have a natural ebb and flow to roll outcomes. They are well sui
 which may feature unnatural modification.
 
 **Interactive Test**
-<img src="https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/interactive-test.gif" width="600" alt="CLI Test Example"/>
+![CLI Test Example](https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/interactive-test.gif)
 
 **Statistical Test**
 This graph illustrates 10,000 consecutive `10d10` rolls. 
-<p align="center"><img src="https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/statistics.png" alt="statistics"/></p>
+
+![Chart Test Example](https://raw.githubusercontent.com/Ouxsoft/LuckByDice/main/docs/statistics.png)
+
 Notice how outcome impacts luck and vice versa.
 
 ### Documentation
