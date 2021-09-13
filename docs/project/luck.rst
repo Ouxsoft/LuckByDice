@@ -6,12 +6,20 @@ Luck
 Luck is modified by and modifies the roll outcome. Thereby simulating both the natual elusivity and ebb and flow of
 the concept of luck itself.
 
-Dice rolls may exceed intended limits because luck is applied afterwards and this should be taken into account
-when using library. For example a 1d6 dice roll may result in an outcome of 8 depending on luck. The game engine
-must take this into account. Roll checks should use a greater than equal symbol.
-This could also allow for the game engine to categorize the roll as a "Critical Hit", "Critical Hit x2", etc.
+No matter how lucky the player, a Dice's outcome may not exceed the sides of the dice. Meaning a 6 sided dice will never
+yield 7; at most it may yield 7 and at least it may yield 1.
 
-Formulas:
+Bonus:
+
+Luck modifies the outcome of the dice. If luck is higher than dice can absorb that value is represented as a
+bonus. A bonus is just a number which displays how much of a luck modifier could not be absorbed into dice because
+they were already at max value. Bonuses can be used for game engine to categorize the roll as a "Critical Hit",
+"Critical Hit x2", etc. if desired.
+
+
+Algorithms:
+
+Algorithms for luck can vary. But the default luck is based on a the follow:
 
 Luck Increases when Roll Outcome Percentage >= (1 / &phi;);
 
