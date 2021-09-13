@@ -40,6 +40,8 @@ Rolls using luck have a natural ebb and flow to roll outcomes. They are well sui
 which may feature unnatural modification.
 
 **Interactive Test**
+This shows run tests rolling a Cup with various Collections of Dice.
+
 ![CLI Test Example](https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/interactive-test.gif)
 
 **Statistical Test**
