@@ -21,7 +21,6 @@ use Ouxsoft\LuckByDice\Contract\OutcomeInterface;
  * Class Collection
  * A Collection resides inside a Cup and contains one or more Dice with same amount of sides.
  * A Collection also features a modifier and a multiplier for the roll outcome.
- * A Collection only contains an Outcome of all dice contained within after it has been rolled.
  * @package Ouxsoft\LuckByDice
  */
 class Collection implements

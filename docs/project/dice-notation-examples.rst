@@ -1,6 +1,6 @@
-.. _dice_notation:
+.. _dice_notation_examples:
 
-Dice Notation
+Dice Notation Examples
 ++++++++++++++++++++++++++++++++++++
 
 Example of flipping a coin using dice notation:

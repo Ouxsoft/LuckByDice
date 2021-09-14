@@ -14,13 +14,13 @@
 /app/src/Contract/CollectionInterface.php:14: warning: Compound Ouxsoft::LuckByDice::Contract::CollectionInterface is not documented.
 /app/src/Contract/TurnInterface.php:11: warning: Compound Ouxsoft::LuckByDice::Contract::TurnInterface is not documented.
 /app/src/Factory/TurnFactory.php:18: warning: Compound Ouxsoft::LuckByDice::Factory::TurnFactory is not documented.
-/app/src/Collection.php:30: warning: Compound Ouxsoft::LuckByDice::Collection is not documented.
+/app/src/Collection.php:29: warning: Compound Ouxsoft::LuckByDice::Collection is not documented.
 /app/src/LuckAdjustment/AbstractLuckAdjustment.php:24: warning: Compound Ouxsoft::LuckByDice::LuckAdjustment::AbstractLuckAdjustment is not documented.
 /app/src/Luck.php:18: warning: Compound Ouxsoft::LuckByDice::Luck is not documented.
-/app/src/Collection.php:32: warning: documented symbol `Ouxsoft\LuckByDice\Collection::array' was not declared or defined.
-/app/src/Collection.php:37: warning: documented symbol `Ouxsoft\LuckByDice\Collection::int' was not declared or defined.
-/app/src/Collection.php:42: warning: documented symbol `Ouxsoft\LuckByDice\Collection::int' was not declared or defined.
-/app/src/Collection.php:47: warning: documented symbol `Ouxsoft\LuckByDice\Collection::int' was not declared or defined.
+/app/src/Collection.php:31: warning: documented symbol `Ouxsoft\LuckByDice\Collection::array' was not declared or defined.
+/app/src/Collection.php:36: warning: documented symbol `Ouxsoft\LuckByDice\Collection::int' was not declared or defined.
+/app/src/Collection.php:41: warning: documented symbol `Ouxsoft\LuckByDice\Collection::int' was not declared or defined.
+/app/src/Collection.php:46: warning: documented symbol `Ouxsoft\LuckByDice\Collection::int' was not declared or defined.
 /app/src/Dice.php:26: warning: documented symbol `int the total number of difference sides marked with dots Ouxsoft\LuckByDice\Dice::pips' was not declared or defined.
 /app/src/Dice.php:31: warning: documented symbol `int the state of the roll What number is on the surface after a roll An unrolled dice has no Ouxsoft\LuckByDice\Dice::value' was not declared or defined.
 /app/src/Dice.php:37: warning: documented symbol `int the amount to change the dices value based on Ouxsoft\LuckByDice\Dice::luck' was not declared or defined.
@@ -35,21 +35,21 @@
 /app/src/Turn.php:30: warning: documented symbol `Ouxsoft\LuckByDice\Turn::Notation' was not declared or defined.
 /app/src/Turn.php:34: warning: documented symbol `Ouxsoft\LuckByDice\Turn::Luck' was not declared or defined.
 /app/src/Turn.php:39: warning: documented symbol `int extra bonuses that could not be absorbed by Ouxsoft\LuckByDice\Turn::dice' was not declared or defined.
-/app/src/Turn.php:22: warning: Found unknown command `\LuckByDice'
-/app/src/Turn.php:25: warning: Found unknown command `\LuckByDice'
-/app/src/Turn.php:25: warning: Found unknown command `\Contract'
-/app/src/Turn.php:30: warning: Found unknown command `\LivingMarkup'
-/app/src/Turn.php:34: warning: Found unknown command `\LuckByDice'
-/app/src/Turn.php:38: warning: Found unknown command `\LuckByDice'
-/app/src/Turn.php:41: warning: Found unknown command `\LuckByDice'
-/app/src/Turn.php:41: warning: Found unknown command `\LuckAdjustment'
-/app/src/Turn.php:48: warning: Found unknown command `\LuckByDice'
-/app/src/Turn.php:48: warning: Found unknown command `\LuckAdjustment'
-/app/src/Turn.php:54: warning: Found unknown command `\LuckByDice'
-/app/src/Turn.php:59: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:21: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:24: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:24: warning: Found unknown command `\Contract'
+/app/src/Turn.php:29: warning: Found unknown command `\LivingMarkup'
+/app/src/Turn.php:33: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:37: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:40: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:40: warning: Found unknown command `\LuckAdjustment'
+/app/src/Turn.php:47: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:47: warning: Found unknown command `\LuckAdjustment'
+/app/src/Turn.php:53: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:58: warning: Found unknown command `\LuckByDice'
 /app/src/Contract/CollectionInterface.php:19: warning: Member getValue() (function) of class Ouxsoft::LuckByDice::Contract::CollectionInterface is not documented.
 /app/src/Contract/CollectionInterface.php:20: warning: Member getTotal() (function) of class Ouxsoft::LuckByDice::Contract::CollectionInterface is not documented.
-/app/src/Collection.php:34: warning: Member $dice (variable) of class Ouxsoft::LuckByDice::Collection is not documented.
+/app/src/Collection.php:33: warning: Member $dice (variable) of class Ouxsoft::LuckByDice::Collection is not documented.
 /app/src/Cup.php:30: warning: Member empty() (function) of class Ouxsoft::LuckByDice::Cup is not documented.
 /app/src/Cup.php:83: warning: Member next() (function) of class Ouxsoft::LuckByDice::Cup is not documented.
 /app/src/Cup.php:104: warning: Member rewind() (function) of class Ouxsoft::LuckByDice::Cup is not documented.
@@ -106,15 +106,15 @@
 /app/src/Factory/ConcreteFactory.php:26: warning: Member makeCup() (function) of class Ouxsoft::LuckByDice::Factory::ConcreteFactory is not documented.
 /app/src/Factory/ConcreteFactory.php:31: warning: Member makeNotation(Container $container) (function) of class Ouxsoft::LuckByDice::Factory::ConcreteFactory is not documented.
 /app/src/Factory/ConcreteFactory.php:36: warning: Member makeLuck() (function) of class Ouxsoft::LuckByDice::Factory::ConcreteFactory is not documented.
-/app/src/Turn.php:22: warning: Found unknown command `\LuckByDice'
-/app/src/Turn.php:25: warning: Found unknown command `\LuckByDice'
-/app/src/Turn.php:25: warning: Found unknown command `\Contract'
-/app/src/Turn.php:30: warning: Found unknown command `\LivingMarkup'
-/app/src/Turn.php:34: warning: Found unknown command `\LuckByDice'
-/app/src/Turn.php:38: warning: Found unknown command `\LuckByDice'
-/app/src/Turn.php:41: warning: Found unknown command `\LuckByDice'
-/app/src/Turn.php:41: warning: Found unknown command `\LuckAdjustment'
-/app/src/Turn.php:48: warning: Found unknown command `\LuckByDice'
-/app/src/Turn.php:48: warning: Found unknown command `\LuckAdjustment'
-/app/src/Turn.php:54: warning: Found unknown command `\LuckByDice'
-/app/src/Turn.php:59: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:21: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:24: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:24: warning: Found unknown command `\Contract'
+/app/src/Turn.php:29: warning: Found unknown command `\LivingMarkup'
+/app/src/Turn.php:33: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:37: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:40: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:40: warning: Found unknown command `\LuckAdjustment'
+/app/src/Turn.php:47: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:47: warning: Found unknown command `\LuckAdjustment'
+/app/src/Turn.php:53: warning: Found unknown command `\LuckByDice'
+/app/src/Turn.php:58: warning: Found unknown command `\LuckByDice'

@@ -56,10 +56,10 @@ Navigation
    :maxdepth: 1
    :caption: Project Information
    
-   project/dice-notation.rst
-   project/luck.rst
-   project/code-of-conduct.rst
+   project/dice-notation-examples.rst
+   project/glossary.rst
    Classes <api.rst>
+   project/code-of-conduct.rst
 
 Indices and tables
 ==================
