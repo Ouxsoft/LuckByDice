@@ -81,14 +81,17 @@ docker run -it luckbydice:latest php tests/src/Feature/Cli.php 6d6
 docker build --target test --tag luckbydice:latest -f Dockerfile .
 docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydice:latest composer install
 
-# Run Interactive Test using local volume 
+# Run Feature CLI Test using local volume 
 docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydice:latest php tests/src/Feature/Cli.php 1d10+4*2 0
 
-# Run Statistical Test using local volume
+# Run Feature Chart Test using local volume
 docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydice:latest php tests/src/Feature/Chart/Run.php
 
 # Run Unit Tests using local volume
 docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydice:latest composer test
+
+# Run Benchmark Tests using local volume
+docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydice:latest ./vendor/bin/phpbench run tests/src/Benchmark --report=default
 ```
 **Docs container**
 ```
