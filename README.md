@@ -37,10 +37,8 @@ LuckByDice is a PHP library for simulating dice rolls written in PHP. In additio
 dice rolls from dice notation, it can also emulate luck. 
 
 Rolls made with luck enabled have a natural ebb and flow to roll outcomes. 
-Rolls made with
-higher are more likely to roll higher values. luck it is more probably 
-They are well suited for use with character luck stat
-which may feature unnatural modification.
+Rolls made with higher luck are more likely to roll higher values. 
+Luck is well suited for use with character's luck stat, which may feature unnatural modification.
 
 **CLI Test**
 
