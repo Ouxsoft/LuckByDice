@@ -48,7 +48,7 @@ This shows running Turn test rolling a Cup with various Collections of Dice.
 
 **Chart Test**
 
-This graph illustrates 10,000 consecutive `10d10` rolls for statistical analysis.
+This graph illustrates 10,000 consecutive `10d10` rolls to aid in statistical analysis.
 
 ![Chart Test Example](https://raw.githubusercontent.com/Ouxsoft/LuckByDice/main/docs/statistics.png)
 
