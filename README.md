@@ -54,15 +54,15 @@ This graph illustrates 10,000 consecutive `10d10` rolls for statistical analysis
 Notice how outcome impacts luck and vice versa.
 
 ### Documentation
-*  [Turn](https://luckbydice.readthedocs.io/en/latest/project/glossary#turn)
-*  [Dice Notations](https://luckbydice.readthedocs.io/en/latest/project/glossary#dice-notation)
+*  [Turn](https://luckbydice.readthedocs.io/en/latest/project/glossary.html#turn)
+*  [Dice Notations](https://luckbydice.readthedocs.io/en/latest/project/glossary.html#dice-notation)
 *  [Dice Notation Examples](https://luckbydice.readthedocs.io/en/latest/project/dice-notation-examples.html)
-*  [Cup](https://luckbydice.readthedocs.io/en/latest/project/glossary#cup)
-*  [Collection](https://luckbydice.readthedocs.io/en/latest/project/glossary#collection)
-*  [Dice](https://luckbydice.readthedocs.io/en/latest/project/glossary#dice)
-*  [Luck](https://luckbydice.readthedocs.io/en/latest/project/glossary#luck)
-*  [Bonus](https://luckbydice.readthedocs.io/en/latest/project/glossary#bonus)
-*  [Algorithms](https://luckbydice.readthedocs.io/en/latest/project/glossary#algorithms)
+*  [Cup](https://luckbydice.readthedocs.io/en/latest/project/glossary.html#cup)
+*  [Collection](https://luckbydice.readthedocs.io/en/latest/project/glossary.html#collection)
+*  [Dice](https://luckbydice.readthedocs.io/en/latest/project/glossary.html#dice)
+*  [Luck](https://luckbydice.readthedocs.io/en/latest/project/glossary.html#luck)
+*  [Bonus](https://luckbydice.readthedocs.io/en/latest/project/glossary.html#bonus)
+*  [Algorithms](https://luckbydice.readthedocs.io/en/latest/project/glossary.html#algorithms)
 *  [Classes](https://luckbydice.readthedocs.io/en/latest/api.html)
 
 ### Author
