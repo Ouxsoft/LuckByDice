@@ -26,6 +26,7 @@ a luck.
     echo $turn->roll();
 
 This graph shows 10,000 consecutive `10d10` LuckByDice rolls. Notice how outcome impacts luck and vice versa.
+
 |graph|
 
 Installation
