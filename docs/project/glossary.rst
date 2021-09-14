@@ -28,11 +28,29 @@ A dice features a value after rolling.
 
 Luck
 =============
-Luck is modified by and modifies the Dice's value.
 Luck simulates both the natual elusivity and ebb and flow of the concept of luck itself.
 
-No matter how lucky the player, a Dice's outcome may not exceed the sides of the dice.
-Meaning a 6 sided dice will never yield 7. At most it may yield 6. At least it may yield 1.
+Luck is modified by and modifies the Dice's value.
+
+.. code-block:: pseudo
+
+    Roll Outcome (x) = Round ((Random (0 – MaxRoll) + 1) * (Random (0 – Luck) *.01 + 1))
+
+It is more probable that dice roll outcomes will increase when luck increases.
+
+.. code-block:: pseudo
+
+    Luck Increases when Roll Outcome Percentage >= (1 / &phi;);
+
+It is more probable that dice roll outcomes will decrease when luck decreases.
+
+.. code-block:: pseudo
+
+    Luck Decreases when Roll Outcome Percentage <= (1 - (1 / &phi;))
+
+A Dice's outcome may not exceed the sides of the dice no matter how lucky the player.
+A 6 sided dice will never yield 7. At most it may yield 6. At least it may yield 1.
+
 
 Bonus
 =============
@@ -45,12 +63,4 @@ Bonuses can be used for game engine to categorize the roll as a "Critical Hit", 
 
 Algorithms
 =============
-Algorithms are used to calculate luck. The default luck is based on a the follow:
-
-.. code-block:: pseudo
-
-    Luck Increases when Roll Outcome Percentage >= (1 / &phi;);
-
-    Luck Decreases when Roll Outcome Percentage <= (1 - (1 / &phi;))
-
-    Roll Outcome (x) = Round ((Random (0 – MaxRoll) + 1) * (Random (0 – Luck) *.01 + 1))
+Algorithms are used to calculate luck.
