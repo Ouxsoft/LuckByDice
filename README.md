@@ -98,8 +98,8 @@ docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydic
 # Run Feature CLI Test using local volume 
 docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydice:latest php tests/src/Feature/Cli.php 1d10+4*2 0
 
-# Run Feature Chart Test using local volume
-docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydice:latest php tests/src/Feature/Chart/Run.php
+# Run Chart Test using local volume then http://localhost/chart.html
+docker run -it -p 80:80 --mount type=bind,source="$(pwd)"/,target=/application luckbydice:latest php -S 0.0.0.0:80
 
 # Run Unit Tests using local volume
 docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydice:latest composer test
