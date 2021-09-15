@@ -15,50 +15,55 @@ use Ouxsoft\LuckByDice\Factory\TurnFactory;
 class TurnFactoryBench
 {
     /**
-     * Test a small roll
-     * @Revs(1000)
-     * @Iterations(5)
+     * @var Turn
      */
-    public function bench1D6() {
-        $notation = '1d6';
-        $turn = TurnFactory::getInstance();
-        $turn->notation->set($notation);
-        $turn->roll();
+    private $turn;
+
+    public function setUp() : void
+    {
+        $this->turn = TurnFactory::getInstance();
     }
 
-    /**
-     * Test rolling 1000d6
-     * @Revs(1000)
-     * @Iterations(5)
-     */
-    public function bench1000d6() {
-        $notation = '1000d6';
-        $turn = TurnFactory::getInstance();
-        $turn->notation->set($notation);
-        $turn->roll();
+    public function tearDown() : void
+    {
+        unset($this->turn);
     }
 
+    // 30000 microseconds = 0.03 seconds
     /**
-     * Test rolling a 100d6,100d8,100d10
-     * @Revs(1000)
-     * @Iterations(5)
+     * @BeforeMethods("setUp")
+     * @AfterMethods("tearDown")
+     * @ParamProviders({"provideNotations"})
+     * @Assert("mode(variant.time.avg) < 20000")
+     * @Iterations(10)
+     * @Revs(5)
+     * @OutputTimeUnit("seconds")
      */
-    public function bench100D6100D8100D10() {
-        $notation = '100d6,100d8,100d10';
-        $turn = TurnFactory::getInstance();
-        $turn->notation->set($notation);
-        $turn->roll();
+    public function benchTurn($params)
+    {
+        $this->turn->notation->set($params['notation']);
+        $this->turn->roll();
     }
 
-    /**
-     * Test rolling a 100d6+10*100
-     * @Revs(1000)
-     * @Iterations(5)
-     */
-    public function bench100D6Plus10Multiply100() {
-        $notation = '100d6+10*100';
-        $turn = TurnFactory::getInstance();
-        $turn->notation->set($notation);
-        $turn->roll();
+    public function provideNotations() : array
+    {
+        $data = [];
+        
+        $sides = [2,3,4,6,8,10,12,20,100];
+        foreach($sides as $i){
+            $notations = [
+                "1d{$i}",
+                "1d{$i},{$i}d{$i}",
+                "1d{$i},{$i}d{$i},{$i}d{$i}+{$i}",
+                "1d{$i},{$i}d{$i},{$i}d{$i}+{$i},{$i}d{$i}+{$i}*{$i}"
+            ];
+            foreach($notations as $notation){
+                $data[] = ['notation' => $notation];
+            }
+        }
+        return $data;
     }
+
 }
+
+
