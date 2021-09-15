@@ -11,6 +11,7 @@
 namespace Ouxsoft\LuckByDiceTests\Unit;
 
 use Ouxsoft\LuckByDice\Turn;
+use Ouxsoft\LuckByDice\Cup;
 use PHPUnit\Framework\TestCase;
 use Ouxsoft\LuckByDice\Factory\TurnFactory;
 
@@ -70,5 +71,39 @@ class TurnTest extends TestCase
         $this->turn->notation->set('1d4,2d5,6d6+3,d5*2');
         $outcome = $this->turn->roll();
         $this->assertIsInt($outcome);
+    }
+
+    /**
+     * @covers \Ouxsoft\LuckByDice\Turn::getCup
+     */
+    public function testGetCup()
+    {
+        $this->turn->notation->set('1d4,2d5,6d6+3,d5*2');
+        $this->turn->roll();
+        $this->assertInstanceOf(Cup::class, $this->turn->getCup());
+    }
+
+    /**
+     * @covers \Ouxsoft\LuckByDice\Turn::getNotation
+     */
+    public function testGetNotation()
+    {
+        $this->assertIsString($this->turn->getNotation());
+    }
+
+    /**
+     * @covers \Ouxsoft\LuckByDice\Turn::getTotal
+     */
+    public function testGetTotal()
+    {
+        $this->assertIsInt($this->turn->getTotal());
+    }
+
+    /**
+     * @covers \Ouxsoft\LuckByDice\Turn::getExtraBonus
+     */
+    public function testGetExtraBonus()
+    {
+        $this->assertIsInt($this->turn->getExtraBonus());
     }
 }
