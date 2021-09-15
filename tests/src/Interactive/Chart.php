@@ -1,7 +1,7 @@
 <?php
 namespace Ouxsoft\LuckByDiceTests\Feature\Statistics;
 
-require __DIR__ . '/../../../../vendor/autoload.php';
+require __DIR__ . '/../../../vendor/autoload.php';
 
 use Ouxsoft\LuckByDice\Factory\TurnFactory;
 
@@ -113,5 +113,5 @@ foreach($datasets as $dataset){
 
 $html = str_replace("{{datasets}}", $json, $html);
 
-echo file_put_contents(__DIR__ . '/chart.html', $html);
+echo $html;
 
