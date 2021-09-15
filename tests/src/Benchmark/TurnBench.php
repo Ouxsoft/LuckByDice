@@ -29,12 +29,13 @@ class TurnFactoryBench
         unset($this->turn);
     }
 
-    // 30000 microseconds = 0.03 seconds
+    // 20000 microseconds = 0.02 seconds
     /**
      * @BeforeMethods("setUp")
      * @AfterMethods("tearDown")
      * @ParamProviders({"provideNotations"})
      * @Assert("mode(variant.time.avg) < 20000")
+     * @Assert("mode(variant.mem.peak) < 2000000")
      * @Iterations(10)
      * @Revs(5)
      * @OutputTimeUnit("seconds")
@@ -48,7 +49,7 @@ class TurnFactoryBench
     public function provideNotations() : array
     {
         $data = [];
-        
+
         $sides = [2,3,4,6,8,10,12,20,100];
         foreach($sides as $i){
             $notations = [
