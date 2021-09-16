@@ -28,9 +28,15 @@ before_script:
 
 jobs:
   include:
-    - stage: Test
+    - stage: PHP Info
+      script:
+        - php --version
+    - stage: Unit Test
       script:
         - mkdir -p tests/output
         - XDEBUG_MODE=coverage phpunit --configuration phpunit.xml
       after_success:
         - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN -f tests/output/clover.xml
+    - stage: Benchmark Test
+      script:
+        - bin/phpbench run --report=env --progress=dots

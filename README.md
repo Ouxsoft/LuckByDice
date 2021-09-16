@@ -77,11 +77,13 @@ create an issue, and/or if possible create a pull request.
 
 For local package development use [Docker](https://www.docker.com/products/docker-desktop):
 
-**Clone Repo**
+#### Local Setup
+Clone Repo
 ```
 git clone https://github.com/Ouxsoft/LuckByDice.git
 cd LuckByDice
 ```
+
 
 **Standard container**
 ```
@@ -96,20 +98,27 @@ docker run -it luckbydice:latest php tests/src/Feature/Cli.php 6d6
 docker build --target test --tag luckbydice:latest -f Dockerfile .
 docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydice:latest composer install
 
-# Feature CLI Test using local volume 
-docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydice:latest php tests/src/Feature/Cli.php 1d10+4*2 0
-
-# Interactive Tests server avaliable at http://localhost/
-docker run -it -p 80:80 --mount type=bind,source="$(pwd)"/,target=/application luckbydice:latest bash -c 'cd tests/src/Interactive && php -S 0.0.0.0:80'
-
-# Unit Tests using local volume
+# Automated Tests
+## Unit Tests using local volume
 docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydice:latest composer test
 
-# Benchmark Tests using local volume
+## Benchmark Tests using local volume
 docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydice:latest ./vendor/bin/phpbench run tests/src/Benchmark --report=default
 ```
 
-**Docs container**
+## Manual Tests
+### Feature CLI Test using local volume 
+```
+docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydice:latest php tests/src/Feature/Cli.php 1d10+4*2 0
+```
+
+### Interactive Tests 
+Creates a server available at [http://localhost/](http://localhost/)
+```
+docker run -it -p 80:80 --mount type=bind,source="$(pwd)"/,target=/application luckbydice:latest bash -c 'cd tests/src/Interactive && php -S 0.0.0.0:80'
+```
+
+### Build Docs
 ```
 # Build Docs
 docker build --target docs --tag luckbydice:docs-latest -f Dockerfile .
