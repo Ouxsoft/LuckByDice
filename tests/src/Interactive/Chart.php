@@ -67,9 +67,15 @@ $html = <<<HTML
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-<div>
-    <canvas id="myChart"></canvas>
-</div>
+    <form action="/api/turn" method="get">
+        <input type="text" name="notation"/>
+        <input type="number" name="iterations" value="10000"/>
+        <input type="number" name="luck" value="0"/>
+    </form>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+</body>
 <script>
     const labels = [
         {$labels}
@@ -102,7 +108,6 @@ $html = <<<HTML
         config
     );
 </script>
-</body>
 </html>
 HTML;
 

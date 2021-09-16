@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>LuckByDice</h1>
+<h2>Rolling 10d12</h2>
+<div>
+    <canvas id="turncanvas"></canvas>
+</div>
+
+<script>
+    var chartLive = document.getElementById("turncanvas");
+    var turnChart = new Chart(chartLive, {
+        type: 'line',
+        data: {
+            labels: [],
+            datasets: [
+                {
+                    data: [],
+                    borderWidth: 1,
+                    backgroundColor: 'rgb(102, 162, 41)',
+                    borderColor: 'rgb(102, 162, 41)',
+                    label: 'Total',
+                },
+                {
+                    data: [],
+                    borderWidth: 1,
+                    backgroundColor: 'rgb(21, 110, 182)',
+                    borderColor: 'rgb(21, 110, 182)',
+                    label: 'Min',
+                },
+                {
+                    data: [],
+                    borderWidth: 1,
+                    backgroundColor: 'rgb(224, 74, 6)',
+                    borderColor: 'rgb(224, 74, 6)',
+                    label: 'Max',
+                },
+                {
+                    data: [],
+                    borderWidth: 1,
+                    backgroundColor: 'rgb(253, 199, 67)',
+                    borderColor: 'rgb(253, 199, 67)',
+                    label: 'Luck',
+                },
+                {
+                    data: [],
+                    borderWidth: 1,
+                    backgroundColor: 'rgb(231, 208, 176)',
+                    borderColor: 'rgb(231, 208, 176)',
+                    label: 'Bonus',
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            title: {
+                display: true,
+                text: "Chart.js - Dynamically Update Chart Via Ajax Requests",
+            },
+            legend: {
+                display: false
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                    }
+                }]
+            }
+        }
+    });
+
+    var turnId = 1;
+    var luck = 0;
+
+    var getData = function() {
+        $.ajax({
+            type: 'POST',
+            data: { "notation": "10d12", "luck": luck },
+            dataType: 'json',
+            url: 'api/turn.php',
+            success: function(turn) {
+                turnChart.data.labels.push(turnId);
+                turnChart.data.datasets[0].data.push(turn.data.total);
+                turnChart.data.datasets[1].data.push(turn.data.min);
+                turnChart.data.datasets[2].data.push(turn.data.max);
+                turnChart.data.datasets[3].data.push(turn.data.luck);
+                turnChart.data.datasets[4].data.push(turn.data.bonus);
+                turnId++;
+                luck = turn.data.luck;
+                turnChart.update();
+            }
+        });
+    };
+
+    setInterval(getData, 100);
+</script>
+</body>
+</html>
