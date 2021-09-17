@@ -11,6 +11,14 @@ All releases must adhere to [SemVer 2](https://semver.org/) naming convention an
 ## LivingMarkup [Unreleased]
 Released: TBD. Notable changes:
 
+## LivingMarkup 2.0.0
+Released: 2021-09-16. Notable changes:
+* Added: Benchmark tests. [77bcd40](https://github.com/Ouxsoft/LuckByDice/commit/77bcd400712c87d0e2e083c119162c2088aa60c3)
+* Added: Interactive tests. [dae006b](https://github.com/Ouxsoft/LuckByDice/commit/dae006b2d8bdde12806d517e86b3c5399f0abb21)
+* Changed: Small changes in Api [84aae39](https://github.com/Ouxsoft/LuckByDice/commit/84aae39d5b41a19a56c4d171461cf1e43386f3a0)
+* Changed: Improved test coverage. [7a5ab7a](https://github.com/Ouxsoft/LuckByDice/commit/7a5ab7a6ed5dafa2f27005fafc070217e173fb91)
+* Changed: Improved documentation. [3e924e8](https://github.com/Ouxsoft/LuckByDice/commit/3e924e8c78c4ff00996bd7510efb49ba40d3cdf9)
+
 ## LivingMarkup 1.3.0
 Released: 2021-09-09. Notable changes:
 * Added: Dice values [9bcde49](https://github.com/Ouxsoft/LuckByDice/commit/9bcde496886b4da7a5fbf36a97e848a3723944d6)
