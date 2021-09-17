@@ -9,7 +9,7 @@ $turn = TurnFactory::getInstance();
 
 $iterations = 10000;
 
-$turn->notation->set('10d10');
+$turn->setNotation('10d10');
 
 $datasets = [];
 

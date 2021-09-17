@@ -48,7 +48,7 @@ class AsciiTest extends TestCase
     public function testCollection()
     {
         $turn = TurnFactory::getInstance();
-        $turn->notation->set('10d6,1d2+12*2,3d3,d%');
+        $turn->setNotation('10d6,1d2+12*2,3d3,d%');
         $turn->roll();
         foreach($turn->getCup() as $collection){
             $this->assertIsString($this->draw->collection($collection));

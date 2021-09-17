@@ -37,8 +37,27 @@ class TurnTest extends TestCase
 
         $notation = 'd6';
         $this->turn = TurnFactory::getInstance($notation);
-        $outcome = $this->turn->notation->get();
+        $outcome = $this->turn->getNotation();
         $this->assertEquals($notation, $outcome);
+    }
+
+    /**
+     * @covers \Ouxsoft\LuckByDice\Turn::getNotation
+     */
+    public function testGetNotation()
+    {
+        $this->assertIsString($this->turn->getNotation());
+    }
+
+    /**
+     * @covers \Ouxsoft\LuckByDice\Turn::setNotation
+     */
+    public function testSetNotation()
+    {
+        $notation = "2d4";
+        $this->turn->setNotation($notation);
+        $outcome = $this->turn->getNotation();
+        $this->assertEquals($outcome, $notation);
     }
 
     /**
@@ -68,7 +87,7 @@ class TurnTest extends TestCase
      */
     public function testRoll()
     {
-        $this->turn->notation->set('1d4,2d5,6d6+3,d5*2');
+        $this->turn->setNotation('1d4,2d5,6d6+3,d5*2');
         $outcome = $this->turn->roll();
         $this->assertIsInt($outcome);
     }
@@ -78,17 +97,9 @@ class TurnTest extends TestCase
      */
     public function testGetCup()
     {
-        $this->turn->notation->set('1d4,2d5,6d6+3,d5*2');
+        $this->turn->setNotation('1d4,2d5,6d6+3,d5*2');
         $this->turn->roll();
         $this->assertInstanceOf(Cup::class, $this->turn->getCup());
-    }
-
-    /**
-     * @covers \Ouxsoft\LuckByDice\Turn::getNotation
-     */
-    public function testGetNotation()
-    {
-        $this->assertIsString($this->turn->getNotation());
     }
 
     /**

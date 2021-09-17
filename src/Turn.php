@@ -26,10 +26,12 @@ class Turn implements TurnInterface
      * @var Cup
      */
     private $cup;
+
     /**
      * @var Notation
      */
-    public $notation;
+    private $notation;
+
     /**
      * @var Luck
      */
@@ -65,6 +67,23 @@ class Turn implements TurnInterface
     }
 
     /**
+     * Get the dice notation for the entire cup
+     * @return string
+     */
+    public function getNotation() : string
+    {
+        return $this->notation->get();
+    }
+
+    /**
+     * @param $notation
+     */
+    public function setNotation($notation) : void
+    {
+        $this->notation->set($notation);
+    }
+
+    /**
      * Get Luck
      * @return int
      */
@@ -81,6 +100,7 @@ class Turn implements TurnInterface
     {
         $this->luck->set($luck);
     }
+
 
     /**
      * Roll each dice group, update luck, and return outcome with luck modifier applied
@@ -175,12 +195,5 @@ class Turn implements TurnInterface
         return $this->cup;
     }
 
-    /**
-     * Get the dice notation for the entire cup
-     * @return string
-     */
-    public function getNotation() : string
-    {
-        return $this->notation->get();
-    }
 }
+

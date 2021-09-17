@@ -8,7 +8,7 @@ use Ouxsoft\LuckByDice\Factory\TurnFactory;
 echo 'Building data.csv file ...';
 $turn = TurnFactory::getInstance();
 
-$turn->notation->set('10d10');
+$turn->setNotation('10d10');
 
 $fp = fopen(__DIR__ . '/data.csv', 'w');
 

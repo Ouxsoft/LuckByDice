@@ -12,6 +12,8 @@ namespace Ouxsoft\LuckByDiceTests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use Ouxsoft\LuckByDice\Factory\TurnFactory;
+use Ouxsoft\LuckByDice\Notation;
+use Ouxsoft\LuckByDice\Cup;
 
 class NotationTest extends TestCase
 {
@@ -32,7 +34,7 @@ class NotationTest extends TestCase
      */
     public function test__construct()
     {
-        $this->assertObjectHasAttribute( 'cup', $this->turn->notation);
+        $this->assertObjectHasAttribute( 'notation', $this->turn);
     }
 
     /**
@@ -43,11 +45,11 @@ class NotationTest extends TestCase
     public function testSet()
     {
         $notation = "d4,2d6,3d8+2,4d10*2,5d20+10*2,6d20-2,10d%";
-        $this->turn->notation->set($notation);
-        $outcome = $this->turn->notation->get();
+        $this->turn->setNotation($notation);
+        $outcome = $this->turn->getNotation();
         $this->assertEquals($notation, $outcome);
 
-        $outcome = (string) $this->turn->notation;
+        $outcome = (string) $this->turn->getNotation();
         $this->assertEquals($notation, $outcome);
     }
 
@@ -58,8 +60,8 @@ class NotationTest extends TestCase
     public function testGet()
     {
         $notation = "d4,2d6,3d8+2,4d10*2,5d20+10*2,6d20-2,10d%";
-        $this->turn->notation->set($notation);
-        $outcome = $this->turn->notation->get();
+        $this->turn->setNotation($notation);
+        $outcome = $this->turn->getNotation();
         $this->assertEquals($notation, $outcome);
     }
 
@@ -68,9 +70,11 @@ class NotationTest extends TestCase
      */
     public function testSetSeparator()
     {
+        $cup = new Cup();
+        $notation = new Notation($cup);
         $separator = ';';
-        $this->turn->notation->setSeparator($separator);
-        $this->assertEquals($separator, $this->turn->notation->getSeparator($separator));
+        $notation->setSeparator($separator);
+        $this->assertEquals($separator, $notation->getSeparator());
     }
 
     /**
@@ -78,8 +82,10 @@ class NotationTest extends TestCase
      */
     public function testGetSeparator()
     {
+        $cup = new Cup();
+        $notation = new Notation($cup);
         $separator = ';';
-        $this->turn->notation->setSeparator($separator);
-        $this->assertEquals($separator, $this->turn->notation->getSeparator($separator));
+        $notation->setSeparator($separator);
+        $this->assertEquals($separator, $notation->getSeparator());
     }
 }

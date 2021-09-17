@@ -42,7 +42,7 @@ class TurnFactoryBench
      */
     public function benchTurn($params)
     {
-        $this->turn->notation->set($params['notation']);
+        $this->turn->setNotation($params['notation']);
         $this->turn->roll();
     }
 

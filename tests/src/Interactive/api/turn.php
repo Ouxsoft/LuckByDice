@@ -8,7 +8,7 @@ use Ouxsoft\LuckByDice\Factory\TurnFactory;
 $turn = TurnFactory::getInstance();
 
 if(isset($_POST['notation'])){
-    $turn->notation->set($_POST['notation']);
+    $turn->setNotation($_POST['notation']);
 }
 
 if(isset($_POST['luck'])){

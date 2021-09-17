@@ -24,7 +24,7 @@ $ composer require ouxsoft/luckbydice
 use Ouxsoft\LuckByDice\Factory\TurnFactory;
 
 $turn = TurnFactory::getInstance();
-$turn->notation->set('10d10,1d6+3*7,d%');
+$turn->setNotation('10d10,1d6+3*7,d%');
 echo $turn->roll(); 
 
 // we should be luckier with this next roll
@@ -72,55 +72,46 @@ Matthew Heroux<br />
 See also the [list of contributors](https://github.com/Ouxsoft/LuckByDice/graphs/contributors) who participated in this project.
 
 ### Contributing
-LuckByDice is an open source project. If you find a problem or want to discuss new features or improvements
+LuckByDice is open source software project. If you find a problem or want to discuss new features or improvements
 create an issue, and/or if possible create a pull request.
 
 For local package development use [Docker](https://www.docker.com/products/docker-desktop):
 
-#### Local Setup
-Clone Repo
+Build Standard container
 ```
 git clone https://github.com/Ouxsoft/LuckByDice.git
 cd LuckByDice
-```
-
-
-**Standard container**
-```
 docker build --target standard --tag luckbydice:latest -f Dockerfile .
-
-# Run Interactive test
-docker run -it luckbydice:latest php tests/src/Feature/Cli.php 6d6
 ```
 
-**Test container**
+Build Test container
 ```
 docker build --target test --tag luckbydice:latest -f Dockerfile .
 docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydice:latest composer install
+```
 
-# Automated Tests
-## Unit Tests using local volume
+Run Automated Unit Tests using local volume
+```
 docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydice:latest composer test
+```
 
-## Benchmark Tests using local volume
+Run Automated Benchmark Tests using local volume
+```
 docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydice:latest ./vendor/bin/phpbench run tests/src/Benchmark --report=default
 ```
 
-## Manual Tests
-### Feature CLI Test using local volume 
+Run Manual CLI Feature Test using local volume 
 ```
 docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydice:latest php tests/src/Feature/Cli.php 1d10+4*2 0
 ```
 
-### Interactive Tests 
-Creates a server available at [http://localhost/](http://localhost/)
+Start test server available at [http://localhost/](http://localhost/)
 ```
 docker run -it -p 80:80 --mount type=bind,source="$(pwd)"/,target=/application luckbydice:latest bash -c 'cd tests/src/Interactive && php -S 0.0.0.0:80'
 ```
 
-### Build Docs
+Build Docs
 ```
-# Build Docs
 docker build --target docs --tag luckbydice:docs-latest -f Dockerfile .
 docker run -it --mount type=bind,source="$(pwd)"/docs,target=/app/docs luckbydice:docs-latest bash -c "doxygen Doxyfile && doxyphp2sphinx Ouxsoft::LuckByDice"
 ```
