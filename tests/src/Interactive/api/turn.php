@@ -15,17 +15,23 @@ if(isset($_POST['luck'])){
     $turn->setLuck($_POST['luck']);
 }
 
-$turn->roll();
+$iterations = isset($_POST['iterations']) ? $_POST['iterations'] : 1;
 
 $response = [
-    'data' => [
+    'data' => []
+];
+
+for($i = 1; $i <= $iterations; $i++){
+    $turn->roll();
+
+    $response['data'][] = [
         'total' => $turn->getTotal(),
         'min' => $turn->getMinPotential(),
         'max' => $turn->getMaxPotential(),
         'luck' => $turn->getLuck(),
         'bonus' => $turn->getExtraBonus(),
-    ]
-];
+    ];
+}
 
 header('Content-Type: application/json');
 echo json_encode($response, JSON_PRETTY_PRINT);
