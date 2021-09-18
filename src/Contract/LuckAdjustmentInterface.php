@@ -17,4 +17,6 @@ interface LuckAdjustmentInterface
     public function setMin(int $min): void;
 
     public function run(int $luck, float $rollPercent = 0.5): int;
+
+    public function getName() : string;
 }
