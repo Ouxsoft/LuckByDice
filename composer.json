@@ -41,7 +41,7 @@
       "php-cs-fixer fix --using-cache=no tests/"
     ],
     "test": [
-      "XDEBUG_MODE=coverage phpunit"
+      "XDEBUG_MODE=coverage vendor/bin/phpunit"
     ],
     "fix-code": [
       "php-cs-fixer fix --using-cache=no src/",
