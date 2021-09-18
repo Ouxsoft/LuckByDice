@@ -105,7 +105,7 @@ class Dice implements DiceInterface
      *
      * @return int|null
      */
-    public function getTotal(): int
+    public function getTotal(): ?int
     {
         return $this->value + $this->bonus;
     }

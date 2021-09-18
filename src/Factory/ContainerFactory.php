@@ -25,9 +25,9 @@ class ContainerFactory
     ): Container {
         $container = new Container();
 
-        $container['cup'] = $abstractFactory->makeCup($container);
+        $container['cup'] = $abstractFactory->makeCup();
         $container['notation'] = $abstractFactory->makeNotation($container);
-        $container['luck'] = $abstractFactory->makeLuck($container);
+        $container['luck'] = $abstractFactory->makeLuck();
 
         return $container;
     }

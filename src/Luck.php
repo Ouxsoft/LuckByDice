@@ -11,6 +11,7 @@
 namespace Ouxsoft\LuckByDice;
 
 use Ouxsoft\LuckByDice\Contract\LuckInterface;
+use Ouxsoft\LuckByDice\Contract\LuckAdjustmentInterface;
 use Ouxsoft\LuckByDice\LuckAdjustment\DefaultLuckAdjustment;
 use Ouxsoft\LuckByDice\LuckAdjustment\FickleLuckAdjustment;
 
@@ -26,10 +27,12 @@ class Luck implements LuckInterface
      * @var int an elusive modifier based on random over time
      */
     protected $luck = 0;
+
     /**
      * @var bool used to determine whether luck is enabled or disabled
      */
     private $active = true;
+
     /**
      * @var LuckAdjustmentInterface
      */
