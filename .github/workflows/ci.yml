@@ -6,6 +6,8 @@ on:
   pull_request:
     branches: [ main ]
 
+env:
+  CODECOV_TOKEN: 08d85771-8ca8-4247-be7d-dc66c6742a5a
 jobs:
   composer-validate:
     name: "Composer Validate ${{ matrix.php-version }}"
@@ -101,3 +103,6 @@ jobs:
       - run: composer run-script test
 
       - run: composer run-script benchmark
+
+      - name: Submit code coverage
+        run: "bash <(curl -s https://codecov.io/bash) -t ${{ env.$CODECOV_TOKEN }} -f tests/output/clover.xml"
