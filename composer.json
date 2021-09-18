@@ -44,7 +44,7 @@
       "XDEBUG_MODE=coverage ./vendor/bin/phpunit"
     ],
     "benchmark" : [
-      "./vendor/bin/phpbench run --report=env --progress=dots"
+      "./vendor/bin/phpbench run tests/src/Benchmark --report=env --progress=dots"
     ],
     "fix-code": [
       "php-cs-fixer fix --using-cache=no src/",
