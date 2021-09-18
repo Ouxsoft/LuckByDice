@@ -10,7 +10,6 @@ jobs:
   tests:
     name: "PHP ${{ matrix.php-version }} + ${{ matrix.dependency }}"
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.allow-failures }}
 
     strategy:
       matrix:
