@@ -23,7 +23,8 @@
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.17@dev",
     "phpunit/phpunit": "^9",
-    "phpbench/phpbench": "^1.1"
+    "phpbench/phpbench": "^1.1",
+    "phpstan/phpstan": "^0.12.99"
   },
   "autoload": {
     "psr-4": {
@@ -45,6 +46,9 @@
     ],
     "benchmark" : [
       "./vendor/bin/phpbench run tests/src/Benchmark --report=env --progress=dots"
+    ],
+    "analyze" : [
+      "./vendor/bin/phpstan analyse -c phpstan.neon"
     ],
     "fix-code": [
       "php-cs-fixer fix --using-cache=no src/",

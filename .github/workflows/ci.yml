@@ -60,8 +60,7 @@ jobs:
         with:
           composer-options: "--no-scripts"
 
-      - name: "Run phpstan/phpstan"
-        run: "vendor/bin/phpstan analyse -c phpstan.neon.dist"
+      - run: composer run-script analyze
 
   tests:
     name: "Tests PHP ${{ matrix.php-version }} + ${{ matrix.dependency }}"
