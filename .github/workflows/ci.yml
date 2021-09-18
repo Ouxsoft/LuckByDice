@@ -31,37 +31,37 @@ jobs:
       - name: "Validate composer.json"
         run: "composer validate --strict --no-check-lock"
 
-    phpstan:
-      needs:
-        - "composer-validate"
+  phpstan:
+    needs:
+      - "composer-validate"
 
-      name: "PHPStan (${{ matrix.php-version }})"
+    name: "PHPStan (${{ matrix.php-version }})"
 
-      runs-on: "ubuntu-latest"
+    runs-on: "ubuntu-latest"
 
-      strategy:
-        matrix:
-          php-version:
-            - '7.4'
+    strategy:
+      matrix:
+        php-version:
+          - '7.4'
 
-      steps:
-        - name: "Checkout code"
-          uses: "actions/checkout@v2"
+    steps:
+      - name: "Checkout code"
+        uses: "actions/checkout@v2"
 
-        - name: "Install PHP"
-          uses: "shivammathur/setup-php@v2"
-          with:
-            coverage: "none"
-            php-version: "${{ matrix.php-version }}"
-            tools: composer:v2
+      - name: "Install PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          coverage: "none"
+          php-version: "${{ matrix.php-version }}"
+          tools: composer:v2
 
-        - name: "Composer install"
-          uses: "ramsey/composer-install@v1"
-          with:
-            composer-options: "--no-scripts"
+      - name: "Composer install"
+        uses: "ramsey/composer-install@v1"
+        with:
+          composer-options: "--no-scripts"
 
-        - name: "Run phpstan/phpstan"
-          run: "vendor/bin/phpstan analyse -c phpstan.neon.dist"
+      - name: "Run phpstan/phpstan"
+        run: "vendor/bin/phpstan analyse -c phpstan.neon.dist"
 
   tests:
     name: "Tests PHP ${{ matrix.php-version }} + ${{ matrix.dependency }}"
