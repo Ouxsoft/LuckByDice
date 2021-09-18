@@ -1,6 +1,6 @@
 # ![LuckByDice](https://raw.githubusercontent.com/Ouxsoft/LuckByDice/main/docs/logo.png)
 
-[![Build Status](https://api.travis-ci.com/Ouxsoft/luckbydice.svg?branch=main&status=passed)](https://travis-ci.com/github/Ouxsoft/LuckByDice)
+[![CI](https://github.com/Ouxsoft/LuckByDice/actions/workflows/ci.yml/badge.svg)](https://github.com/Ouxsoft/LuckByDice/actions/workflows/ci.yml)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/08ce9a4f9d2041ed8d815ff6ad664242)](https://www.codacy.com/gh/Ouxsoft/LuckByDice/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ouxsoft/LuckByDice&amp;utm_campaign=Badge_Grade)
 [![Code Coverage](https://img.shields.io/codecov/c/github/Ouxsoft/LuckByDice)](https://codecov.io/gh/Ouxsoft/LuckByDice)
 [![Docs Status](https://readthedocs.org/projects/luckbydice/badge/?version=latest&style=flat)](https://readthedocs.org/projects/luckbydice)
