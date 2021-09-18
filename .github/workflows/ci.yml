@@ -109,5 +109,5 @@ jobs:
       - run: composer run-script benchmark
 
       - name: Submit code coverage
-        if: matrix.submit-coverage = 'yes'
+        if: matrix.submit-coverage == 'yes'
         run: bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN -f tests/output/clover.xml
