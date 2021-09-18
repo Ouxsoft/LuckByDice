@@ -8,9 +8,9 @@ on:
 
 jobs:
   tests:
+    name: "PHP ${{ matrix.php-version }} + ${{ matrix.dependency }}"
     needs:
       - "composer-validate"
-    name: "PHP ${{ matrix.php-version }} + ${{ matrix.dependency }}"
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.allow-failures }}
 
@@ -21,25 +21,10 @@ jobs:
           - '7.3'
           - '7.4'
           - '8.0'
-        dependency:
-          - 'lowest'
-          - 'highest'
-        with-examples: [ 'yes' ]
-        allow-failures: [ false ]
-        include:
-          - php-version: '7.2'
-            dependency: 'lowest'
-            with-examples: 'no'
-            allow-failures: false
-            coverage: xdebug
 
-          - php-version: '8.0'
-            dependency: 'highest'
-            with-examples: 'no'
-            allow-failures: true
-            coverage: xdebug
     steps:
-      - uses: actions/checkout@v2
+      - name: "Checkout code"
+        uses: actions/checkout@v2
 
       - name: PHP Info
         run: php --version
