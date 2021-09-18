@@ -44,7 +44,7 @@ class Cup implements
 
     /**
      * @param mixed $offset
-     * @return mixed
+     * @return CollectionInterface
      */
     public function offsetGet($offset) : CollectionInterface
     {

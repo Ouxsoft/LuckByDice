@@ -23,16 +23,26 @@ use Ouxsoft\LuckByDice\Luck;
 
 class ConcreteFactory implements AbstractFactoryInterface
 {
+    /**
+     * @return Cup
+     */
     public function makeCup(): Cup
     {
         return new Cup();
     }
 
+    /**
+     * @param Container $container
+     * @return Notation
+     */
     public function makeNotation(Container $container): Notation
     {
         return new Notation($container['cup']);
     }
 
+    /**
+     * @return Luck
+     */
     public function makeLuck(): Luck
     {
         return new Luck();

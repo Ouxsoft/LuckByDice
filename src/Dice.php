@@ -56,9 +56,9 @@ class Dice implements DiceInterface
 
     /**
      * Dice constructor.
-     * @param $sides
+     * @param int $sides
      */
-    public function __construct($sides)
+    public function __construct(int $sides)
     {
         if ($sides <= 1) {
             throw new OutOfRangeException('Dice must have at least 2 sides.');

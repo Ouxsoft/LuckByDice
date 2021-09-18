@@ -14,7 +14,7 @@ namespace Ouxsoft\LuckByDice\Contract;
 
 interface DiceInterface
 {
-    public function __construct($sides);
+    public function __construct(int $sides);
 
     public function roll() : int;
 

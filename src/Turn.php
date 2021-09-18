@@ -76,9 +76,9 @@ class Turn implements TurnInterface
     }
 
     /**
-     * @param $notation
+     * @param string $notation
      */
-    public function setNotation($notation) : void
+    public function setNotation(string $notation) : void
     {
         $this->notation->set($notation);
     }
@@ -115,7 +115,7 @@ class Turn implements TurnInterface
             $collection->roll();
 
             // get value without modifier and multiplier
-            $value += $collection->getValue(false);
+            $value += $collection->getValue();
 
             // update luck based on outcome percentage of the collection
             $percent = $collection->getOutcomePercent();
@@ -145,7 +145,7 @@ class Turn implements TurnInterface
     {
         $total = 0;
         foreach ($this->cup as $collection) {
-            $total += $collection->getTotal(true);
+            $total += $collection->getTotal();
         }
         return $total;
     }

@@ -15,13 +15,22 @@ interface TurnInterface
         Luck $luck,
         string $expression = null
     );
+
     public function getLuck(): int;
+
     public function setLuck(int $luck);
+
     public function roll(): int;
+
     public function getTotal(): int;
+
     public function getExtraBonus() : int;
+
     public function getMinPotential() : int;
+
     public function getMaxPotential() : int;
+
     public function getCup() : Cup;
+
     public function getNotation() : string;
 }

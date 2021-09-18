@@ -13,7 +13,7 @@ interface NotationInterface
 
     public function get() : string;
 
-    public function setSeparator($separator) : void;
+    public function setSeparator(string $separator) : void;
 
     public function getSeparator() : string;
 

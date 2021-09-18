@@ -59,9 +59,9 @@ class Notation implements NotationInterface
     }
 
     /**
-     * @param $separator
+     * @param string $separator
      */
-    public function setSeparator($separator) : void
+    public function setSeparator(string $separator) : void
     {
         $this->separator = $separator;
     }

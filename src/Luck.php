@@ -31,7 +31,7 @@ class Luck implements LuckInterface
      */
     private $active = true;
     /**
-     * @var AlgorithmInterface
+     * @var LuckAdjustmentInterface
      */
     public $adjustment;
 
