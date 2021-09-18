@@ -11,24 +11,61 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v2
+    tests:
+      needs:
+        - "composer-validate"
 
-    - name: Validate composer.json and composer.lock
-      run: composer validate --strict
+      name: "PHP ${{ matrix.php-version }} + ${{ matrix.dependency }}"
 
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v2
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-php-
+      runs-on: ubuntu-latest
 
-    - name: Install dependencies
-      run: composer install --prefer-dist --no-progress
+      continue-on-error: ${{ matrix.allow-failures }}
 
-    - run: composer run-script test
+      strategy:
+        matrix:
+          php-version:
+            - '7.2'
+            - '7.3'
+            - '7.4'
+            - '8.0'
+          dependency:
+            - 'lowest'
+            - 'highest'
+          with-examples: ['yes']
+          allow-failures: [false]
+          include:
+            - php-version: '7.2'
+              dependency: 'lowest'
+              with-examples: 'no'
+              allow-failures: false
+              coverage: xdebug
+            - php-version: '8.0'
+              dependency: 'highest'
+              with-examples: 'no'
+              allow-failures: true
+              coverage: xdebug
 
-    - run: composer run-script benchmark
+      steps:
+      - uses: actions/checkout@v2
+
+      - name: PHP Info
+        run: php --version
+
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
+
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v2
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress
+
+      - run: composer run-script test
+
+      - run: composer run-script benchmark
