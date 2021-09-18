@@ -8,12 +8,12 @@ on:
 
 jobs:
   tests:
+    needs:
+      - "composer-validate"
+    name: "PHP ${{ matrix.php-version }} + ${{ matrix.dependency }}"
     runs-on: ubuntu-latest
-      needs:
-        - "composer-validate"
-      name: "PHP ${{ matrix.php-version }} + ${{ matrix.dependency }}"
-      runs-on: ubuntu-latest
-      continue-on-error: ${{ matrix.allow-failures }}
+    continue-on-error: ${{ matrix.allow-failures }}
+
     strategy:
       matrix:
         php-version:
