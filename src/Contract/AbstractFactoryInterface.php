@@ -26,5 +26,4 @@ interface AbstractFactoryInterface
     public function makeNotation(Container $container): Notation;
 
     public function makeLuck(): Luck;
-
 }

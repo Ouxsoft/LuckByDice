@@ -55,8 +55,7 @@ class Turn implements TurnInterface
         Cup $cup,
         Luck $luck,
         string $expression = null
-    )
-    {
+    ) {
         $this->notation = &$notation;
         $this->cup = &$cup;
         $this->luck = &$luck;
@@ -70,7 +69,7 @@ class Turn implements TurnInterface
      * Get the dice notation for the entire cup
      * @return string
      */
-    public function getNotation() : string
+    public function getNotation(): string
     {
         return $this->notation->get();
     }
@@ -78,7 +77,7 @@ class Turn implements TurnInterface
     /**
      * @param string $notation
      */
-    public function setNotation(string $notation) : void
+    public function setNotation(string $notation): void
     {
         $this->notation->set($notation);
     }
@@ -155,7 +154,7 @@ class Turn implements TurnInterface
      * This could be used for determining critical, etc. in game engines, etc.
      * @return int
      */
-    public function getExtraBonus() : int
+    public function getExtraBonus(): int
     {
         return $this->extraBonus;
     }
@@ -164,10 +163,10 @@ class Turn implements TurnInterface
      * Get minimum potential of all Collections in Cup
      * @return int
      */
-    public function getMinPotential() : int
+    public function getMinPotential(): int
     {
         $total = 0;
-        foreach($this->cup as $collection){
+        foreach ($this->cup as $collection) {
             $total += $collection->getMinPotential();
         }
         return $total;
@@ -177,10 +176,10 @@ class Turn implements TurnInterface
      * Get maximum potential of all Collections in Cup
      * @return int
      */
-    public function getMaxPotential() : int
+    public function getMaxPotential(): int
     {
         $total = 0;
-        foreach($this->cup as $collection){
+        foreach ($this->cup as $collection) {
             $total += $collection->getMaxPotential();
         }
         return $total;
@@ -190,10 +189,8 @@ class Turn implements TurnInterface
      * Gets a Cup containing all Collections of Dice
      * @return Cup
      */
-    public function getCup() : Cup
+    public function getCup(): Cup
     {
         return $this->cup;
     }
-
 }
-

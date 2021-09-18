@@ -45,7 +45,7 @@ abstract class AbstractLuckAdjustment implements LuckAdjustmentInterface
      * Get max
      * @return int
      */
-    public function getMax() : int
+    public function getMax(): int
     {
         return $this->max;
     }
@@ -64,7 +64,7 @@ abstract class AbstractLuckAdjustment implements LuckAdjustmentInterface
      * Get min
      * @return int
      */
-    public function getMin() : int
+    public function getMin(): int
     {
         return $this->min;
     }
@@ -73,7 +73,7 @@ abstract class AbstractLuckAdjustment implements LuckAdjustmentInterface
      * Get name of adjustment class
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return static::class;
     }
@@ -90,11 +90,11 @@ abstract class AbstractLuckAdjustment implements LuckAdjustmentInterface
 
         $adjustedLuck = ($currentLuck + $adjustment);
 
-        if($adjustedLuck < $this->min) {
+        if ($adjustedLuck < $this->min) {
             // Return the amount of adjustment it would take for currentLuck
             // to equal min
             return ($this->min - $currentLuck);
-        } else if ($adjustedLuck > $this->max) {
+        } elseif ($adjustedLuck > $this->max) {
             // Return the amount of adjustment it would take for currentLuck
             // to equal max
             return ($this->max - $currentLuck);
@@ -108,5 +108,5 @@ abstract class AbstractLuckAdjustment implements LuckAdjustmentInterface
      * @param float $rollPercent min 0 to max 1
      * @return int
      */
-    abstract function getAdjustment(float $rollPercent = 0.5) : int;
+    abstract public function getAdjustment(float $rollPercent = 0.5): int;
 }

@@ -19,7 +19,7 @@ class AbstractLuckAdjustmentTest extends TestCase
 
     public function setUp(): void
     {
-        $this->luckAdjustment = new DefaultLuckAdjustment;
+        $this->luckAdjustment = new DefaultLuckAdjustment();
     }
 
     public function tearDown(): void
@@ -70,18 +70,18 @@ class AbstractLuckAdjustmentTest extends TestCase
     /**
      * @covers \Ouxsoft\LuckByDice\LuckAdjustment\AbstractLuckAdjustment::getName
      */
-    public function testGetName(){
+    public function testGetName()
+    {
         $this->assertEquals(DefaultLuckAdjustment::class, $this->luckAdjustment->getName());
     }
 
     /**
      * @covers \Ouxsoft\LuckByDice\LuckAdjustment\AbstractLuckAdjustment::run
      */
-    public function testRun(){
-        $this->assertEquals(-1, $this->luckAdjustment->run(1,0));
+    public function testRun()
+    {
+        $this->assertEquals(-1, $this->luckAdjustment->run(1, 0));
 
-        $this->assertEquals(1, $this->luckAdjustment->run(1,1));
+        $this->assertEquals(1, $this->luckAdjustment->run(1, 1));
     }
-
-
 }

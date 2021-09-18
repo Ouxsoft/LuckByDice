@@ -16,5 +16,4 @@ use ArrayObject;
 
 class Container extends ArrayObject
 {
-
 }

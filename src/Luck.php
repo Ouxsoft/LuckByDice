@@ -18,10 +18,10 @@ use Ouxsoft\LuckByDice\LuckAdjustment\FickleLuckAdjustment;
 class Luck implements LuckInterface
 {
     /** @var int DefaultLuckAdjustment */
-    const DEFAULT_ADJUSTMENT = 0;
+    public const DEFAULT_ADJUSTMENT = 0;
 
     /** @var int FickleLuckAdjustment */
-    const FICKLE_ADJUSTMENT = 1;
+    public const FICKLE_ADJUSTMENT = 1;
 
     /**
      * @var int an elusive modifier based on random over time
@@ -51,7 +51,7 @@ class Luck implements LuckInterface
     /**
      * Enable luck
      */
-    public function enable() : void
+    public function enable(): void
     {
         $this->active = true;
     }
@@ -59,7 +59,7 @@ class Luck implements LuckInterface
     /**
      * Disable luck
      */
-    public function disable() : void
+    public function disable(): void
     {
         $this->active = false;
     }
@@ -68,7 +68,7 @@ class Luck implements LuckInterface
      * Get whether enabled or disabled
      * @return bool
      */
-    public function getActiveStatus() : bool
+    public function getActiveStatus(): bool
     {
         return $this->active;
     }
@@ -77,13 +77,13 @@ class Luck implements LuckInterface
      * Set the luck adjustment algorithm
      * @param int $algorithm
      */
-    public function setAdjustment(int $algorithm = self::DEFAULT_ADJUSTMENT) : void
+    public function setAdjustment(int $algorithm = self::DEFAULT_ADJUSTMENT): void
     {
-        switch($algorithm){
+        switch ($algorithm) {
             case self::FICKLE_ADJUSTMENT:
                 $this->adjustment = new FickleLuckAdjustment();
                 break;
-            case self::DEFAULT_ADJUSTMENT;
+            case self::DEFAULT_ADJUSTMENT:
             default:
                 $this->adjustment = new DefaultLuckAdjustment();
                 break;
@@ -94,7 +94,7 @@ class Luck implements LuckInterface
      * Get name of selected adjustment algorithm
      * @return string
      */
-    public function getAdjustment() : string
+    public function getAdjustment(): string
     {
         return $this->adjustment->getName();
     }
@@ -103,7 +103,7 @@ class Luck implements LuckInterface
      * Update luck based on percentage of roll outcome
      * @param float $rollPercent min 0 to max 1
      */
-    public function update(float $rollPercent = 0.5) : void
+    public function update(float $rollPercent = 0.5): void
     {
         $this->luck += $this->adjustment->run($this->luck, $rollPercent);
     }
@@ -112,7 +112,7 @@ class Luck implements LuckInterface
      * Gets luck
      * @return int
      */
-    public function get() : int
+    public function get(): int
     {
         return $this->luck;
     }
@@ -121,7 +121,7 @@ class Luck implements LuckInterface
      * Sets luck
      * @param int $luck
      */
-    public function set(int $luck) : void
+    public function set(int $luck): void
     {
         $this->luck = $luck;
     }
@@ -131,12 +131,12 @@ class Luck implements LuckInterface
      * @param int $number
      * @return int
      */
-    public function modify(int $number) : int
+    public function modify(int $number): int
     {
-        if($this->active){
+        if ($this->active) {
             $number *= $this->getApplicablePercent();
 
-            return (int) round($number, 0,PHP_ROUND_HALF_UP);
+            return (int) round($number, 0, PHP_ROUND_HALF_UP);
         }
 
         return $number;
@@ -146,11 +146,11 @@ class Luck implements LuckInterface
      * Get applicable luck as random percentage based on current luck
      * @return float
      */
-    public function getApplicablePercent() : float
+    public function getApplicablePercent(): float
     {
-        if($this->luck < 0){
+        if ($this->luck < 0) {
             return 1 - mt_rand(0, abs($this->luck)) * .01;
-        } else if($this->luck == 0){
+        } elseif ($this->luck == 0) {
             return 1;
         }
 

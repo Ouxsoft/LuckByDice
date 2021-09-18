@@ -135,5 +135,4 @@ class CupTest extends TestCase
         $key = $this->cup->key();
         $this->assertEquals(0, $key);
     }
-
 }

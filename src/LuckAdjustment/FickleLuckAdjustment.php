@@ -17,15 +17,15 @@ class FickleLuckAdjustment extends AbstractLuckAdjustment
      * @param float $rollPercent min 0 to max 1
      * @return int
      */
-    public function getAdjustment(float $rollPercent = 0.5) : int
+    public function getAdjustment(float $rollPercent = 0.5): int
     {
-        if($rollPercent <=.1) {
+        if ($rollPercent <=.1) {
             return -2;
         } elseif ($rollPercent <=.2) {
             return -1;
         } elseif ($rollPercent >=.8) {
             return 1;
-        } elseif($rollPercent >=.9) {
+        } elseif ($rollPercent >=.9) {
             return 2;
         }
 

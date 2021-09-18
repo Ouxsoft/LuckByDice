@@ -19,7 +19,7 @@ class DefaultLuckAdjustmentTest extends TestCase
 
     public function setUp(): void
     {
-        $this->luckAdjustment = new DefaultLuckAdjustment;
+        $this->luckAdjustment = new DefaultLuckAdjustment();
     }
 
     public function tearDown(): void
@@ -35,5 +35,4 @@ class DefaultLuckAdjustmentTest extends TestCase
         $phi = $this->luckAdjustment->getPhi();
         $this->assertEquals(1.6180339887499, $phi);
     }
-
 }

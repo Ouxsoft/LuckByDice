@@ -21,7 +21,7 @@
     "ext-json": "*"
   },
   "require-dev": {
-    "friendsofphp/php-cs-fixer": "^2.17@dev",
+    "friendsofphp/php-cs-fixer": "^v3.1.0",
     "phpunit/phpunit": "^9",
     "phpbench/phpbench": "^1.1",
     "phpstan/phpstan": "^0.12.99"
@@ -37,10 +37,6 @@
     }
   },
   "scripts": {
-    "build": [
-      "php-cs-fixer fix --using-cache=no src/",
-      "php-cs-fixer fix --using-cache=no tests/"
-    ],
     "test": [
       "XDEBUG_MODE=coverage ./vendor/bin/phpunit"
     ],
@@ -50,9 +46,13 @@
     "analyze" : [
       "./vendor/bin/phpstan analyse -c phpstan.neon"
     ],
-    "fix-code": [
+    "fix-code-standards": [
       "php-cs-fixer fix --using-cache=no src/",
       "php-cs-fixer fix --using-cache=no tests/"
+    ],
+    "check-code-standards": [
+      "php-cs-fixer fix --dry-run --diff --verbose --using-cache=no src/ ",
+      "php-cs-fixer fix --dry-run --diff --verbose --using-cache=no tests/"
     ]
   }
 }

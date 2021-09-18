@@ -72,7 +72,7 @@ class Collection implements
     /**
      * @return int
      */
-    public function count() : int
+    public function count(): int
     {
         return count($this->dice);
     }
@@ -82,7 +82,7 @@ class Collection implements
      *
      * @return int
      */
-    public function roll() : int
+    public function roll(): int
     {
         foreach ($this->dice as &$dice) {
             $dice->roll();
@@ -95,7 +95,7 @@ class Collection implements
      * Gets an array containing Dice
      * @return array
      */
-    public function getDice() : array
+    public function getDice(): array
     {
         return $this->dice;
     }
@@ -105,13 +105,13 @@ class Collection implements
      * @param bool $adjustments whether to apply modifier and multiplier
      * @return int
      */
-    public function getValue(bool $adjustments = true) : int
+    public function getValue(bool $adjustments = true): int
     {
         $value = 0;
-        foreach($this->dice as $dice){
+        foreach ($this->dice as $dice) {
             $value += $dice->getValue();
         }
-        if(!$adjustments){
+        if (!$adjustments) {
             return $value;
         }
         return ($value + $this->getModifier()) * $this->getMultiplier();
@@ -121,10 +121,10 @@ class Collection implements
      * Get bonus of dice without modifier or multiplier
      * @return int
      */
-    public function getBonus() : int
+    public function getBonus(): int
     {
         $bonus = 0;
-        foreach($this->dice as $dice){
+        foreach ($this->dice as $dice) {
             $bonus += $dice->getBonus();
         }
         return $bonus;
@@ -135,21 +135,21 @@ class Collection implements
      * @param int $amount
      * @return int returns the remaining bonus amount left to distribute
      */
-    public function setBonus(int $amount) : int
+    public function setBonus(int $amount): int
     {
         // rearranging dice as tp distribute bonus evenly
         shuffle($this->dice);
 
         // distribute bonus to all dice
-        foreach($this->dice as &$dice) {
-            if($amount == 0) {
+        foreach ($this->dice as &$dice) {
+            if ($amount == 0) {
                 $dice->setBonus(0);
                 continue;
             }
 
             // a dices bonus may not exceed the amount of sides
             $bonus = $dice->getSides() - $dice->getValue();
-            if($amount > $bonus){
+            if ($amount > $bonus) {
                 $dice->setBonus($bonus);
                 $amount -= $bonus;
             } else {
@@ -166,13 +166,13 @@ class Collection implements
      * @param bool $adjustments whether to apply modifier and multiplier
      * @return int
      */
-    public function getTotal(bool $adjustments = true) : int
+    public function getTotal(bool $adjustments = true): int
     {
         $total = 0;
-        foreach($this->dice as $dice){
+        foreach ($this->dice as $dice) {
             $total += $dice->getTotal();
         }
-        if(!$adjustments){
+        if (!$adjustments) {
             return $total;
         }
         return ($total + $this->getModifier()) * $this->getMultiplier();
@@ -181,7 +181,7 @@ class Collection implements
     /**
      * @return int
      */
-    public function getModifier() : int
+    public function getModifier(): int
     {
         return $this->modifier;
     }
@@ -189,7 +189,7 @@ class Collection implements
     /**
      * @return int
      */
-    public function getMultiplier() : int
+    public function getMultiplier(): int
     {
         return $this->multiplier;
     }
@@ -197,7 +197,7 @@ class Collection implements
     /**
      * @return int
      */
-    public function getSides() : int
+    public function getSides(): int
     {
         return $this->sides;
     }
@@ -206,7 +206,7 @@ class Collection implements
      * Get min potential of outcome
      * @return int
      */
-    public function getMinOutcome() : int
+    public function getMinOutcome(): int
     {
         return $this->count();
     }
@@ -215,7 +215,7 @@ class Collection implements
      * Get max potential of outcome
      * @return int
      */
-    public function getMaxOutcome() : int
+    public function getMaxOutcome(): int
     {
         return ($this->count() * $this->sides);
     }
@@ -229,7 +229,7 @@ class Collection implements
      *
      * @return float
      */
-    public function getOutcomePercent() : float
+    public function getOutcomePercent(): float
     {
         return ($this->getValue(false) - $this->count()) / ($this->getMaxOutcome() - $this->count());
     }
@@ -241,7 +241,7 @@ class Collection implements
      *
      * @return int
      */
-    public function getMinPotential() : int
+    public function getMinPotential(): int
     {
         return ($this->getMinOutcome() + $this->getModifier()) * $this->getMultiplier();
     }
@@ -253,7 +253,7 @@ class Collection implements
      *
      * @return int
      */
-    public function getMaxPotential() : int
+    public function getMaxPotential(): int
     {
         return ($this->getMaxOutcome() + $this->getModifier()) * $this->getMultiplier();
     }
@@ -262,7 +262,7 @@ class Collection implements
      * Get the notation for the collection
      * @return string
      */
-    public function getNotation() : string
+    public function getNotation(): string
     {
         return $this->count() . 'd' .
             $this->getSides() . '+' .

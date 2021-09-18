@@ -26,7 +26,7 @@ class Ascii
      * @param int $value the outcome for the cup
      * @return string
      */
-    public function cup(int $value) : string
+    public function cup(int $value): string
     {
         $faceValue = str_pad((string) $value, 8, ' ', STR_PAD_BOTH);
         return <<<ASCII
@@ -47,7 +47,7 @@ class Ascii
      * @param int $sides
      * @return string[]
      */
-    public function dice(int $value, int $total, int $sides) : array
+    public function dice(int $value, int $total, int $sides): array
     {
         $value = ($value == $total) ? '*' : $value;
         $value = str_pad((string) $value, 3, ' ', STR_PAD_BOTH);
@@ -69,11 +69,11 @@ class Ascii
      * @param Collection $collection
      * @return string
      */
-    public function collection(Collection $collection) : string
+    public function collection(Collection $collection): string
     {
         // build an array of dice to be combined line by line
         $drawnDice = [];
-        foreach($collection->getDice() as $die){
+        foreach ($collection->getDice() as $die) {
             $drawnDice[] = $this->dice($die->getValue(), $die->getTotal(), $die->getSides());
         }
 
@@ -82,8 +82,8 @@ class Ascii
         $diceWidth = strlen($drawnDice[0][0]);
         $output = '';
 
-        for($line = 0; $line < $dieHeight; $line++){
-            foreach($drawnDice as $key => $drawnDie){
+        for ($line = 0; $line < $dieHeight; $line++) {
+            foreach ($drawnDice as $key => $drawnDie) {
                 $output .= $drawnDie[$line];
             }
             $output .= PHP_EOL;
@@ -97,7 +97,7 @@ class Ascii
      * @param int $max
      * @return string
      */
-    public function scale(int $min, int $max) : string
+    public function scale(int $min, int $max): string
     {
         return <<<ASCII
     

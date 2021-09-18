@@ -10,7 +10,7 @@
 
 namespace Ouxsoft\LuckByDiceTests\Unit;
 
-use \OutOfRangeException;
+use OutOfRangeException;
 use Ouxsoft\LuckByDice\Collection;
 use PHPUnit\Framework\TestCase;
 

@@ -32,7 +32,8 @@ class TurnTest extends TestCase
     /**
      * @covers \Ouxsoft\LuckByDice\Turn::__construct
      */
-    public function test__construct() {
+    public function test__construct()
+    {
         $this->assertInstanceOf(Turn::class, $this->turn);
 
         $notation = 'd6';

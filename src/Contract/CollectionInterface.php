@@ -27,5 +27,5 @@ interface CollectionInterface
     public function getMinPotential(): int;
     public function getMaxPotential(): int;
     public function getNotation(): string;
-    public function setBonus(int $amount) : int;
+    public function setBonus(int $amount): int;
 }

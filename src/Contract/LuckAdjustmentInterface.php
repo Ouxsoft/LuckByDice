@@ -18,5 +18,5 @@ interface LuckAdjustmentInterface
 
     public function run(int $luck, float $rollPercent = 0.5): int;
 
-    public function getName() : string;
+    public function getName(): string;
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace Ouxsoft\LuckByDiceTests\Feature\Statistics;
 
 require __DIR__ . '/../../../../vendor/autoload.php';
@@ -24,7 +25,7 @@ $fields = [
 fputcsv($fp, $fields);
 
 // add rows
-for($i = 1; $i <= 100000; $i++){
+for ($i = 1; $i <= 100000; $i++) {
     $turn->roll();
 
     $fields = [

@@ -70,7 +70,7 @@ class Dice implements DiceInterface
     /**
      * @return int
      */
-    public function roll() : int
+    public function roll(): int
     {
         $this->value = mt_rand(1, $this->sides);
         return $this->value;
@@ -117,5 +117,4 @@ class Dice implements DiceInterface
     {
         $this->value = $value;
     }
-
 }

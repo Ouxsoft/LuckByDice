@@ -19,12 +19,12 @@ class TurnFactoryBench
      */
     private $turn;
 
-    public function setUp() : void
+    public function setUp(): void
     {
         $this->turn = TurnFactory::getInstance();
     }
 
-    public function tearDown() : void
+    public function tearDown(): void
     {
         unset($this->turn);
     }
@@ -46,25 +46,22 @@ class TurnFactoryBench
         $this->turn->roll();
     }
 
-    public function provideNotations() : array
+    public function provideNotations(): array
     {
         $data = [];
 
         $sides = [2,3,4,6,8,10,12,20,100];
-        foreach($sides as $i){
+        foreach ($sides as $i) {
             $notations = [
                 "1d{$i}",
                 "1d{$i},{$i}d{$i}",
                 "1d{$i},{$i}d{$i},{$i}d{$i}+{$i}",
                 "1d{$i},{$i}d{$i},{$i}d{$i}+{$i},{$i}d{$i}+{$i}*{$i}"
             ];
-            foreach($notations as $notation){
+            foreach ($notations as $notation) {
                 $data[] = ['notation' => $notation];
             }
         }
         return $data;
     }
-
 }
-
-

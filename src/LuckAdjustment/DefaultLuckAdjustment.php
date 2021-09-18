@@ -22,7 +22,7 @@ class DefaultLuckAdjustment extends AbstractLuckAdjustment
      * Get Phi / The Golden Ratio
      * @return float
      */
-    public function getPhi() : float
+    public function getPhi(): float
     {
         return (1 + sqrt(5)) / 2;
     }
@@ -32,15 +32,15 @@ class DefaultLuckAdjustment extends AbstractLuckAdjustment
      * @param float $rollPercent min 0 to max 1
      * @return int
      */
-    public function getAdjustment(float $rollPercent = 0.5) : int
+    public function getAdjustment(float $rollPercent = 0.5): int
     {
         $phi = $this->getPhi();
 
-        if ($rollPercent >= (1/$phi) ) {
+        if ($rollPercent >= (1/$phi)) {
             return 1;
         }
 
-        if($rollPercent <= (1 - (1/$phi)) ) {
+        if ($rollPercent <= (1 - (1/$phi))) {
             return -1;
         }
 

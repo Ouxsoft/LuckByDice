@@ -36,7 +36,7 @@ class Notation implements NotationInterface
      * Set cup notation
      * @param string $notation "1d4+3*2,1d5,d5,10d5"
      */
-    public function set(string $notation) : void
+    public function set(string $notation): void
     {
         $this->decode($notation);
     }
@@ -45,7 +45,7 @@ class Notation implements NotationInterface
      * Get cup notation
      * @return string "1d4+3*2,1d5,d5,10d5"
      */
-    public function get() : string
+    public function get(): string
     {
         return $this->encode();
     }
@@ -53,7 +53,7 @@ class Notation implements NotationInterface
     /**
      * @see Notation::get()
      */
-    public function __toString () : string
+    public function __toString(): string
     {
         return $this->get();
     }
@@ -61,7 +61,7 @@ class Notation implements NotationInterface
     /**
      * @param string $separator
      */
-    public function setSeparator(string $separator) : void
+    public function setSeparator(string $separator): void
     {
         $this->separator = $separator;
     }
@@ -69,7 +69,7 @@ class Notation implements NotationInterface
     /**
      * @return string
      */
-    public function getSeparator() : string
+    public function getSeparator(): string
     {
         return $this->separator;
     }
@@ -77,7 +77,7 @@ class Notation implements NotationInterface
     /**
      * @return string
      */
-    private function encode() : string
+    private function encode(): string
     {
         $expression = '';
         $firstIteration = true;
@@ -94,7 +94,7 @@ class Notation implements NotationInterface
             }
 
             $sides = $collection->getSides();
-            if($sides == 100) {
+            if ($sides == 100) {
                 $expression .= 'd%';
             } else {
                 $expression .= 'd' . $sides;
@@ -119,7 +119,7 @@ class Notation implements NotationInterface
     /**
      * @param string $expression
      */
-    private function decode(string $expression) : void
+    private function decode(string $expression): void
     {
         $this->cup->empty();
 
@@ -142,7 +142,7 @@ class Notation implements NotationInterface
                 $modifier = (int) 0 - ((isset($unsorted[1])) ? $unsorted[1] : 0);
             }
 
-            if( $unsorted[0] == '%'){
+            if ($unsorted[0] == '%') {
                 $sides = 100;
             } else {
                 $sides = (int) $unsorted[0];

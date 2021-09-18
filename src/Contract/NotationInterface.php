@@ -9,13 +9,13 @@ interface NotationInterface
 {
     public function __construct(Cup $cup);
 
-    public function set(string $notation) : void;
+    public function set(string $notation): void;
 
-    public function get() : string;
+    public function get(): string;
 
-    public function setSeparator(string $separator) : void;
+    public function setSeparator(string $separator): void;
 
-    public function getSeparator() : string;
+    public function getSeparator(): string;
 
-    public function __toString () : string;
+    public function __toString(): string;
 }

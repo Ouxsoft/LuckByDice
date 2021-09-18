@@ -14,7 +14,7 @@ interface LuckInterface
 {
     public function __construct(int $luck = 0);
 
-    public function update(float $rollPercent = 0.5) : void;
+    public function update(float $rollPercent = 0.5): void;
 
     public function get(): int;
 

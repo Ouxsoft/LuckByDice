@@ -47,5 +47,4 @@ class ConcreteFactory implements AbstractFactoryInterface
     {
         return new Luck();
     }
-
 }

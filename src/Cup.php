@@ -27,7 +27,7 @@ class Cup implements
     private $container = [];
     private $index = 0;
 
-    public function empty() : void
+    public function empty(): void
     {
         $this->container = [];
         $this->index = 0;
@@ -46,7 +46,7 @@ class Cup implements
      * @param mixed $offset
      * @return CollectionInterface
      */
-    public function offsetGet($offset) : CollectionInterface
+    public function offsetGet($offset): CollectionInterface
     {
         return $this->container[$offset];
     }
@@ -55,7 +55,7 @@ class Cup implements
      * @param mixed $offset
      * @param mixed $value
      */
-    public function offsetSet($offset, $value) : void
+    public function offsetSet($offset, $value): void
     {
         if ($offset === null) {
             $this->container[] = $value;
@@ -67,7 +67,7 @@ class Cup implements
     /**
      * @param mixed $offset
      */
-    public function offsetUnset($offset) : void
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -75,12 +75,12 @@ class Cup implements
     /**
      * @return CollectionInterface
      */
-    public function current() : CollectionInterface
+    public function current(): CollectionInterface
     {
         return $this->container[$this->index];
     }
 
-    public function next() : void
+    public function next(): void
     {
         $this->index++;
     }
@@ -88,7 +88,7 @@ class Cup implements
     /**
      * @return int
      */
-    public function key() : int
+    public function key(): int
     {
         return $this->index;
     }
@@ -101,12 +101,12 @@ class Cup implements
         return isset($this->container[$this->key()]);
     }
 
-    public function rewind() : void
+    public function rewind(): void
     {
         $this->index = 0;
     }
 
-    public function reverse() : void
+    public function reverse(): void
     {
         $this->container = array_reverse($this->container);
         $this->rewind();

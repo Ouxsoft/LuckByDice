@@ -34,7 +34,7 @@ class NotationTest extends TestCase
      */
     public function test__construct()
     {
-        $this->assertObjectHasAttribute( 'notation', $this->turn);
+        $this->assertObjectHasAttribute('notation', $this->turn);
     }
 
     /**

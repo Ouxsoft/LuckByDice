@@ -34,6 +34,38 @@ jobs:
       - name: "Validate composer.json"
         run: "composer validate --strict --no-check-lock"
 
+  php-cs-fixer:
+    needs:
+      - "composer-validate"
+
+    name: "PHP-CS-Fixer (${{ matrix.php-version }})"
+
+    runs-on: "ubuntu-latest"
+
+    strategy:
+      matrix:
+        php-version:
+          - '7.2'
+
+    steps:
+      - name: "Checkout code"
+        uses: "actions/checkout@v2"
+
+      - name: "Install PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          coverage: "none"
+          php-version: "${{ matrix.php-version }}"
+          tools: composer:v2
+
+      - name: "Composer install"
+        uses: "ramsey/composer-install@v1"
+        with:
+          composer-options: "--no-scripts"
+
+      - name: "Run friendsofphp/php-cs-fixer"
+        run: check-code-standards
+
   phpstan:
     needs:
       - "composer-validate"

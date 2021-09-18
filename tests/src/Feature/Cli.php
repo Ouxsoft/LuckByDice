@@ -1,4 +1,5 @@
 <?php
+
 #!/usr/local/bin/php
 /**
  * $ php Game.php 2d10,6d6+2*1
@@ -30,10 +31,10 @@ do {
         PHP_EOL .
         PHP_EOL .
         ' Cup '. $turn->getNotation() . PHP_EOL .
-        $draw->scale($turn->getMinPotential(),$turn->getMaxPotential()) .
+        $draw->scale($turn->getMinPotential(), $turn->getMaxPotential()) .
         $draw->cup($roll);
 
-    foreach($turn->getCup() as $collection) {
+    foreach ($turn->getCup() as $collection) {
         echo PHP_EOL .
             'Collection: ' . $collection->getNotation() . PHP_EOL .
             $draw->scale($collection->getMinOutcome(), $collection->getMaxOutcome()) .
@@ -43,7 +44,7 @@ do {
     echo PHP_EOL .
         'Roll again? (y/n)?';
 
-    $handle = fopen('php://stdin','r');
+    $handle = fopen('php://stdin', 'r');
     $line = fgets($handle);
 } while (trim($line) == 'y');
 fclose($handle);

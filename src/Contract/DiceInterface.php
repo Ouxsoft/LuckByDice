@@ -16,7 +16,7 @@ interface DiceInterface
 {
     public function __construct(int $sides);
 
-    public function roll() : int;
+    public function roll(): int;
 
-    public function getSides() : int;
+    public function getSides(): int;
 }

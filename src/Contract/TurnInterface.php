@@ -24,13 +24,13 @@ interface TurnInterface
 
     public function getTotal(): int;
 
-    public function getExtraBonus() : int;
+    public function getExtraBonus(): int;
 
-    public function getMinPotential() : int;
+    public function getMinPotential(): int;
 
-    public function getMaxPotential() : int;
+    public function getMaxPotential(): int;
 
-    public function getCup() : Cup;
+    public function getCup(): Cup;
 
-    public function getNotation() : string;
+    public function getNotation(): string;
 }

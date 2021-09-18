@@ -1,4 +1,5 @@
 <?php
+
 namespace Ouxsoft\LuckByDiceTests\Feature\Statistics;
 
 require __DIR__ . '/../../../../vendor/autoload.php';
@@ -7,11 +8,11 @@ use Ouxsoft\LuckByDice\Factory\TurnFactory;
 
 $turn = TurnFactory::getInstance();
 
-if(isset($_POST['notation'])){
+if (isset($_POST['notation'])) {
     $turn->setNotation($_POST['notation']);
 }
 
-if(isset($_POST['luck'])){
+if (isset($_POST['luck'])) {
     $turn->setLuck($_POST['luck']);
 }
 
@@ -21,7 +22,7 @@ $response = [
     'data' => []
 ];
 
-for($i = 1; $i <= $iterations; $i++){
+for ($i = 1; $i <= $iterations; $i++) {
     $turn->roll();
 
     $response['data'][] = [

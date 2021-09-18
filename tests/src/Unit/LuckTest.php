@@ -89,7 +89,6 @@ class LuckTest extends TestCase
         $this->luck->set(1);
         $this->luck->update(1);
         $this->assertEquals(1, $this->luck->get());
-
     }
 
     /**

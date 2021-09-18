@@ -39,7 +39,7 @@ class AsciiTest extends TestCase
      */
     public function testDice()
     {
-        $this->assertIsArray($this->draw->dice(4,6,6));
+        $this->assertIsArray($this->draw->dice(4, 6, 6));
     }
 
     /**
@@ -50,7 +50,7 @@ class AsciiTest extends TestCase
         $turn = TurnFactory::getInstance();
         $turn->setNotation('10d6,1d2+12*2,3d3,d%');
         $turn->roll();
-        foreach($turn->getCup() as $collection){
+        foreach ($turn->getCup() as $collection) {
             $this->assertIsString($this->draw->collection($collection));
         }
     }
@@ -60,6 +60,6 @@ class AsciiTest extends TestCase
      */
     public function testScale()
     {
-        $this->assertIsString($this->draw->scale(2,20));
+        $this->assertIsString($this->draw->scale(2, 20));
     }
 }
