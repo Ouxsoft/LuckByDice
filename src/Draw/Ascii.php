@@ -22,11 +22,10 @@ use Ouxsoft\LuckByDice\Collection;
  */
 class Ascii
 {
-
     /**
      * @return string
      */
-    public function logo() : string
+    public function logo(): string
     {
         return <<<ASCII
      _                _   ______      ______  
