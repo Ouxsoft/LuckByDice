@@ -96,7 +96,7 @@ FROM build AS standard
 
 # Copy App
 COPY . /application
-RUN dos2unix /application/tests/src/Interactive/Game.php
+RUN dos2unix /application/tests/src/Feature/Cli.php
 
 RUN composer install --no-dev --no-interaction
 
