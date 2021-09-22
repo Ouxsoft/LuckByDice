@@ -96,7 +96,7 @@ FROM build AS standard
 
 # Copy App
 COPY . /application
-RUN dos2unix /application/tests/src/Feature/Cli.php
+RUN dos2unix /application/bin/luckbydice
 
 RUN composer install --no-dev --no-interaction
 
