@@ -140,7 +140,7 @@ jobs:
 
       - run: composer run-script benchmark
 
-      - run: bin/luckbydice 1d2,3d6*2+2 0
+      - run: ${{ GITHUB_WORKSPACE }}/bin/luckbydice 1d2,3d6*2+2 0
 
       - name: Submit code coverage
         if: matrix.submit-coverage == 'yes'
