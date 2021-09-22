@@ -140,9 +140,12 @@ jobs:
 
       - run: composer run-script benchmark
 
+      - run: bin/luckbydice 1d2,3d6*2+2 0
+
       - name: Submit code coverage
         if: matrix.submit-coverage == 'yes'
         run: bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN -f tests/output/clover.xml
+
 
   docker:
     name: "Build and push Docker container"

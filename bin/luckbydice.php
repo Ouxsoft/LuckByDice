@@ -16,31 +16,21 @@ $luck = !empty($argv[2]) ? $argv[2] : '0';
 $turn->setNotation($notation);
 $turn->setLuck($luck);
 
-do {
-    $roll = $turn->roll();
+$roll = $turn->roll();
+?>
 
-    echo PHP_EOL .
-        PHP_EOL .
-        ' A cup with collections of similar dice was rolled and a total was computed' . PHP_EOL .
-        ' ' . PHP_EOL .
-        ' Luck : ' . $turn->getLuck() .
-        PHP_EOL .
-        PHP_EOL .
-        ' Cup '. $turn->getNotation() . PHP_EOL .
-        $draw->scale($turn->getMinPotential(), $turn->getMaxPotential()) .
-        $draw->cup($roll);
+A cup with collections of similar dice was rolled and a total was computed.
 
-    foreach ($turn->getCup() as $collection) {
-        echo PHP_EOL .
-            'Collection: ' . $collection->getNotation() . PHP_EOL .
-            $draw->scale($collection->getMinOutcome(), $collection->getMaxOutcome()) .
-            $draw->collection($collection);
-    }
+Luck : <?php echo $turn->getLuck();?>
 
-    echo PHP_EOL .
-        'Roll again? (y/n)?';
+Cup <?php echo $turn->getNotation();?>
+<?php echo $draw->scale($turn->getMinPotential(), $turn->getMaxPotential()) ?>
+<?php echo $draw->cup($roll); ?>
 
-    $handle = fopen('php://stdin', 'r');
-    $line = fgets($handle);
-} while (trim($line) == 'y');
-fclose($handle);
+<?php foreach ($turn->getCup() as $collection) : ?>
+
+Collection: <?php echo $collection->getNotation(); ?>
+<?php echo $draw->scale($collection->getMinOutcome(), $collection->getMaxOutcome()); ?>
+<?php echo $draw->collection($collection); ?>
+
+<?php endforeach; ?>
