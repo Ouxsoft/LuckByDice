@@ -36,6 +36,9 @@
       "Ouxsoft\\LuckByDiceTests\\": "tests/src/"
     }
   },
+  "bin" : [
+    "bin/luckbydice"
+  ],
   "scripts": {
     "test": [
       "XDEBUG_MODE=coverage ./vendor/bin/phpunit"
