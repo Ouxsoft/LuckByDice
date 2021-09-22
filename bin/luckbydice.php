@@ -18,6 +18,7 @@ $turn->setLuck($luck);
 
 $roll = $turn->roll();
 ?>
+<?php echo $draw->logo();?>
 
 A cup with collections of similar dice was rolled and a total was computed.
 
@@ -30,7 +31,9 @@ Cup <?php echo $turn->getNotation();?>
 <?php foreach ($turn->getCup() as $collection) : ?>
 
 Collection: <?php echo $collection->getNotation(); ?>
+
 <?php echo $draw->scale($collection->getMinOutcome(), $collection->getMaxOutcome()); ?>
+
 <?php echo $draw->collection($collection); ?>
 
 <?php endforeach; ?>

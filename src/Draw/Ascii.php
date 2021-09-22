@@ -22,6 +22,24 @@ use Ouxsoft\LuckByDice\Collection;
  */
 class Ascii
 {
+
+    /**
+     * @return string
+     */
+    public function logo() : string
+    {
+        return <<<ASCII
+     _                _   ______      ______  
+    | |              | |  | ___ \     |  _  (_)
+    | |    _   _  ___| | _| |_/ /_   _| | | |_  ___ ___
+    | |   | | | |/ __| |/ / ___ \ | | | | | | |/ __/ _ \
+    | |___| |_| | (__|   <| |_/ / |_| | |/ /| | (_|  __/
+    \_____/\__,_|\___|_|\_\____/ \__, |___/ |_|\___\___|
+                                  __/ |                 
+                                 |___/
+    ASCII;
+    }
+
     /**
      * @param int $value the outcome for the cup
      * @return string
@@ -103,6 +121,7 @@ class Ascii
     
      <--{$min}-----------------------------------------------{$max}-->
         Min                                              Max
+        
     ASCII;
     }
 }
