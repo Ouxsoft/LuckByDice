@@ -128,9 +128,7 @@ class Turn implements TurnInterface
             $amount = $collection->setBonus($amount);
         }
 
-        // there is the potential for an amount to still exist after
-        // that could be represented as a luck
-        // if modifier granter then total add luck dice to outcome only not collection
+        // there is the potential for an amount to still exist after above iterations, store it
         $this->extraBonus = $amount;
 
         return $this->getTotal();
