@@ -137,9 +137,8 @@ jobs:
 
       - run: composer run-script benchmark
 
-      - name: Run bin test
+      - name: Run LuckByDice bin test
         run: php ./bin/luckbydice 1d2,3d6*2+2 0
-        shell: bash
 
       - name: Submit code coverage
         if: matrix.submit-coverage == 'yes'
