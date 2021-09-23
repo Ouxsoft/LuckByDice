@@ -11,6 +11,10 @@ All releases must adhere to [SemVer 2](https://semver.org/) naming convention an
 ## LivingMarkup [Unreleased]
 Released: TBD. Notable changes:
 
+## LivingMarkup 2.0.1
+Released: 2021-09-22. Notable changes:
+* Added: Composer package bin option [256b24e](https://github.com/Ouxsoft/LuckByDice/commit/256b24eaa6ccada3a1b294abfc937382dc5f83f2)
+
 ## LivingMarkup 2.0.0
 Released: 2021-09-16. Notable changes:
 * Added: Benchmark tests. [77bcd40](https://github.com/Ouxsoft/LuckByDice/commit/77bcd400712c87d0e2e083c119162c2088aa60c3)
