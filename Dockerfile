@@ -97,6 +97,7 @@ FROM build AS standard
 # Copy App
 COPY . /application
 RUN dos2unix /application/bin/luckbydice
+ && chmod +x /application/bin/luckbydice
 
 RUN composer install --no-dev --no-interaction
 
