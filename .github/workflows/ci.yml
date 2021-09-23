@@ -173,5 +173,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: hxtree/luckbydice:latest
+          tags: ouxsoft/luckbydice:latest
           target: standard
