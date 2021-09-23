@@ -14,9 +14,8 @@
 Run your dice notation via [Docker](https://www.docker.com/products/docker-desktop):
 
 ```
-$ docker run ouxsoft/luckbydice:latest php bin/luckbydice 1d6+2,3d8+3*2
+$ docker run ouxsoft/luckbydice:latest bin/luckbydice d3,4d6+1,5d+1*2
 ```
-
 
 ![CLI Test Example](https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/interactive-test.gif)
 

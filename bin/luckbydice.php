@@ -35,5 +35,4 @@ Collection: <?php echo $collection->getNotation(); ?>
 <?php echo $draw->scale($collection->getMinOutcome(), $collection->getMaxOutcome()); ?>
 <?php echo PHP_EOL; ?>
 <?php echo $draw->collection($collection); ?>
-
 <?php endforeach; ?>
