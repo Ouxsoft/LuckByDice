@@ -10,6 +10,16 @@
 [![License](https://img.shields.io/badge/license-MIT-428f7e.svg?logo=open%20source%20initiative&logoColor=white&labelColor=555555)](https://github.com/Ouxsoft/LuckByDice/blob/master/LICENSE)
 [![Total Downloads](https://img.shields.io/packagist/dt/Ouxsoft/LuckByDice.svg)](https://packagist.org/packages/Ouxsoft/LuckByDice)
 
+## Got Dice?
+Run your dice notation via [Docker](https://www.docker.com/products/docker-desktop):
+
+```
+$ docker run ouxsoft/luckbydice:latest php bin/luckbydice 1d6+2,3d8+3*2
+```
+
+
+![CLI Test Example](https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/interactive-test.gif)
+
 ## Installation
 
 Install using [Composer](https://getcomposer.org/download/):
@@ -40,19 +50,12 @@ Rolls made with luck enabled have a natural ebb and flow to roll outcomes.
 Rolls made with higher luck are more likely to roll higher values. 
 Luck is well suited for use with character's luck stat, which may feature unnatural modification.
 
-**CLI Test**
-
-This shows running Turn test rolling a Cup with various Collections of Dice.
-
-![CLI Test Example](https://raw.githubusercontent.com/ouxsoft/LuckByDice/main/docs/interactive-test.gif)
-
 **Chart Test**
 
-This graph illustrates 10,000 consecutive `10d10` rolls to aid in statistical analysis.
+This graph illustrates 10,000 consecutive `10d10` rolls to aid in statistical analysis. Notice how outcome impacts luck and vice versa.
 
 ![Chart Test Example](https://raw.githubusercontent.com/Ouxsoft/LuckByDice/main/docs/statistics.png)
 
-Notice how outcome impacts luck and vice versa.
 
 ### Documentation
 *  [Dice Notation Examples](https://luckbydice.readthedocs.io/en/latest/project/dice-notation-examples.html)
