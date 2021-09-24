@@ -177,6 +177,8 @@ jobs:
 
   deploy-aws:
     name: Deloy to AWS
+    needs:
+      - "tests"
     runs-on: ubuntu-latest
     steps:
       - name: Configure AWS credentials
@@ -189,6 +191,9 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
