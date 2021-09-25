@@ -1,7 +1,7 @@
 {
   "family": "luckbydice-fargate",
   "networkMode": "awsvpc",
-  "executionRoleArn": "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy",
+  "executionRoleArn": "arn:aws:iam::124653296725:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "name": "luckbydice",
