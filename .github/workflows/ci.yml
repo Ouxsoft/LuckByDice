@@ -210,7 +210,7 @@ jobs:
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
-          task-definition: ./.github/workflow/task-definition.json
+          task-definition: ./.github/workflows/task-definition.json
           container-name: luckbydice
           image: ${{ steps.build-image.outputs.image }}
 
