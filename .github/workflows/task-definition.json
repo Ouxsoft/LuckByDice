@@ -3,8 +3,8 @@
   "networkMode": "awsvpc",
   "containerDefinitions": [
     {
-      "name": "luckbydice-app",
-      "image": "luckbydice:latest",
+      "name": "luckbydice",
+      "image": "124653296725.dkr.ecr.us-east-2.amazonaws.com/luckbydice",
       "portMappings": [
         {
           "containerPort": 80,
