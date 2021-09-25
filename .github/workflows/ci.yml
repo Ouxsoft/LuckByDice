@@ -146,7 +146,7 @@ jobs:
 
 
   docker:
-    name: "Build and push Docker container"
+    name: "Build and push container to DockerHub"
     environment: CI
     needs:
       - "tests"
@@ -176,7 +176,7 @@ jobs:
           target: standard
 
   deploy-aws:
-    name: Deloy to AWS
+    name: "Deploy to AWS"
     needs:
       - "tests"
     runs-on: ubuntu-latest
@@ -210,14 +210,14 @@ jobs:
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
-          task-definition: task-definition.json
-          container-name: my-container
+          task-definition: ./github/workflow/task-definition.json
+          container-name: luckbydice
           image: ${{ steps.build-image.outputs.image }}
 
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: my-service
-          cluster: my-cluster
+          service: keepers-cradle-service
+          cluster: keepers-cradle-cluster
           wait-for-service-stability: true

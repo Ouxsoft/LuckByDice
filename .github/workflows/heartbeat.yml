@@ -1,0 +1,19 @@
+on:
+  schedule:
+    - cron:  '33 5,17 * * *'
+jobs:
+   package-test:
+    name: "Composer package install test"
+    needs:
+      - "composer-validate"
+    runs-on: "ubuntu-latest"
+    strategy:
+      matrix:
+        php-version:
+          - '8.0'
+    steps:
+      - name: "Checkout code"
+        uses: "actions/checkout@v2"
+
+      - name: Install dependencies
+        run: composer install ouxsoft/luckbydice --no-dev
