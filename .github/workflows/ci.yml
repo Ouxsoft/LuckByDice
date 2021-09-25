@@ -145,7 +145,7 @@ jobs:
         run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }} -f tests/output/clover.xml
 
 
-  docker:
+  docker-hub:
     name: "Build and push container to DockerHub"
     environment: CI
     needs:
