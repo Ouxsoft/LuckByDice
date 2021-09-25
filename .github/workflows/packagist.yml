@@ -2,7 +2,7 @@ name: Package Test
 
 on:
   schedule:
-    - cron:  '33 5,17 * * *'
+    - cron:  '1/13 4-10 * * *'
 jobs:
    package-test:
     name: "Composer package install test"
