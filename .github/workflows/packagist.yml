@@ -6,8 +6,6 @@ on:
 jobs:
    package-test:
     name: "Composer package install test"
-    needs:
-      - "composer-validate"
     runs-on: "ubuntu-latest"
     strategy:
       matrix:
