@@ -1,10 +1,10 @@
 {
-  "family": "sample-fargate",
+  "family": "luckbydice-fargate",
   "networkMode": "awsvpc",
   "containerDefinitions": [
     {
-      "name": "fargate-app",
-      "image": "httpd:2.4",
+      "name": "luckbydice-app",
+      "image": "luckbydice:latest",
       "portMappings": [
         {
           "containerPort": 80,
