@@ -146,7 +146,7 @@ jobs:
 
 
   docker-hub:
-    name: "Build and push container to DockerHub"
+    name: "Build and push docker container to DockerHub"
     environment: CI
     needs:
       - "tests"
@@ -176,7 +176,7 @@ jobs:
           target: standard
 
   deploy-aws:
-    name: "Deploy to AWS"
+    name: "Build, push docker container to ECS, and deploy to Fargate"
     needs:
       - "tests"
     runs-on: ubuntu-latest
