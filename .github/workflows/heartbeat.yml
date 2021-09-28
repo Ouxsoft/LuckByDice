@@ -1,4 +1,4 @@
-name: Package Test
+name: Packagist heartbeat
 
 on:
   schedule:
