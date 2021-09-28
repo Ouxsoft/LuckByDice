@@ -6,9 +6,6 @@ on:
 jobs:
   deploy-aws:
     name: "Deploy to Fargate"
-    needs:
-      - "tests"
-    continue-on-error: true
     runs-on: ubuntu-latest
     steps:
       - name: Configure AWS credentials
