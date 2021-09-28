@@ -144,16 +144,30 @@ jobs:
         if: matrix.submit-coverage == 'yes'
         run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }} -f tests/output/clover.xml
 
+  docker-validate:
+      - name: Get files changed
+        id: changed-files
+        uses: tj-actions/changed-files@v2.1
+
+      - uses: actions/checkout@v2
+        if: contains(steps.changed-files.outputs.modified_files, 'Dockerfile')
+
+      - uses: hadolint/hadolint-action@v1.5.0
+        if: contains(steps.changed-files.outputs.modified_files, 'Dockerfile')
+        with:
+          dockerfile: Dockerfile
 
   docker-hub:
     name: "Push to DockerHub"
     environment: CI
     needs:
+      - "docker-validate"
       - "tests"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -185,7 +199,6 @@ jobs:
         uses: slackapi/slack-github-action@v1.14.0
         with:
           channel-id: '#luckbydice'
-          slack-message: ${{ job.status }}
-          payload:  ${{ toJson(steps) }}
+          slack-message: 'CI Build Init${{ job.status }}
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
