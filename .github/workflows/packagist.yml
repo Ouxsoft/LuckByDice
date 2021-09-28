@@ -3,6 +3,8 @@ name: Package Test
 on:
   schedule:
     - cron:  '1/13 4-10 * * *'
+  workflow_dispatch:
+    
 jobs:
    package-test:
     name: "Composer package install test"
@@ -12,8 +14,5 @@ jobs:
         php-version:
           - '8.0'
     steps:
-      - name: "Checkout code"
-        uses: "actions/checkout@v2"
-
       - name: Install dependencies
         run: composer require ouxsoft/luckbydice
