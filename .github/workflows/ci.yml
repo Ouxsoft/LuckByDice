@@ -194,7 +194,6 @@ jobs:
           tags: ouxsoft/luckbydice:latest
           target: standard
 
-
   notify-slack:
     name: Notify slack
     runs-on: ubuntu-latest
@@ -204,6 +203,6 @@ jobs:
         uses: slackapi/slack-github-action@v1.14.0
         with:
           channel-id: '#luckbydice'
-          slack-message: 'CI Build Init${{ job.status }}
+          slack-message: CI Build Init ${{ job.status }}
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
