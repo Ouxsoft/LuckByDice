@@ -226,27 +226,13 @@ jobs:
   notify-slack:
     name: Notify slack
     runs-on: ubuntu-latest
-    env:
-      REPOSITORY_URL: docker.pkg.github.com
-      IMAGE_NAME: ${{ github.repository }}/alerta-cli
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     steps:
-      - uses: act10ns/slack@v1
+      - name: Post to the #LuckByDice channel
+        id: slack
+        uses: slackapi/slack-github-action@v1.14.0
         with:
-          status: starting
-          channel: '#luckbydice'
-        if: always()
-
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Variables
-        id: vars
-        run: echo "::set-output name=SHORT_COMMIT_ID::$(git rev-parse --short HEAD)"
-
-      - uses: act10ns/slack@v1
-        with:
-          status: ${{ job.status }}
-          steps: ${{ toJson(steps) }}
-          channel: '#workflows'
-        if: always()
+          channel-id: '#luckbydice'
+          slack-message: ${{ job.status }}
+          payload: ${{ job.status }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
