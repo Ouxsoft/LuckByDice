@@ -145,6 +145,11 @@ jobs:
         run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }} -f tests/output/clover.xml
 
   docker-validate:
+    name: "Validate Dockerfile"
+    needs:
+      - "tests"
+    runs-on: ubuntu-latest
+    steps:
       - name: Get files changed
         id: changed-files
         uses: tj-actions/changed-files@v2.1
