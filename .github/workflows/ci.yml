@@ -233,6 +233,6 @@ jobs:
         with:
           channel-id: '#luckbydice'
           slack-message: ${{ job.status }}
-          payload: ${{ job.status }}
+          payload:  ${{ toJson(steps) }}
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
