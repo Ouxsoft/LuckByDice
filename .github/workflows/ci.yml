@@ -37,7 +37,7 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - '8.0'
+          - '7.4'
     steps:
       - name: "Checkout code"
         uses: "actions/checkout@v2"
@@ -240,6 +240,7 @@ jobs:
   slack-notification:
     name: "Slack Notification"
     runs-on: ubuntu-latest
+    if: always()
     needs:
       - composer-validate
       - php-coding-standards-test
@@ -251,7 +252,6 @@ jobs:
       - docker-hub
     steps:
       - name: Send message to Slack API
-        if: always()
         uses: archive/github-actions-slack@v2.0.0
         with:
           slack-bot-user-oauth-access-token: ${{ secrets.SLACK_BOT_USER_OAUTH_ACCESS_TOKEN }}
