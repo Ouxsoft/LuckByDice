@@ -29,6 +29,7 @@ jobs:
           tools: composer:v2
 
       - name: "Validate composer.json"
+        id: composer-validate-check
         run: "composer validate --strict --no-check-lock"
 
   php-cs-fixer:
@@ -60,7 +61,8 @@ jobs:
         with:
           composer-options: "--no-scripts"
 
-      - name: "Run friendsofphp/php-cs-fixer"
+      - name: Run Code Standard Test
+        id: php-code-standard-test-check
         run: composer run-script check-code-standards
 
   phpstan:
@@ -92,7 +94,9 @@ jobs:
         with:
           composer-options: "--no-scripts"
 
-      - run: composer run-script analyze
+      - name: PHPStan Test
+        id: phpstan-test-check
+        run: composer run-script analyze
 
   test-suite:
     name: "Tests PHP ${{ matrix.php-version }} + ${{ matrix.dependency }}"
@@ -133,18 +137,23 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
 
-      - run: composer run-script test
+      - name: Run PHP Unit Tests
+        id: php-unit-test-check
+        run: composer run-script test
 
-      - run: composer run-script benchmark
+      - name: Run PHP Benchmark Tests
+        id: php-benchmark-test-check
+        run: composer run-script benchmark
 
       - name: Run LuckByDice bin test
+        id: php-bin-check
         run: php ./bin/luckbydice 1d2,3d6*2+2 0
 
       - name: Submit code coverage
         if: matrix.submit-coverage == 'yes'
         run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }} -f tests/output/clover.xml
 
-  docker-validate:
+  dockerfile-validate:
     name: "Validate Dockerfile"
     needs:
       - "phpstan"
@@ -160,6 +169,7 @@ jobs:
         if: contains(steps.changed-files.outputs.modified_files, 'Dockerfile')
 
       - uses: hadolint/hadolint-action@v1.5.0
+        id: dockerfile-validate-check
         if: contains(steps.changed-files.outputs.modified_files, 'Dockerfile')
         with:
           dockerfile: Dockerfile
@@ -168,7 +178,7 @@ jobs:
     name: "Push to DockerHub"
     environment: CI
     needs:
-      - "docker-validate"
+      - "dockerfile-validate"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -187,6 +197,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push
+        id: docker-hub-check
         uses: docker/build-push-action@v2
         with:
           context: .
@@ -210,11 +221,13 @@ jobs:
           slack-emoji-name: green_circle
           slack-text: |
             Event "${{ github.event_name }}" in "${{ github.repository }}" by @${{ github.actor }}
-            ${{ steps.composer-validate.outcome == 'success' && ':green-circle:' || ':red-circle:' }} Composer Validate
-            ${{ steps.php-cs-fixer.outcome}} PHP CS Fixer
-            ${{ steps.phpstan.outcome }} PHPStan
-            ${{ steps.test-suite.outcome }} Test Suite
-            ${{ steps.docker-validate.outcome }} Docker Validate
-            ${{ steps.docker-hub.outcome }} Docker Hub
+            ${{ steps.composer-validate-check.outcome == 'success' && ':large_green_circle:' || ':red-circle:' }} Composer Validate
+            ${{ steps.php-code-standard-test-check.outcome}} PHP CS Fixer Test
+            ${{ steps.phpstan-test-check.outcome }} PHPStan Test
+            ${{ steps.php-unit-test-check.outcome }} PHP Unit Test Check
+            ${{ steps.php-benchmark-test-check.outcome }} PHP Benchmark Test Check
+            ${{ steps.php-bin-check.outcome }} PHP Bin Check
+            ${{ steps.dockerfile-validate-check.outcome }} Docker Validate
+            ${{ steps.docker-hub-check.outcome }} Docker Hub
 
 
