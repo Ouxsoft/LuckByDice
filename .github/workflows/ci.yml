@@ -234,9 +234,15 @@ jobs:
 
 
   one:
+    if: always()
     runs-on: ubuntu-20.04
     needs:
-      - "docker-hub"
+      - composer-validate
+      - php-cs-fixer
+      - phpstan
+      - test-suite
+      - docker-hub
+      - dockerfile-validate
     steps:
       - name: Dump GitHub context
         env:
@@ -262,3 +268,7 @@ jobs:
         env:
           MATRIX_CONTEXT: ${{ toJson(matrix) }}
         run: echo "$MATRIX_CONTEXT"
+     - name: Needs
+       env:
+         NEEDS_CONTEXT: ${{ toJson(needs) }}
+       run: echo "$NEEDS_CONTEXT"
