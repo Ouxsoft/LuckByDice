@@ -34,7 +34,7 @@ RUN apt-get update \
   libzip-dev \
   libicu-dev \
   vim \
-  dos2unix
+  dos2unix \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* \
  && docker-php-ext-configure gd --with-freetype --with-jpeg \
