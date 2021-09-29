@@ -118,7 +118,7 @@ RUN apt-get update \
  && apt-get install --no-install-recommends -y \
     wget \
  && apt-get clean \
- && rm -rf /var/lib/apt/lists/*
+ && rm -rf /var/lib/apt/lists/* \
  && wget --progress=dot:giga https://raw.githubusercontent.com/silverfoxy/doxyphp2sphinx/master/doxyphp2sphinx/rstgenerator.py \
     -O /usr/local/lib/python3.7/dist-packages/doxyphp2sphinx/rstgenerator.py
 
