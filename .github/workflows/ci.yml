@@ -221,6 +221,7 @@ jobs:
           slack-emoji-name: green_circle
           slack-text: |
             Event "${{ github.event_name }}" in "${{ github.repository }}" by @${{ github.actor }}
+            {{ github.sha }}
             ${{ steps.composer-validate-check.outcome == 'success' && ':large_green_circle:' || ':red-circle:' }} Composer Validate
             ${{ steps.php-code-standard-test-check.outcome}} PHP CS Fixer Test
             ${{ steps.phpstan-test-check.outcome }} PHPStan Test
@@ -232,9 +233,10 @@ jobs:
 
 
 
-
   one:
     runs-on: ubuntu-20.04
+    needs:
+      - "docker-hub"
     steps:
       - name: Dump GitHub context
         env:
