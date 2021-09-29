@@ -94,7 +94,7 @@ jobs:
 
       - run: composer run-script analyze
 
-  tests:
+  test-suite:
     name: "Tests PHP ${{ matrix.php-version }} + ${{ matrix.dependency }}"
     needs:
       - "composer-validate"
@@ -149,7 +149,7 @@ jobs:
     needs:
       - "phpstan"
       - "php-cs-fixer"
-      - "tests"
+      - "test-suite"
     runs-on: ubuntu-latest
     steps:
       - name: Get files changed
@@ -198,7 +198,7 @@ jobs:
     name: "Notify Slack"
     runs-on: ubuntu-latest
     needs:
-      - "docker-validate"
+      - "docker-hub"
     steps:
       - name: Send message to Slack API
         if: always()
@@ -210,9 +210,9 @@ jobs:
           slack-emoji-name: green_circle
           slack-text: |
             Event "${{ github.event_name }}" in "${{ github.repository }}" by @${{ github.actor }}
-            {{ steps.composer-validate.outputs.result == 'success' }} composer-validate
-            {{ steps.php-cs-fixer.outputs.result == 'success' }} php-cs-fixer
-            {{ steps.phpstan.outputs.result == 'success' }} phpstan
-            {{ steps.tests.outputs.result == 'success' }} tests
-            {{ steps.docker-validate.outputs.result == 'success' }} docker-validate
-            {{ steps.docker-hub.outputs.result == 'success' }} docker-hub
+            ${{ steps.composer-validate.outputs.result == 'success' }} Composer Validate
+            ${{ steps.php-cs-fixer.outputs.result == 'success' }} PHP CS Fixer
+            ${{ steps.phpstan.outputs.result == 'success' }} PHPStan
+            ${{ steps.test-suite.outputs.result == 'success' }} Test Suite
+            ${{ steps.docker-validate.outputs.result == 'success' }} Docker Validate
+            ${{ steps.docker-hub.outputs.result == 'success' }} Docker Hub
