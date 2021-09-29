@@ -144,7 +144,7 @@ jobs:
         run: composer run-script benchmark
 
   php-feature-test:
-    name: "PHP ${{ matrix.php-version }} Feature Test"
+    name: "PHP ${{ matrix.php-version }} Feature Tests"
     needs:
       - composer-validate
     runs-on: ubuntu-latest
@@ -184,14 +184,9 @@ jobs:
       - php-feature-test
     runs-on: ubuntu-latest
     steps:
-      - name: Get files changed
-        uses: tj-actions/changed-files@v2.1
-
       - uses: actions/checkout@v2
-        if: contains(steps.changed-files.outputs.modified_files, 'Dockerfile')
 
       - uses: hadolint/hadolint-action@v1.5.0
-        if: contains(steps.changed-files.outputs.modified_files, 'Dockerfile')
         with:
           dockerfile: Dockerfile
 
