@@ -250,8 +250,8 @@ jobs:
             ${{ needs.composer-validate.result == 'success' && ':white_check_mark:' || ':no_entry_sign:' }} Composer Validate.
             ${{ needs.php-coding-standards-test.result == 'success' && ':white_check_mark:' || ':no_entry_sign:' }} PHP Coding Standards Tests
             ${{ needs.php-static-analysis-test.result == 'success' && ':white_check_mark:' || ':no_entry_sign:' }} PHP Static Analysis Tests
-            ${{ needs.php-unit-test.result == 'success' && ':white_check_mark:' || ':no_entry_sign:' }} PHP Unit Test.
-            ${{ needs.php-benchmark-test.result == 'success' && ':white_check_mark:' || ':no_entry_sign:' }} PHP Benchmark Test.
-            ${{ needs.php-feature-test.result == 'success' && ':white_check_mark:' || ':no_entry_sign:' }} PHP Feature Test.
+            ${{ needs.php-unit-test.result == 'success' && ':white_check_mark:' || ':no_entry_sign:' }} PHP Unit Tests.
+            ${{ needs.php-benchmark-test.result == 'success' && ':white_check_mark:' || ':no_entry_sign:' }} PHP Benchmark Tests.
+            ${{ needs.php-feature-test.result == 'success' && ':white_check_mark:' || ':no_entry_sign:' }} PHP Feature Tests.
             ${{ needs.dockerfile-validate.result == 'success' && ':white_check_mark:' || ':no_entry_sign:' }} Dockerfile Validate.
             ${{ needs.docker-hub.result == 'success' && ':white_check_mark:' || ':no_entry_sign:' }} Docker Hub.
