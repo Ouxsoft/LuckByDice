@@ -189,7 +189,7 @@ jobs:
     name: "Dockerfile Validate"
     needs:
       - composer-validate
-      - php-coding-style-test
+      - php-coding-standards-test
       - php-static-analysis-test
       - php-unit-test
       - php-benchmark-test
@@ -242,7 +242,7 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - composer-validate
-      - php-coding-style-test
+      - php-coding-standards-test
       - php-static-analysis-test
       - php-unit-test
       - php-benchmark-test
@@ -260,7 +260,7 @@ jobs:
             Event "${{ github.event_name }}" in "${{ github.repository }}" by @${{ github.actor }}
             Commit ${{ github.sha }}
             ${{ needs.composer-validate.result == 'success' && ':white_check_mark:' || ':no_entry_sign:' }} Composer Validate.
-            ${{ needs.php-coding-style-test.result == 'success' && ':white_check_mark:' || ':no_entry_sign:' }} PHP Coding Style Tests
+            ${{ needs.php-coding-standards-test.result == 'success' && ':white_check_mark:' || ':no_entry_sign:' }} PHP Coding Standards Tests
             ${{ needs.php-static-analysis-test.result == 'success' && ':white_check_mark:' || ':no_entry_sign:' }} PHP Static Analysis Tests
             ${{ needs.php-unit-test.result == 'success' && ':white_check_mark:' || ':no_entry_sign:' }} PHP Unit Test.
             ${{ needs.php-benchmark-test.result == 'success' && ':white_check_mark:' || ':no_entry_sign:' }} PHP Benchmark Test.
