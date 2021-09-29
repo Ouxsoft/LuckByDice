@@ -210,9 +210,11 @@ jobs:
           slack-emoji-name: green_circle
           slack-text: |
             Event "${{ github.event_name }}" in "${{ github.repository }}" by @${{ github.actor }}
-            ${{ steps.composer-validate.outputs.result }} Composer Validate
-            ${{ steps.php-cs-fixer.outputs.result }} PHP CS Fixer
-            ${{ steps.phpstan.outputs.result }} PHPStan
-            ${{ steps.test-suite.outputs.result }} Test Suite
-            ${{ steps.docker-validate.outputs.result }} Docker Validate
-            ${{ steps.docker-hub.outputs.result }} Docker Hub
+            ${{ steps.composer-validate.outcome == 'success' && ':green-circle:' || ':red-circle:' }} Composer Validate
+            ${{ steps.php-cs-fixer.outcome}} PHP CS Fixer
+            ${{ steps.phpstan.outcome }} PHPStan
+            ${{ steps.test-suite.outcome }} Test Suite
+            ${{ steps.docker-validate.outcome }} Docker Validate
+            ${{ steps.docker-hub.outcome }} Docker Hub
+
+
