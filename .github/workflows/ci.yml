@@ -8,7 +8,7 @@ on:
 
 jobs:
   composer-validate:
-    name: "Composer Validate ${{ matrix.php-version }}"
+    name: "PHP${{ matrix.php-version }} Composer Validate"
     runs-on: "ubuntu-latest"
     strategy:
       matrix:
@@ -32,7 +32,7 @@ jobs:
   php-coding-standards-test:
     needs:
       - composer-validate
-    name: "PHP Coding Standards Tests ${{ matrix.php-version }}"
+    name: "PHP${{ matrix.php-version }} Coding Standards Tests"
     runs-on: "ubuntu-latest"
     strategy:
       matrix:
@@ -60,7 +60,7 @@ jobs:
   php-static-analysis-test:
     needs:
       - composer-validate
-    name: "PHP Static Analysis Tests ${{ matrix.php-version }}"
+    name: "PHP${{ matrix.php-version }} Static Analysis Tests"
     runs-on: "ubuntu-latest"
     strategy:
       matrix:
@@ -74,7 +74,7 @@ jobs:
         run: composer run-script analyze
 
   php-unit-test:
-    name: "PHP Unit Tests ${{ matrix.php-version }} + ${{ matrix.dependency }}"
+    name: "PHP${{ matrix.php-version }} Unit Tests"
     needs:
       - composer-validate
     runs-on: ubuntu-latest
@@ -114,7 +114,7 @@ jobs:
         run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }} -f tests/output/clover.xml
 
   php-benchmark-test:
-    name: "PHP Benchmark Tests ${{ matrix.php-version }} + ${{ matrix.dependency }}"
+    name: "PHP${{ matrix.php-version }} Benchmark Tests"
     needs:
       - composer-validate
     runs-on: ubuntu-latest
@@ -144,7 +144,7 @@ jobs:
         run: composer run-script benchmark
 
   php-feature-test:
-    name: "PHP Feature Test ${{ matrix.php-version }} + ${{ matrix.dependency }}"
+    name: "PHP${{ matrix.php-version }} Feature Test"
     needs:
       - composer-validate
     runs-on: ubuntu-latest
