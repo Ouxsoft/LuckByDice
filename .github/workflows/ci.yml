@@ -268,7 +268,7 @@ jobs:
         env:
           MATRIX_CONTEXT: ${{ toJson(matrix) }}
         run: echo "$MATRIX_CONTEXT"
-     - name: Needs
-       env:
-         NEEDS_CONTEXT: ${{ toJson(needs) }}
-       run: echo "$NEEDS_CONTEXT"
+      - name: Needs
+        env:
+          NEEDS_CONTEXT: ${{ toJson(needs) }}
+        run: echo "$NEEDS_CONTEXT"
