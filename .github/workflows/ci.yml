@@ -32,7 +32,7 @@ jobs:
   php-coding-standards-test:
     needs:
       - composer-validate
-    name: "PHP Coding Standards Tests (${{ matrix.php-version }})"
+    name: "PHP Coding Standards Tests ${{ matrix.php-version }}"
     runs-on: "ubuntu-latest"
     strategy:
       matrix:
@@ -60,27 +60,15 @@ jobs:
   php-static-analysis-test:
     needs:
       - composer-validate
-    name: "PHP Static Analysis Tests (${{ matrix.php-version }})"
+    name: "PHP Static Analysis Tests ${{ matrix.php-version }}"
     runs-on: "ubuntu-latest"
     strategy:
       matrix:
         php-version:
-          - '7.4'
+          - '8.0'
     steps:
-      - name: "Checkout code"
-        uses: "actions/checkout@v2"
-
-      - name: "Install PHP"
-        uses: "shivammathur/setup-php@v2"
-        with:
-          coverage: "none"
-          php-version: "${{ matrix.php-version }}"
-          tools: composer:v2
-
-      - name: "Composer install"
-        uses: "ramsey/composer-install@v1"
-        with:
-          composer-options: "--no-scripts"
+      - uses: actions/checkout@v2
+      - uses: php-actions/composer@v6
 
       - name: PHPStan Test
         run: composer run-script analyze
