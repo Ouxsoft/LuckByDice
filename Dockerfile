@@ -113,7 +113,7 @@ RUN apt-get update \
  && python3 -m pip install --no-cache-dir Sphinx==3.4.3 Pillow \
  && pip install sphinxcontrib-phpdomain \
  && pip install sphinx_rtd_theme \
- && pip install doxyphp2sphinx
+ && pip install doxyphp2sphinx \
  && apt-get update \
  && apt-get install --no-install-recommends -y \
     wget \
