@@ -48,3 +48,20 @@ jobs:
           service: keepers-cradle-service
           cluster: keepers-cradle-cluster
           wait-for-service-stability: true
+
+  slack-notification:
+    name: "Slack Notification"
+    runs-on: ubuntu-latest
+    if: always()
+    needs:
+      - deploy-aws
+    steps:
+      - name: Send message to Slack API
+        uses: archive/github-actions-slack@v2.0.0
+        with:
+          slack-bot-user-oauth-access-token: ${{ secrets.SLACK_BOT_USER_OAUTH_ACCESS_TOKEN }}
+          slack-channel: ${{ secrets.SLACK_CHANNEL_ID }}
+          slack-text: |
+            Event "${{ github.event_name }}" in "${{ github.repository }}" by @${{ github.actor }}
+            Commit ${{ github.sha }}
+            ${{ needs.deploy-aws.result == 'success' && ':white_check_mark:' || ':no_entry_sign:' }} Deploy to Fargate.
