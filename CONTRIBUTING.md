@@ -27,9 +27,9 @@ Run Bin using local volume
 docker run -it --mount type=bind,source="$(pwd)"/,target=/application/ luckbydice:latest bin/luckbydice 1d10+4*2 0
 ```
 
-Start test server available at [http://localhost/](http://localhost/)
+Start test server available at [http://localhost/](http://localhost/test.html)
 ```
-docker run -it -p 80:80 --mount type=bind,source="$(pwd)"/,target=/application luckbydice:latest bash -c 'cd tests/src/Interactive && php -S 0.0.0.0:80'
+docker run -it -p 80:80 --mount type=bind,source="$(pwd)"/,target=/application luckbydice:latest bash -c 'cd public && php -S 0.0.0.0:80'
 ```
 
 Rebuild Docs

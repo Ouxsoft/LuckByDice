@@ -2,7 +2,7 @@
 
 namespace Ouxsoft\LuckByDiceTests\Feature\Statistics;
 
-require __DIR__ . '/../../../../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 use Ouxsoft\LuckByDice\Factory\TurnFactory;
 
