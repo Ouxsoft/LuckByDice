@@ -38,8 +38,8 @@ $turn->setNotation('10d10,1d6+3*7,d%');
 echo $turn->roll(); 
 
 // we should be luckier with this next roll
-$this->turn->setLuck(200);
-echo $this->roll();
+$turn->setLuck(200);
+echo $turn->roll();
 ```
 
 ## About
