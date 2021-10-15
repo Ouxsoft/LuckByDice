@@ -1,7 +1,7 @@
 {
   "family": "luckbydice-fargate",
   "networkMode": "awsvpc",
-  "executionRoleArn": "arn:aws:iam::124653296725:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::124653296725:user/github-ci",
   "containerDefinitions": [
     {
       "name": "luckbydice",
