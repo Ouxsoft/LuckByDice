@@ -8,19 +8,17 @@
       "image": "124653296725.dkr.ecr.us-east-2.amazonaws.com/luckbydice",
       "portMappings": [
         {
-          "containerPort": 80,
-          "hostPort": 80,
+          "containerPort": 9000,
+          "hostPort": 9000,
           "protocol": "tcp"
         }
       ],
       "essential": true,
       "entryPoint": [
-        "sh",
+        "/bin/bash",
         "-c"
       ],
-      "command": [
-        "cd public && php -S 0.0.0.0:80"
-      ]
+      "command": [ "CMD-SHELL", "bin/luckbydice 1d2 || exit 1" ]
     }
   ],
   "requiresCompatibilities": [
