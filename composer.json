@@ -1,6 +1,6 @@
 {
   "name": "ouxsoft/luckbydice",
-  "description": "A library for simulating luck based dice rolls written in PHP.",
+  "description": "A library for simulating dice rolls written in PHP.",
   "license": "MIT",
   "keywords": [
     "dice",
