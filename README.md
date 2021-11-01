@@ -71,7 +71,7 @@ This graph illustrates 10,000 consecutive `10d10` rolls to aid in statistical an
 *  [Classes](https://luckbydice.readthedocs.io/en/latest/api.html)
 
 ### Author
-Matthew Heroux<br />
+[Matthew Heroux](https://github.com/hxtree).<br />
 See also the [list of contributors](https://github.com/Ouxsoft/LuckByDice/graphs/contributors) who participated in this project.
 
 ### Contributing
