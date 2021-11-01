@@ -1,15 +1,16 @@
 Subject
 
 ### Problem
-Problem, task, reason for PR
+<!-- Problem, task, reason for PR -->
 
 ### Solution
-List of changes
+<!-- List of changes -->
 
 ### Notes
-Special instructions, testing steps, etc.
+<!-- Special instructions, testing steps, etc. -->
 
 ### References
+<!-- Add issue ID -->
 Issue ID: [JRA-1]
 
 ### Checklist
