@@ -1,4 +1,4 @@
-Subject
+<!-- Subject -->
 
 ### Problem
 <!-- Problem, task, reason for PR -->
@@ -8,10 +8,6 @@ Subject
 
 ### Notes
 <!-- Special instructions, testing steps, etc. -->
-
-### References
-<!-- Add issue ID -->
-Issue ID: [JRA-1]
 
 ### Checklist
 - [ ] Screenshots and recordings of any visual changes were added to pull request to make reviewers jobs easier.
