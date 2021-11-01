@@ -3,10 +3,10 @@
   "description": "A library for simulating dice rolls written in PHP.",
   "license": "MIT",
   "keywords": [
-    "dice",
-    "luck",
+    "dice roller",
     "dice notation",
-    "roll"
+    "dice",
+    "luck"
   ],
   "type": "library",
   "homepage": "https://github.com/ouxsoft/LuckByDice",
