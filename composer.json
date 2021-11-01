@@ -4,9 +4,9 @@
   "license": "MIT",
   "keywords": [
     "dice",
-    "luck",
     "dice notation",
-    "roll"
+    "roll",
+    "luck"
   ],
   "type": "library",
   "homepage": "https://github.com/ouxsoft/LuckByDice",
