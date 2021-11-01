@@ -6,8 +6,7 @@
     "dice",
     "luck",
     "dice notation",
-    "roll",
-    "throw"
+    "roll"
   ],
   "type": "library",
   "homepage": "https://github.com/ouxsoft/LuckByDice",
