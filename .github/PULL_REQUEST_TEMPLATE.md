@@ -1,9 +1,22 @@
-Issue ID: Subject
+Subject
 
-Problem: problem, task, reason for PR
+### Problem
+Problem, task, reason for PR
 
-Solution: list of changes
+### Solution
+List of changes
 
-Notes: special instructions, testing steps, etc.
+### Notes
+Special instructions, testing steps, etc.
 
-By submitting this pull request, I confirm that you can use, modify, copy, and redistribute this contribution, under the terms of your choice.
+### References
+Issue ID: [JRA-1]
+
+### Checklist
+- [ ] Screenshots and recordings of any visual changes were added to pull request to make reviewers jobs easier.
+- [ ] Automated tests passed locally.
+- [ ] By submitting this pull request, I confirm that you can use, modify, copy, and redistribute this contribution, under the terms of your choice.
+
+
+
+
