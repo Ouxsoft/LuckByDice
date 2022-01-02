@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-   package-test:
+   package-test2:
     name: "Composer package install test"
     runs-on: "ubuntu-latest"
     strategy:
@@ -15,4 +15,4 @@ jobs:
           - '8.1'
     steps:
       - name: Install dependencies
-        run: composer require ouxsoft/luckbydice
+        run: composer install --no-interaction && composer require ouxsoft/luckbydice
