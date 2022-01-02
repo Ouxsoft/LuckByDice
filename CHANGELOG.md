@@ -8,14 +8,18 @@ All releases must adhere to [SemVer 2](https://semver.org/) naming convention an
 >
 >PATCH version - when you make backwards compatible bug fixes.
 
-## LivingMarkup [Unreleased]
+## [Unreleased]
 Released: TBD. Notable changes:
 
-## LivingMarkup 2.0.1
+## 2.0.1
+Released: 2022-01-01. Notable changes:
+* Added: PHP 8.1 Support.
+
+## 2.0.1
 Released: 2021-09-22. Notable changes:
 * Added: Composer package bin option [256b24e](https://github.com/Ouxsoft/LuckByDice/commit/256b24eaa6ccada3a1b294abfc937382dc5f83f2)
 
-## LivingMarkup 2.0.0
+## 2.0.0
 Released: 2021-09-16. Notable changes:
 * Added: Benchmark tests. [77bcd40](https://github.com/Ouxsoft/LuckByDice/commit/77bcd400712c87d0e2e083c119162c2088aa60c3)
 * Added: Interactive tests. [dae006b](https://github.com/Ouxsoft/LuckByDice/commit/dae006b2d8bdde12806d517e86b3c5399f0abb21)
@@ -23,19 +27,19 @@ Released: 2021-09-16. Notable changes:
 * Changed: Improved test coverage. [7a5ab7a](https://github.com/Ouxsoft/LuckByDice/commit/7a5ab7a6ed5dafa2f27005fafc070217e173fb91)
 * Changed: Improved documentation. [3e924e8](https://github.com/Ouxsoft/LuckByDice/commit/3e924e8c78c4ff00996bd7510efb49ba40d3cdf9)
 
-## LivingMarkup 1.3.0
+## 1.3.0
 Released: 2021-09-09. Notable changes:
 * Added: Dice values [9bcde49](https://github.com/Ouxsoft/LuckByDice/commit/9bcde496886b4da7a5fbf36a97e848a3723944d6)
 
-## LivingMarkup 1.2.0
+## 1.2.0
 Released: 2021-08-18. Notable changes: [1683b63](https://github.com/Ouxsoft/LuckByDice/commit/1683b639ab0e06b595b9bcfb7d201285fee7e52d)
 * Added: Min and Max potential calculations to cup and collection.
 
-## LivingMarkup 1.0.0
+## 1.0.0
 Released: 2021-07-26. Notable changes:
 * Removed: Pimple/Pimple container dependency [bec5ae2](https://github.com/Ouxsoft/LuckByDice/commit/bec5ae219a100f986b180926d523707192ca79a0).
 
-## LivingMarkup 0.1.0
+## 0.1.0
 Released: 2021-03-08. Notable changes:
 * Added: Luck, Dice notation parser, Dice, Collection, and Cup [35b224e](https://github.com/ouxsoft/LuckByDice/commit/35b224efb59c05922dc13903381959961b6fa69c)
 * Added: Test coverage [6d66739](https://github.com/ouxsoft/LuckByDice/commit/6d66739d09d314160e6ebc039878139d3ad03fa6)
