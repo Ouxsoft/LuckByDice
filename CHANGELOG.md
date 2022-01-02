@@ -11,7 +11,7 @@ All releases must adhere to [SemVer 2](https://semver.org/) naming convention an
 ## [Unreleased]
 Released: TBD. Notable changes:
 
-## 2.0.1
+## 2.2.0
 Released: 2022-01-01. Notable changes:
 * Added: PHP 8.1 Support.
 
