@@ -15,4 +15,4 @@ jobs:
           - '8.1'
     steps:
       - name: Install dependencies
-        run: composer install --no-interaction && composer require ouxsoft/luckbydice
+        run: echo "{}" >> composer.json && composer require ouxsoft/luckbydice
