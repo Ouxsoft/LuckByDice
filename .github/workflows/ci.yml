@@ -131,7 +131,8 @@ jobs:
           fi
 
       - name: Submit code coverage to Codacy 
-        if: matrix.submit-coverage == 'yes' && steps.codacy-checksum.checsum == 'pass'
+        if: matrix.submit-coverage == 'yes' 
+        # && steps.codacy-checksum.checsum == 'pass'
         run: |
           bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r tests/output/clover.xml -l PHP
         env:
