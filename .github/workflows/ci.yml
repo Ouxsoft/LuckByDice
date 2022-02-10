@@ -111,6 +111,13 @@ jobs:
       - name: Run PHP Unit Tests
         run: composer run-script test
 
+      - name: Run codacy-coverage-reporter
+        uses: codacy/codacy-coverage-reporter-action@v1
+        with:
+          api-token: ${{ secrets.CODACY_API_TOKEN }}
+          coverage-reports: tests/output/clover.xml
+
+
 #       - name: Submit code coverage to Codecov
 #         if: matrix.submit-coverage == 'yes'
 #         run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }} -f tests/output/clover.xml
@@ -130,12 +137,6 @@ jobs:
 #               echo "::set-output name=checksum::fail"
 #           fi
 
-      - uses: actions/checkout@v2
-      - name: Run codacy-coverage-reporter
-        uses: codacy/codacy-coverage-reporter-action@v1
-        with:
-          api-token: ${{ secrets.CODACY_API_TOKEN }}
-          coverage-reports: tests/output/clover.xml
 
 #       - name: Submit code coverage to Codacy 
 #         if: matrix.submit-coverage == 'yes' 
