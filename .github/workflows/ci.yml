@@ -111,24 +111,24 @@ jobs:
       - name: Run PHP Unit Tests
         run: composer run-script test
 
-      - name: Submit code coverage to Codecov
-        if: matrix.submit-coverage == 'yes'
-        run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }} -f tests/output/clover.xml
+#       - name: Submit code coverage to Codecov
+#         if: matrix.submit-coverage == 'yes'
+#         run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }} -f tests/output/clover.xml
 
-      - name: Verified Codacy Coverage tool to checksum 
-        id: codacy-checksum
-        if: matrix.submit-coverage == 'yes'
-        run: |          
-          SHA256=$(curl -sSL https://coverage.codacy.com/get.sh | sha256sum | head -c 64)
-          CHECKSUM='8dc671cdf1038f1c95cf2dbcb4ef6ae127a243d99d0b131d4600f8b4e3e91428'
+#       - name: Verified Codacy Coverage tool to checksum 
+#         id: codacy-checksum
+#         if: matrix.submit-coverage == 'yes'
+#         run: |          
+#           SHA256=$(curl -sSL https://coverage.codacy.com/get.sh | sha256sum | head -c 64)
+#           CHECKSUM='8dc671cdf1038f1c95cf2dbcb4ef6ae127a243d99d0b131d4600f8b4e3e91428'
 
-          if [ "$SHA256" == "$CHECKSUM" ]; then
-              echo "Checksum verification pass: $SHA256"
-              echo "::set-output name=checksum::pass"
-          else
-              echo "Checksum verification fail: $SHA256"
-              echo "::set-output name=checksum::fail"
-          fi
+#           if [ "$SHA256" == "$CHECKSUM" ]; then
+#               echo "Checksum verification pass: $SHA256"
+#               echo "::set-output name=checksum::pass"
+#           else
+#               echo "Checksum verification fail: $SHA256"
+#               echo "::set-output name=checksum::fail"
+#           fi
 
       - name: Submit code coverage to Codacy 
         if: matrix.submit-coverage == 'yes' 
