@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/Ouxsoft/LuckByDice/actions/workflows/ci.yml/badge.svg)](https://github.com/Ouxsoft/LuckByDice/actions/workflows/ci.yml)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/08ce9a4f9d2041ed8d815ff6ad664242)](https://www.codacy.com/gh/Ouxsoft/LuckByDice/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ouxsoft/LuckByDice&amp;utm_campaign=Badge_Grade)
-[![Code Coverage](https://img.shields.io/codecov/c/github/Ouxsoft/LuckByDice)](https://codecov.io/gh/Ouxsoft/LuckByDice)
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/08ce9a4f9d2041ed8d815ff6ad664242)](https://www.codacy.com/gh/Ouxsoft/LuckByDice/dashboard?utm_source=github.com&utm_medium=referral&utm_content=ouxsoft/LuckByDice&utm_campaign=Badge_Coverage)
 [![Docs Status](https://readthedocs.org/projects/luckbydice/badge/?version=latest&style=flat)](https://readthedocs.org/projects/luckbydice)
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/Ouxsoft/LuckByDice.svg)](https://packagist.org/packages/Ouxsoft/LuckByDice)
