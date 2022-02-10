@@ -82,11 +82,11 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - '7.2'
-          - '7.3'
-          - '7.4'
+#           - '7.2'
+#           - '7.3'
+#           - '7.4'
           - '8.0'
-          - '8.1'
+#           - '8.1'
         include:
           - php-version: '8.0'
             submit-coverage: 'yes'
@@ -130,10 +130,13 @@ jobs:
 #               echo "::set-output name=checksum::fail"
 #           fi
 
+
       - name: Submit code coverage to Codacy 
         if: matrix.submit-coverage == 'yes' 
         # && steps.codacy-checksum.checsum == 'pass'
         run: |
+          ls
+          pwd
           bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r tests/output/clover.xml -l PHP
         env:
           CODACY_API_TOKEN: ${{ secrets.CODACY_API_TOKEN }}
