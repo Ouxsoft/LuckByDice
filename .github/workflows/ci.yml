@@ -110,9 +110,24 @@ jobs:
       - name: Run PHP Unit Tests
         run: composer run-script test
 
-      - name: Submit code coverage
+      - name: Submit code coverage to Codecov
         if: matrix.submit-coverage == 'yes'
         run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }} -f tests/output/clover.xml
+
+      - name: Submit code coverage to Codacy
+        if: matrix.submit-coverage == 'yes'
+        run: |
+          # Codacy Curl Bashing Checksum Verification
+          # https://blog.aquasec.com/codecovs-breach-supply-chain-attack
+          
+          SHA256=$(curl -sSL https://coverage.codacy.com/get.sh | sha256sum)
+          CHECKSUM='28dc671cdf1038f1c95cf2dbcb4ef6ae127a243d99d0b131d4600f8b4e3e91428 *-'
+          
+          if [ "$SHA256" == "$CHECKSUM" ]; then
+                  bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r tests/log/clover.xml -l PHP
+          else
+                  echo "Failed Codacy checksum verification: $SHA256"
+          fi
 
   php-benchmark-test:
     name: "PHP ${{ matrix.php-version }} Benchmark Tests"
