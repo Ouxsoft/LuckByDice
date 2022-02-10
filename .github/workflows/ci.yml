@@ -122,7 +122,7 @@ jobs:
           # https://blog.aquasec.com/codecovs-breach-supply-chain-attack
           
           SHA256=$(curl -sSL https://coverage.codacy.com/get.sh | sha256sum)
-          CHECKSUM='28dc671cdf1038f1c95cf2dbcb4ef6ae127a243d99d0b131d4600f8b4e3e91428 *-'
+          CHECKSUM='8dc671cdf1038f1c95cf2dbcb4ef6ae127a243d99d0b131d4600f8b4e3e91428 *-'
           
           if [ "$SHA256" == "$CHECKSUM" ]; then
                   bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r tests/log/clover.xml -l PHP
