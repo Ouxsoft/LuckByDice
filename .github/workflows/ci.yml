@@ -123,10 +123,15 @@ jobs:
           CHECKSUM='8dc671cdf1038f1c95cf2dbcb4ef6ae127a243d99d0b131d4600f8b4e3e91428'
 
           if [ "$SHA256" == "$CHECKSUM" ]; then
-              bash <(echo $FILE) report -r tests/log/clover.xml -l PHP
+              echo "Verified Codacy Coverage submitter checksum verification: $SHA256"
           else
               echo "Failed Codacy Coverage submitter checksum verification: $SHA256"
           fi
+
+      - name: Submit code coverage to Codacy 
+        if: matrix.submit-coverage == 'yes'
+        run: |
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r
         env:
           CODACY_API_TOKEN: ${{ secrets.CODACY_API_TOKEN }}
           CODACY_ORGANIZATION_PROVIDER: gh
