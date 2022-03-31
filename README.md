@@ -12,7 +12,7 @@
 [![Slack](https://img.shields.io/badge/slack-luckbydice-purple)](https://ouxsoft.slack.com/archives/C02FR135CN9)
 
 ## Got Dice?
-Run your dice notation via [Docker](https://www.docker.com/products/docker-desktop):
+Run your dice notation using [Docker](https://www.docker.com/products/docker-desktop):
 
 ```
 $ docker run ouxsoft/luckbydice:latest bin/luckbydice d3,4d6+1,5d+1*2
